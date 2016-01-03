@@ -1,0 +1,122 @@
+{% load i18n staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% block metatags %}
+			<meta charset="utf-8">
+			<title>{% block headtitle %}Django Custom Errors{% endblock %}</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="{% trans 'An app to manage errors page ...'%}">
+			<meta name="author" content="Davide La Rosa">
+		{% endblock %}
+		
+		<!-- Cascade Style Sheets -->
+		{% if jquery == 'bootstrap' %}
+			<link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css'%}">
+
+			<link rel="stylesheet" href="{% static 'css/jquery/jquery-ui-1.10.3.custom.css'%}">
+			<!--[if lt IE 9]>
+				<link rel="stylesheet" href="{% static 'css/jquery/jquery.ui.1.10.3.ie.css'%}">
+			<![endif]-->
+
+			<link rel="stylesheet" href="{% static 'css/font-awesome/font-awesome.min.css'%}">
+			<!--[if IE 7]>
+				<link rel="stylesheet" href="{% static 'css/font-awesome/font-awesome-ie7.min.css'%}">
+			<![endif]-->
+			
+			<link rel="stylesheet" href="{% static 'js/google-code-prettify/prettify.css'%}">
+			<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+			<!--[if lt IE 9]>
+				<script src="{% static 'js/vendor/html5shiv.js'%}" type="text/javascript"></script>
+				<script src="{% static 'js/vendor/respond.min.js'%}" type="text/javascript"></script>
+			<![endif]-->
+
+			<!-- Le fav and touch icons -->
+			<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'ico/favicon_256x256.png'%}">
+			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'ico/favicon_256x256'%}">
+			<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'ico/favicon_256x256'%}">
+			<link rel="apple-touch-icon-precomposed" href="{% static 'ico/favicon_256x256'%}">
+			<link rel="shortcut icon" href="{% static 'ico/favicon_256x256.png'%}">
+
+			<!-- For Chrome for Android: -->
+			<link rel="icon" sizes="192x192" href="touch-icon-192x192.png">
+			<!-- For iPhone 6 Plus with @3× display: -->
+			<link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon-180x180-precomposed.png">
+			<!-- For iPad with @2× display running iOS ≥ 7: -->
+			<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png">
+			<!-- For iPad with @2× display running iOS ≤ 6: -->
+			<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+			<!-- For iPhone with @2× display running iOS ≥ 7: -->
+			<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+			<!-- For iPhone with @2× display running iOS ≤ 6: -->
+			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+			<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+			<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png">
+			<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+			<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+			<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+			<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"><!-- 57×57px -->
+
+			<!-- <script src="//code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script> -->
+			<script src="{% static 'js/jquery/jquery-1.10.2.js'%}" type="text/javascript"></script>
+			<script src="{% static 'js/jquery/jquery-migrate-1.2.1.min.js'%}" type="text/javascript"></script>
+			<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+			<script src="{% static 'js/jquery/ui/1.11.4/jquery-ui.js'%}"></script>
+		{% else %}
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		{% endif %}
+
+		{% if debug %}
+			<script type="text/javascript">
+				var isDebug = true;
+			</script>
+		{% else %}
+			<script type="text/javascript">
+				var isDebug = false;
+			</script>
+		{% endif %}
+
+		<script>
+			/* Fix Facebook Appending Hash */
+			if (window.location.hash == "#_=_")
+				window.location.hash = "";
+		</script>
+
+		{% block head %}{% endblock %}
+	</head>
+
+	<body {% block body_class %}{% endblock %}>
+
+		<section {% block page_role %} data-role="page" data-theme="b" {% endblock %} >
+
+			{% block header %}{% include "header.html" %}{% endblock %}
+
+			{% block messages %}
+				{% if messages %}
+					<div class="ui-bar ui-bar-e">
+						{% for message in messages %}
+							<h3>{{ message }}</h3>
+						{% endfor %}
+					</div>
+				{% endif %}
+			{% endblock %}
+
+			{% block content %}<p>No Content Defined</p>{% endblock %}
+
+			{% block footer %}{% include "footer.html" %}{% endblock %}
+
+			{% if jquery == 'bootstrap' %}
+				<!-- Placed at the end of the document so the pages load faster -->
+				<script src="{% static 'js/google-code-prettify/prettify.js'%}" type="text/javascript"></script>
+				<script src="{% static 'js/bootstrap/bootstrap.js'%}" type="text/javascript"></script>
+				<script src="{% static 'js/bootstrap/holder.js'%}" type="text/javascript"></script>
+				<!-- <script src="{% static 'js/jquery/jquery-ui-1.10.3.custom.min.js'%}" type="text/javascript"></script> -->
+			{% endif %}
+
+			{% block bottom_js %}{% endblock %}
+		
+		</section>
+	</body>
+</html>
