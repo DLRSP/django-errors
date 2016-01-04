@@ -22,27 +22,33 @@ class ExampleTestCase(TestCase):
         LOGGER.debug("Example Tests tearDown")
 		
     def test_400_urls(self):
-        """Test that redirects kicking in when trying to go to 400 page."""
+        """Test the url of 400 page."""
         LOGGER.debug("400 Test Redirect URLs")
         response = self.client.get('/400/', follow=True)
         self.assertEqual(200, response.status_code)
 
     def test_403_urls(self):
-        """Test that redirects kicking in when trying to go to 403 page."""
+        """Test the url of 403 page."""
         LOGGER.debug("403 Test Redirect URLs")
         response = self.client.get('/403/', follow=True)
         self.assertEqual(200, response.status_code)
 
     def test_404_urls(self):
-        """Test that redirects kicking in when trying to go to 404 page."""
-        LOGGER.debug("404 Test Redirect URLs")
-        response = self.client.get('/403/', follow=True)
+        """Test the url of 404 page."""
+        LOGGER.debug("404 Test URLs")
+        response = self.client.get('/404/', follow=True)
         self.assertEqual(200, response.status_code)
 
+    def test_404_urls(self):
+        """Test that redirects kicking in when trying to go to 404 page."""
+        LOGGER.debug("404 Test Redirect URLs")
+        response = self.client.get('/UrlShouldNotExist/', follow=True)
+        self.assertEqual(404, response.status_code)
+
     def test_500_urls(self):
-        """Test that redirects kicking in when trying to go to 500 page."""
+        """Test the url of 500 page."""
         LOGGER.debug("500 Test Redirect URLs")
-        response = self.client.get('/403/', follow=True)
+        response = self.client.get('/500/', follow=True)
         self.assertEqual(200, response.status_code)
 
     # def test_X_redirect_urls(self):
