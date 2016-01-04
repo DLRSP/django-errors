@@ -1,6 +1,6 @@
 # django-errors
 
-[![Ready](https://badge.waffle.io/DLRSP/django-errors.png?label=Ready)] "ToBeWorked"
+[![Ready](https://badge.waffle.io/DLRSP/django-errors.png?label=Ready)](https://waffle.io/DLRSP/django-errors)
 [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master)
 [![master](https://travis-ci.org/DLRSP/django-errors.svg?branch=master)](https://travis-ci.org/DLRSP/django-errors)
 
