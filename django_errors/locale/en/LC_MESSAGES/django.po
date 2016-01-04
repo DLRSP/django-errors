@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 15:41+0100\n"
+"POT-Creation-Date: 2016-01-04 16:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,12 @@ msgid ""
 msgstr ""
 
 #: templates/django_errors/400.html:16
-msgid "The client SHOULD NOT repeat the request without modifications."
+msgid "The browser SHOULD NOT repeat the request without modifications."
 msgstr ""
 
-#: templates/django_errors/400.html:24 templates/django_errors/500.html:20
-msgid "Details:"
+#: templates/django_errors/400.html:24 templates/django_errors/403.html:20
+#: templates/django_errors/404.html:20 templates/django_errors/500.html:20
+msgid "Details"
 msgstr ""
 
 #: templates/django_errors/403.html:5 templates/django_errors/403.html.py:9
@@ -44,10 +45,6 @@ msgstr ""
 
 #: templates/django_errors/403.html:12
 msgid "You don't have permissions to see this page!"
-msgstr ""
-
-#: templates/django_errors/403.html:20
-msgid "Details"
 msgstr ""
 
 #: templates/django_errors/404.html:5 templates/django_errors/404.html.py:9
