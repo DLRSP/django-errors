@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+gettext = lambda s: s
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,9 +28,18 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+LANGUAGES = (
+    ## Customize this
+    ('it', gettext('it')),
+    ('en', gettext('en')),
+    ('es', gettext('es')),
+    ('fr', gettext('fr')),
+    ('de', gettext('de')),
+    ('ru', gettext('ru')),
+    ('cn', gettext('cn')),
+)
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,19 +47,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_errors'
+    'django_nose',
+    'django_errors',
+    'example'
 ]
 
-# MIDDLEWARE_CLASSES = [
-    # # 'django.middleware.security.SecurityMiddleware',
-    # 'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
-    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    # 'django.contrib.messages.middleware.MessageMiddleware',
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-# ]
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_INCLUDE_EXE=1
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=django_errors',
+]
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',

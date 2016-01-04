@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-04 08:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: cms_plugins.py:63
+msgid "Video Meta"
+msgstr ""
+
+#: templates/base.html:9
+msgid "An app to manage errors page ..."
+msgstr ""
+
+#: templates/django_errors/400.html:5 templates/django_errors/400.html.py:9
+#: templates/django_errors/500.html:9
+msgid "Server Error"
+msgstr ""
+
+#: templates/django_errors/400.html:10 templates/django_errors/500.html:10
+msgid "I"
+msgstr ""
+
+#: templates/django_errors/400.html:17 templates/django_errors/500.html:17
+msgid "Details:"
+msgstr ""
+
+#: templates/django_errors/403.html:5 templates/django_errors/403.html.py:9
+msgid "Permission Denied"
+msgstr ""
+
+#: templates/django_errors/403.html:10
+msgid "You don't have permissions to see this page!"
+msgstr ""
+
+#: templates/django_errors/403.html:17
+msgid "Details"
+msgstr ""
+
+#: templates/django_errors/404.html:5 templates/django_errors/404.html.py:9
+msgid "Page Not Found"
+msgstr ""
+
+#: templates/django_errors/404.html:10
+msgid "I'm sorry, we don't have a page with that URL."
+msgstr ""
+
+#: templates/django_errors/500.html:5
+msgid "Internal Server Error"
+msgstr ""
