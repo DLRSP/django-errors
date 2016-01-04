@@ -2,14 +2,14 @@
 {% load i18n %}
 
 {% block headtitle %}
-	{% trans 'Internal Server Error' %}
+	{% trans 'Internal Server Error' %} (500)
 {% endblock headtitle %}
 
 {% block content %}
     <section title="{% trans 'Server Error' %}" data-role="content" data-theme="e">
         <h2>
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
-			{% trans 'I'm sorry, an error has occurred with the application.' %}
+			{% trans "I'm sorry, an error has occurred with the application." %}
 		</h2>
         {% if messages %}
             {% for msg in messages %}
