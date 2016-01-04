@@ -15,12 +15,18 @@ python:
   # maintainers to fix their pypy-dev package.
   - "pypy"
 
+deploy:
+  provider: pypi
+  user: KingDade
+  on:
+    tags: true
+	
 install:
   - python setup.py install
   - pip install codecov
 
 script:
-  - coverage run manage.py test --exe --all-modules
+  - coverage run example/manage.py test --exe --all-modules
 
 after_success:
   - codecov
