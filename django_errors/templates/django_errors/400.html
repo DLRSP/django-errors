@@ -2,17 +2,19 @@
 {% load i18n %}
 
 {% block headtitle %}
-	{% trans 'Bad Request' %}
+	{% trans 'Bad Request' %} (400)
 {% endblock headtitle %}
 
 {% block content %}
     <section title="{% trans 'Bad Request' %}" data-role="content" data-theme="e">
         <h2>
-			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
+			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
 			{% trans 'The request could not be understood by the server due to malformed syntax.' %}
-			</br>
-			{% trans 'The client SHOULD NOT repeat the request without modifications.' %}
 		</h2>
+        <h3>
+			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
+			<i>{% trans 'The client SHOULD NOT repeat the request without modifications.' %}</i>
+		</h3>
         {% if messages %}
             {% for msg in messages %}
                 <p class="error">{{ msg.message }} ({{ msg.extra_tags }})</p>
