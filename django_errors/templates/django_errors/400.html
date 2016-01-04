@@ -15,14 +15,5 @@
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
 			<i>{% trans 'The browser SHOULD NOT repeat the request without modifications.' %}</i>
 		</h3>
-        {% if messages %}
-            {% for msg in messages %}
-                <p class="error">{{ msg.message }} ({{ msg.extra_tags }})</p>
-            {% endfor %}
-        {% endif %}
-        {% if error_msg %}
-            <p>{% trans 'Details' %}</p>
-            <p class="error">{{ error_msg }}</p>
-        {% endif %}
     </section>
 {% endblock %}

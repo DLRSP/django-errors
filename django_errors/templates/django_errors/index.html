@@ -24,3 +24,26 @@
 	</div>
 </div>
 {% endblock %}
+
+{% block bottom_js %}
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(document).on("pageloadfailed", function(event, data){
+			event.preventDefault();
+			
+			var errMessage = data.xhr.status + " " + data.xhr.statusText;
+			<!-- var errMessage = data.messages; -->
+
+			setTimeout(function(){
+				$.mobile.loading('hide');
+				$.mobile.loading('show', {theme:"b", text:errMessage, textonly:false, textVisible: true});
+			},50);
+			
+			setTimeout(function(){$.mobile.loading('hide')}, 2000);
+			
+			data.deferred.reject(data.absUrl, data.options);
+			
+		});
+	});
+	</script>
+{% endblock %}
