@@ -16,32 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from views import CustomIndex, Test404
-
-from django_errors.views import custom_400, custom_403, custom_404, custom_500
-""" Impot Custom Errors Views """
 
 urlpatterns = [
-    url(r'^$', CustomIndex.as_view(),name="index"),
     url(r'^admin/', admin.site.urls),
 	
-    url(r'^django_errors/', include('django_errors.urls')),
-	
-    url(r'^400/$', custom_400,name="400"),
-    url(r'^403/$', custom_403,name="403"),
-    url(r'^404/$', custom_404,name="404"),
-    url(r'^500/$', custom_500,name="500"),
+    # url(r'^$', include('django_errors.urls')),
 ]
-
-# handler404 = 'django_errors.views.custom_404'
-""" Handle 404 also with DEBUG = True """
-
-# handler500 = 'django_errors.views.custom_500'
-""" Handle 500 also with DEBUG = True """
-
-#TBD: handler403 = 'mysite.views.my_custom_permission_denied_view'
-""" Handle 500 also with DEBUG = True """
-
-#TBD: handler400 = 'mysite.views.my_custom_bad_request_view'
-""" Handle 500 also with DEBUG = True """
-
