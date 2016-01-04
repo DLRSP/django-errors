@@ -20,7 +20,7 @@ deploy:
   user: KingDade
   on:
     tags: true
-	
+
 install:
   - python setup.py install
   - pip install codecov
