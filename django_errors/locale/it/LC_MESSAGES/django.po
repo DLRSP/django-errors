@@ -3,70 +3,69 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 15:41+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-01-04 16:15+0100\n"
+"PO-Revision-Date: 2016-01-04 16:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: templates/base.html:9
 msgid "An app to manage errors page ..."
-msgstr ""
+msgstr "Una app per gestire le pagine di errorre ..."
 
 #: templates/django_errors/400.html:5 templates/django_errors/400.html.py:9
 msgid "Bad Request"
-msgstr ""
+msgstr "Brutta Richiesta"
 
 #: templates/django_errors/400.html:12
-msgid ""
-"The request could not be understood by the server due to malformed syntax."
-msgstr ""
+msgid "The request could not be understood by the server due to malformed syntax."
+msgstr "La richiesta non può essere compresa dal server a causa di sintassi errata."
 
 #: templates/django_errors/400.html:16
-msgid "The client SHOULD NOT repeat the request without modifications."
-msgstr ""
+msgid "The browser SHOULD NOT repeat the request without modifications."
+msgstr "Il browser NON DEVE ripetere la richiesta senza modifiche."
 
-#: templates/django_errors/400.html:24 templates/django_errors/500.html:20
-msgid "Details:"
-msgstr ""
+#: templates/django_errors/400.html:24 templates/django_errors/403.html:20
+#: templates/django_errors/404.html:20 templates/django_errors/500.html:20
+msgid "Details"
+msgstr "Details"
 
 #: templates/django_errors/403.html:5 templates/django_errors/403.html.py:9
 msgid "Permission Denied"
-msgstr ""
+msgstr "Permesso Negato"
 
 #: templates/django_errors/403.html:12
 msgid "You don't have permissions to see this page!"
-msgstr ""
-
-#: templates/django_errors/403.html:20
-msgid "Details"
-msgstr ""
+msgstr "Non hai il permesso per vedere questa pagina!"
 
 #: templates/django_errors/404.html:5 templates/django_errors/404.html.py:9
 msgid "Page Not Found"
-msgstr ""
+msgstr "Pagina non trovata"
 
 #: templates/django_errors/404.html:12
 msgid "I'm sorry, we don't have a page with that URL."
-msgstr ""
+msgstr "Mi dispiace, non abbiamo una pagina con questo URL."
 
 #: templates/django_errors/500.html:5
 msgid "Internal Server Error"
-msgstr ""
+msgstr "Errore Interno del Server"
 
 #: templates/django_errors/500.html:9
 msgid "Server Error"
-msgstr ""
+msgstr "Errore del Server "
 
 #: templates/django_errors/500.html:12
 msgid "I'm sorry, an error has occurred with the application."
-msgstr ""
+msgstr "Mi dispiace, si è verificato un errore con il programma."
+
+#~ msgid "Details:"
+#~ msgstr "Dettagli:"
