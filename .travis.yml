@@ -1,0 +1,26 @@
+sudo: false
+
+language: python
+
+env:
+  - DJANGO_VERSION=1.8.7
+  - DJANGO_VERSION=1.8.8
+  - DJANGO_VERSION=1.9
+  
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
+  # maintainers to fix their pypy-dev package.
+  - "pypy"
+
+install:
+  - python setup.py install
+  - pip install codecov
+
+script:
+  - coverage run manage.py test --exe --all-modules
+
+after_success:
+  - codecov
