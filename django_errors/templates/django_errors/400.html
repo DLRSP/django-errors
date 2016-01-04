@@ -1,17 +1,25 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block headtitle %}Server Error{% endblock %}
+{% block headtitle %}
+	{% trans 'Bad Request' %}
+{% endblock headtitle %}
 
 {% block content %}
-    <section title="Error" data-role="content" data-theme="e">
-        <h2><span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>I'm sorry, an error has occurred with the application.</h2>
+    <section title="{% trans 'Bad Request' %}" data-role="content" data-theme="e">
+        <h2>
+			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
+			{% trans 'The request could not be understood by the server due to malformed syntax.' %}
+			</br>
+			{% trans 'The client SHOULD NOT repeat the request without modifications.' %}
+		</h2>
         {% if messages %}
             {% for msg in messages %}
                 <p class="error">{{ msg.message }} ({{ msg.extra_tags }})</p>
             {% endfor %}
         {% endif %}
         {% if error_msg %}
-            <p>Details:</p>
+            <p>{% trans 'Details:' %}</p>
             <p class="error">{{ error_msg }}</p>
         {% endif %}
     </section>
