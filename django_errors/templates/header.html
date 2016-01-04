@@ -1,9 +1,11 @@
-{% load url from future %}
+{% load i18n staticfiles %}
 {% if user.is_staff %}
 <header data-role="header" data-theme="b" data-position="fixed">
     <div data-role="navbar">
         <ul>
 			<li><a href="{% url 'index' %}" data-icon="home">All Erros</a></li>
+			<li><a href="{% url '400' %}" data-icon="home">400</a></li>
+			<li><a href="{% url '403' %}" data-icon="home">403</a></li>
 			<li><a href="{% url '404' %}" data-icon="home">404</a></li>
 			<li><a href="{% url '500' %}" data-icon="gear">500</a></li>
         </ul>
