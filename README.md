@@ -12,12 +12,12 @@ http://www.onextrapixel.com/2011/03/09/the-secret-of-a-successful-error-page-wit
 http://www.onextrapixel.com/2011/10/21/applying-defensive-design-for-the-web/
 
 
-## Install From Pip ::
+## Install From Pip
 	
 	$ pip install django-errors
 
 	
-## Run Example Project ::
+## Run Example Project
 
 	$ cd example
 	$ python manage.py runserver
