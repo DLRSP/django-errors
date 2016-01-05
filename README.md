@@ -1,5 +1,4 @@
-# django-errors
-[![PyPi license](https://img.shields.io/pypi/l/django-errros.svg)](https://pypi.python.org/pypi/django_errors)
+# django-errors [![PyPi license](https://img.shields.io/pypi/l/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
 
 ## Pypi
 [![PyPi status](https://img.shields.io/pypi/status/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
@@ -12,7 +11,8 @@
 	$ pip install django-errors
 
 ## GitHub
-
+![GitHub release](https://img.shields.io/github/tag/DLRSP/django-errors.svg)
+![GitHub release](https://img.shields.io/github/release/DLRSP/django-errors.svg)
 
 ## Test
 [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master)
