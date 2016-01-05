@@ -13,16 +13,17 @@ setup(
     url='https://github.com/DLRSP/django-errors',
     license='MIT',
     description="Wrapper Views for common errors",
-    author='Davide La Rosa',
-    author_email='davide.larosa.coins@gmail.com',
+    author='DLRSP',
+    author_email='dlrsp.py@gmail.com',
     packages=['django_errors', ],
     long_description=readme,
     include_package_data=True,
     zip_safe=False,
-    download_url = 'https://github.com/DLRSP/django-errors/releases/tag/v1.0', # I'll explain this in a second
+	# download_url = 'https://github.com/DLRSP/django-errors/releases/tag/v1.0'
     install_requires=['django_nose',
-		      'django==1.8.7', 
-		      ],
+                      'django==1.8.7', 
+                      'django-errors', 
+                      ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Django',
