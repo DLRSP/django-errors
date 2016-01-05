@@ -4,6 +4,8 @@
 [![Ready](https://badge.waffle.io/DLRSP/django-errors.png?label=Ready)](https://waffle.io/DLRSP/django-errors)
 [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master)
 [![master](https://travis-ci.org/DLRSP/django-errors.svg?branch=master)](https://travis-ci.org/DLRSP/django-errors)
+[![master](https://circleci.com/gh/DLRSP/django-errors.svg?style=shield&circle-token=b2c2b63556f8dfc17f9058adfbaae1fd16b3bc01)](https://circleci.com/gh/DLRSP/django-errors)
+
 
 ## Report an Issue
 https://waffle.io/DLRSP/django-errors/join
