@@ -1,7 +1,7 @@
 sudo: false
 language: python
 before_install:
-  - [ -z brew ] ; brew update
+  - [ ! -z brew ] ; brew update
   - pip install virtualenv
 matrix:
   allow_failures:
