@@ -1,6 +1,9 @@
 from setuptools import setup
 
-readme = open('README.md').read()
+try:
+    readme = open('README.md').read()
+except:
+    readme = u"Wrapper Views for common errors"
 
 from django_errors import __version__ as version
 
