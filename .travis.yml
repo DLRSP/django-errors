@@ -24,7 +24,6 @@ deploy:
     tags: true
     repo: DLRSP/django-errors
 before_install:
-  - [ ! -z brew ] ; brew update
   - pip install virtualenv
   - pip install codecov
 install:
