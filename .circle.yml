@@ -1,0 +1,10 @@
+dependencies:
+  pre:
+    - pip install codecov
+test:
+  override:
+    - coverage run example/manage.py test --exe --all-modules
+post:
+    - coverage html -d $CIRCLE_ARTIFACTS
+    - codecov
+
