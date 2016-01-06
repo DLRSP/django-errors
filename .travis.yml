@@ -3,6 +3,7 @@ language: python
 before_install:
   - [ ! -z brew ] ; brew update
   - pip install virtualenv
+  - pip install codecov
 matrix:
   allow_failures:
     - os: osx
@@ -28,7 +29,6 @@ deploy:
     repo: DLRSP/django-errors
 install:
   - python setup.py install
-  - pip install codecov
 script:
   - coverage run example/manage.py test --exe --all-modules
 after_success:
