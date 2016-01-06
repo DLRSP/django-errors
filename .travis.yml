@@ -1,32 +1,26 @@
 sudo: false
-
 language: python
-
 env:
-  - DJANGO_VERSION=1.8.7
-  - DJANGO_VERSION=1.8.8
-  - DJANGO_VERSION=1.9
-  
+- DJANGO_VERSION=1.8.7
+- DJANGO_VERSION=1.8.8
+- DJANGO_VERSION=1.9
 python:
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
-  # maintainers to fix their pypy-dev package.
-  - "pypy"
-
+- '2.7'
+- '3.3'
+- '3.4'
+- pypy
 deploy:
   provider: pypi
   user: KingDade
+  password:
+    secure: FrqlGhvfkX+OyC7a+OoOFk2pkuXCYpHusz6XMR8BDKQskajGepV3iQ2Xaa8y6hJGW2flqSKa0wr9U6JwmgVvhuX3wuoycbED4eWqPe/l5a6C+6h7Rw29IUWEL2zZjRBWoJooA+AB1FY3N/TcNRC/1NutUKOGkb3b6wNi4sDFIGai9jKpDCNgEkbWeXAv390g3E76OtV1WjH/fwXYtliaTQX0FHq5+j6//ZTAdEKFs1NxLJnR0VPMJ/hDiASOkfImkp1RuBn8SwUzgoyNKbzlwaGEYdq/6tCgnQIAMllPo7dwJAnLTWZWD/Jk5bd9ufezc1QgDAgNHE11jWHWvEUrKbpEV+h4fSk61voud6OfRqJ3GqCDSPrt2w48gmEjrgXBOEAFUwIKUcCwmQHr0Kd+7FXok4K3GKzrh/VqYjXoEz9R1mQHrISMF2i8vQpCJw7ZPbo7LXEu+ZwrFw7adIvelXU+Qdrq1aknDPTcncbO/i/SrNF9/LTX5U/iF78As36iytRBsjuRM7IY2VVJQpqWYU800BrQ+1otlw0GdoK488AN6ICQ7ngEjCo9uBxLnGnbdTFE8/fZViRtYhxPfYs2ETDKjvkA22VhKADK4kcWjsnKyA9hZPeOXUpcj4IiV/ozmvQn2ujflF6rJakdz+ujn6GjvdxYtsQ+E3WDvGnzSis=
   on:
     tags: true
-
+    repo: DLRSP/django-errors
 install:
-  - python setup.py install
-  - pip install codecov
-
+- python setup.py install
+- pip install codecov
 script:
-  - coverage run example/manage.py test --exe --all-modules
-
+- coverage run example/manage.py test --exe --all-modules
 after_success:
-  - codecov
+- codecov
