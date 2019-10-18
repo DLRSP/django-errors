@@ -21,7 +21,7 @@ setup(
     zip_safe=False,
 	# download_url = 'https://github.com/DLRSP/django-errors/releases/tag/v1.0'
     install_requires=['django_nose',
-                      'django<1.9', 
+                      'django<1.12', 
                       'django-errors', 
                       ],
     classifiers=[
