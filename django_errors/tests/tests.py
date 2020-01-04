@@ -20,7 +20,7 @@ class ExampleTestCase(TestCase):
     def tearDown(self):
         """Remove Test Data"""
         LOGGER.debug("Example Tests tearDown")
-		
+
     def test_400_urls(self):
         """Test the url of 400 page."""
         LOGGER.debug("400 Test Redirect URLs")
@@ -39,7 +39,7 @@ class ExampleTestCase(TestCase):
         response = self.client.get('/404/', follow=True)
         self.assertEqual(404, response.status_code)
 
-    def test_404_urls(self):
+    def test_not_exist_urls(self):
         """Test that redirects kicking in when trying to go to 404 page."""
         LOGGER.debug("404 Test Redirect URLs")
         response = self.client.get('/UrlShouldNotExist/', follow=True)
@@ -52,8 +52,7 @@ class ExampleTestCase(TestCase):
         self.assertEqual(500, response.status_code)
 
     # def test_X_redirect_urls(self):
-        # """Test that redirects end urls"""
-        # LOGGER.debug("Test X Redirect URLs")
-        # response = self.client.get('/403/', follow=True)
-        # self.assertRedirects(response, "http://testserver/admin/login/?next=/admin/")
-
+    # """Test that redirects end urls"""
+    # LOGGER.debug("Test X Redirect URLs")
+    # response = self.client.get('/403/', follow=True)
+    # self.assertRedirects(response, "http://testserver/admin/login/?next=/admin/")
