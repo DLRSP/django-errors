@@ -1,7 +1,11 @@
 #################
+## PyCharm
+#################
+.idea
+
+#################
 ## Eclipse
 #################
-
 *.pydevproject
 .project
 .metadata
@@ -134,7 +138,7 @@ Desktop.ini
 # Packages
 *.egg
 *.egg-info
-# dist
+dist
 build
 eggs
 parts
