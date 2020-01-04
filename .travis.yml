@@ -2,10 +2,14 @@ sudo: false
 language: python
 matrix:
   allow_failures:
-    - os: osx
+    - os:
+        - windows
+        - osx
+    - env: DJANGO_VERSION=3.0.2
 os:
   - linux
   - osx
+  - windows
 env:
   - DJANGO_VERSION=2.2.9
   - DJANGO_VERSION=3.0.2
