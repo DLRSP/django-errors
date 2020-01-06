@@ -1,7 +1,7 @@
 """Django Views for django-errors module"""
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.template import loader
-from django.shortcuts import render
+from django.template import loader, RequestContext
+from django.shortcuts import render, render_to_response
 from django.views.generic import TemplateView
 from django.utils.translation import ugettext_lazy as _
 
@@ -9,6 +9,14 @@ from django.utils.translation import ugettext_lazy as _
 class CustomViewIndexErrors(TemplateView):
     """Public Index Page. url: /"""
     template_name = "django_errors/index.html"
+
+
+def custom_400(request, exception=None):
+    """Custom Page for 400 error (Bad Request). url: /400"""
+    error_msg = _("Bad Request")
+    response = render_to_response('django_errors/400.html', {'messages': error_msg})
+    response.status_code = 400
+    return response
 
 
 # def custom_400(request, exception=None):
@@ -19,12 +27,12 @@ class CustomViewIndexErrors(TemplateView):
 #     return response
 
 
-def custom_400(request, exception=None):
-    """Custom Page for 400 error (Bad Request). url: /400"""
-    error_msg = _("Bad Request")
-    t = loader.get_template('django_errors/400.html')
-    c = {'messages': error_msg, 'exception': exception}
-    return HttpResponseBadRequest(t.render(c, request))
+# def custom_400(request, exception=None):
+#     """Custom Page for 400 error (Bad Request). url: /400"""
+#     error_msg = _("Bad Request")
+#     t = loader.get_template('django_errors/400.html')
+#     c = {'messages': error_msg, 'exception': exception}
+#     return HttpResponseBadRequest(t.render(c, request))
 
 
 def custom_403(request, exception=None):
