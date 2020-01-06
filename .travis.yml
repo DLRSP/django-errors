@@ -26,8 +26,9 @@ before_install:
   - pip install virtualenv
   - pip install codecov
 install:
+  - git clone --depth=50 --branch=django-errors https://github.com/DLRSP/example.git DLRSP/example
   - python setup.py install
 script:
-  - coverage run example/manage.py test --exe --all-modules
+  - coverage run DLRSP/example/manage.py test --exe --all-modules
 after_success:
   - codecov
