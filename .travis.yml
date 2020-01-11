@@ -16,9 +16,9 @@ python:
   - '3.8'
 deploy:
   provider: pypi
-  user: dlrsp
+  user: django-errors
   password:
-    secure: pypi-AgEIcHlwaS5vcmcCJDc3YzFkMDliLWEwNzYtNGM2Yi05MDc3LTllZTQzNjdkNGE1NAACPnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJkamFuZ28tZXJyb3JzIl19LCAidmVyc2lvbiI6IDF9AAAGIGK-bgCe9YnyW9symLkUjs_2BJccFFVWQLJYbEzNu3u6
+    secure: "S2ZMu4lfShVPfKYd5l9I9m5U2T2uP7f1SOvkgmrhVc0ANLbqwSFMHNjWc8fHS+MoNvnDb19tvRVjn53JGutuzi9xhYFcbinLHpf7moFXfVbCaGOU5R/CVdktQmrL5cee08jYDAZHL1fhXe0fnER9o719O8rYAEwNWU8ogGKHVwAlfz7DmIpfdZNkZGsvDIeeonsSDheBBWYGQ8+R5APOUk9tq2Hdijjy4Zk/0yCurAnAmrmyvewix6bXro3tdYPcvpuTA5IOwbhG1Z30eAlYhMuZ43+thevai0CEXl2JIqPL83zT9AKDgg/xBHlkiRlEcW3YSCXieh1AdQzmr5gZQvL5YneGXVhosrCkGjguIuJwFA9nHJABbYWgsPM54vg9WcdvjNEHVGdUru5Hk7XugutRWx6FqeIydayWYxpSgp9wct4lT1PAnVToy7q2a39uhNK35z/OOdWPrfK25XlxcnAmughFNf9vxS6yT7mf6remwa36JhdolpT57IZ2X+TKYdMurzFg837KDK12+Fclzmck5kA4to1p3+0sGeKL9ngGuQoY0XnS4pTbSH7OXkmOZJiImaQD2rZfUjBgUlNzLRA8ZeLZ/G48ihCM7vwFU/nAOVHXlfQtipOlmD/b8c3PDjjyd18LSrvK/IcO2iv2kJYHy2hdGOdpF69aWO+xlNU="
   on:
     tags: true
     repo: DLRSP/django-errors
