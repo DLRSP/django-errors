@@ -15,5 +15,8 @@
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
 			<i>{% trans 'The browser SHOULD NOT repeat the request without modifications.' %}</i>
 		</h3>
+		{% if exception %}
+       		<p>{{ exception }}</p>
+		{% endif%}
     </section>
 {% endblock %}

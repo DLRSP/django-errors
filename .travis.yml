@@ -3,22 +3,22 @@ language: python
 matrix:
   allow_failures:
     - os: osx
-    - env: DJANGO_VERSION=3.0.2
+    - env: DJANGO_VERSION=3.0
 os:
   - linux
   - osx
 env:
-  - DJANGO_VERSION=2.2.9
-  - DJANGO_VERSION=3.0.2
+  - DJANGO_VERSION=2.2
+  - DJANGO_VERSION=3.0
 python:
-  - '3.6'
   - '3.7'
   - '3.8'
+  - '3.9'
 deploy:
   provider: pypi
-  user: "dlrsp"
+  user: __token__
   password:
-    secure: "HIi7neagm+PDLJoIiJelkK0voUjbF9uxAbnIcA++BCX2ySbKvVyUEMdMXGd8BKkjRnaxV3ewov6scwusPxDBeaQTd43aOXoMQVxdWSWQ/vw0Ru0MN2I7YtPHY6VeLegIKg8Ul07iSYJuOIOdEit8MWqm7ZsKsTO8JNq2CcompdhxQNjOcAplv/gJ986eX5bEm+evaLHpo75sdfHYFxKmhAAzcVqP/4U4FMb2pVJkOGGuZre/bM/fJ9HHhFMOU1w+wpsCS6PdoWQbM1lGoJ7Cmdr40cjtedIphYpkPNDbxdqnogPZi9YlfZxc2J8YHLdiGBPfJfyl2duzqgq5CXMglJ8BpUacVzuKJDcgm1mTwpxHpl0rIBiLptFsm8fYJZzg0FpPNtuszhF0ChVJ5dtGr98jUWCVzJMAC4z9ZrLCqP/0DkmqkdvnxE/RsDLsZA34dcg8QeODDa2dEGn15lN9zxRRUjH22VsO6SmIu2e0wo183OohYZvMMTpDOjMo6clm029tJQI8vqXDJTV5T5jjAAVfNuTDgbstJEdC4TiXb+eWfLfnGM36yhJ3mc0X6PgndhQl5V+L4tHqdZfRTLGlDdehceupY7ckuOhUJdzXEqQ9NmFXyIll8uehfZivDxoa2oG8YfAXgLP9IS6U8CnCiIlnaVJJdkBzwMMm3vwqqnM="
+    secure: pypi-AgEIcHlwaS5vcmcCJGY4MzY0MmZjLWM5NzQtNGM0Yy04ODdkLTMyMjU3NmM3MGFiYgACPnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJkamFuZ28tZXJyb3JzIl19LCAidmVyc2lvbiI6IDF9AAAGIAqXz59OvAmVMkHvfjlgR6eCYB9iunEWd2NObEew1WZh
   on:
     tags: true
     repo: DLRSP/django-errors
@@ -32,3 +32,5 @@ script:
   - coverage run DLRSP/example/manage.py test --exe --all-modules
 after_success:
   - codecov
+after_deploy:
+  - ./after_deploy_1.sh
