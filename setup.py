@@ -19,7 +19,8 @@ setup(
     long_description=readme,
     include_package_data=True,
     zip_safe=False,
-    install_requires=['django<3'],
+    install_requires=['django_nose',
+                      'django<3'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Django',
