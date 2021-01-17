@@ -17,6 +17,7 @@ setup(
     author_email='dlrsp.dev@gmail.com',
     packages=['django_errors', ],
     long_description=readme,
+    long_description_content_type="text/markdown",
     include_package_data=True,
     zip_safe=False,
     install_requires=['django_nose',

@@ -1,12 +1,12 @@
-sudo: false
 language: python
-matrix:
+jobs:
   allow_failures:
     - os: osx
     - env: DJANGO_VERSION=3.0
 os:
   - linux
   - osx
+dist: xenial
 env:
   - DJANGO_VERSION=2.2
   - DJANGO_VERSION=3.0
@@ -16,9 +16,9 @@ python:
   - '3.9'
 deploy:
   provider: pypi
-  user: __token__
+  username: __token__
   password:
-    secure: pypi-AgEIcHlwaS5vcmcCJGY4MzY0MmZjLWM5NzQtNGM0Yy04ODdkLTMyMjU3NmM3MGFiYgACPnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJkamFuZ28tZXJyb3JzIl19LCAidmVyc2lvbiI6IDF9AAAGIAqXz59OvAmVMkHvfjlgR6eCYB9iunEWd2NObEew1WZh
+    secure: "dL2jLryKnXZ6S6xwObOVqLQ/CCR5LUgfxsZEtmrQnT7ZUSY0t2pNDRxq1Sh4Oup+EgTr5gVpVGKXfmCFb1boC69OyLOG6piqy6lhI1tAZL6jMOi23cSk/7XILVDFvo8Oe+UwNE66oH9qRGV1GGpYf8P3ltXveLH+oEe7o5sMFlkVQHoXvNBXRO6DXa93zQQLAeGUn3grNWzyec3tY+32POuMvGFI30hDvTM5+Sdh5VgmyQCh6iYSWhKsE0GM7M/R8jJKvBsokUG8P5rXVZDNtIb1W1KW4WZtJtmG//mA6H3RNgSHAAIdzmuMCzt/+sTuAcCE+uSYLN23Qa0pn8mNSnbcdHm0VUeEPpA8DRanoLjRyIGf6Gj6/fdZO5eXU8Ib/RaGPw9mxmc+iMtQMhD9taZSSHOpHZy5wdQT8QBWg4ZaL4kuXiwANg7+BRmASyvTFdxUld01rdtSIRzWRA3M0d9aU5j0rl7eyNxRz8D+L6GrPcx4bVqeGXf7gRBBeSIuILfDrE9250ZZJk2TQAe2HFQQmZW86PIhD55xbGxjyKSIwJ6IKZoyPv8wLVoHMNj79NYJWBpn/doFn98piiNI/Q2uFDHBIYHtFJGH+gft2ln1NV0qkxlRR8xRyy4al3uBsPeih9S53RNsIKYeRUnnmMk9ZjwBdK+AFdtyZSueoog="
   on:
     tags: true
     repo: DLRSP/django-errors
