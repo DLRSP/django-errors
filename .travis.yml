@@ -2,7 +2,7 @@ language: python
 jobs:
   allow_failures:
     - os: osx
-    - env: DJANGO_VERSION=3
+    - env: DJANGO_VERSION=4
   include:
     - os: linux
     - os: osx
@@ -27,7 +27,7 @@ before_install:
   - python -m pip install --upgrade pip
   - pip install virtualenv
   - pip install codecov
-  - pip install -q Django<$DJANGO_VERSION
+  - pip install "Django<$DJANGO_VERSION"
   - git clone --depth=50 --branch=django-errors https://github.com/DLRSP/example.git DLRSP/example
 install:
   - python setup.py install
