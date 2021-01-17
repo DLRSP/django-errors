@@ -1,6 +1,12 @@
 # django-errors [![PyPi license](https://img.shields.io/pypi/l/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
 
-## Pypi [![PyPi status](https://img.shields.io/pypi/status/django-errors.svg)](https://pypi.python.org/pypi/django_errors) [![PyPi version](https://img.shields.io/pypi/v/django-errors.svg)](https://pypi.python.org/pypi/django_errors) [![PyPi python version](https://img.shields.io/pypi/pyversions/django-errors.svg)](https://pypi.python.org/pypi/django_errors) [![PyPi downloads](https://img.shields.io/pypi/dm/django-errors.svg)](https://pypi.python.org/pypi/django_errors) [![PyPi downloads](https://img.shields.io/pypi/dw/django-errors.svg)](https://pypi.python.org/pypi/django_errors) [![PyPi downloads](https://img.shields.io/pypi/dd/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
+## Pypi 
+[![PyPi status](https://img.shields.io/pypi/status/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
+[![PyPi version](https://img.shields.io/pypi/v/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
+[![PyPi python version](https://img.shields.io/pypi/pyversions/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
+[![PyPi downloads](https://img.shields.io/pypi/dm/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
+[![PyPi downloads](https://img.shields.io/pypi/dw/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
+[![PyPi downloads](https://img.shields.io/pypi/dd/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
 
 ```shell
 pip install django-errors
@@ -46,7 +52,8 @@ handler500 = errors_views.custom_500
 ## Run Example Project
 
 ```shell
-cd example
+git clone --depth=50 --branch=django-errors https://github.com/DLRSP/example.git DLRSP/example
+cd DLRSP/example
 python manage.py runserver
 ```
 

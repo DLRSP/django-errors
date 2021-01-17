@@ -2,14 +2,13 @@ language: python
 jobs:
   allow_failures:
     - os: osx
-    - env: DJANGO_VERSION=3.0
-os:
-  - linux
-  - osx
-dist: xenial
+    - env: DJANGO_VERSION=3
+  include:
+    - os: linux
+    - os: osx
 env:
   - DJANGO_VERSION=2.2
-  - DJANGO_VERSION=3.0
+  - DJANGO_VERSION=3
 python:
   - '3.7'
   - '3.8'
