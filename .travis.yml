@@ -7,8 +7,8 @@ jobs:
     - os: linux
     - os: osx
 env:
-  - DJANGO_VERSION=2.2
   - DJANGO_VERSION=3
+  - DJANGO_VERSION=4
 python:
   - '3.7'
   - '3.8'
@@ -24,10 +24,12 @@ deploy:
   skip_cleanup: true
   skip_existing: true
 before_install:
+  - python -m pip install --upgrade pip
   - pip install virtualenv
   - pip install codecov
-install:
+  - pip install -q Django<$DJANGO_VERSION
   - git clone --depth=50 --branch=django-errors https://github.com/DLRSP/example.git DLRSP/example
+install:
   - python setup.py install
 script:
   - coverage run DLRSP/example/manage.py test --exe --all-modules
