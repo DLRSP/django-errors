@@ -1,10 +1,7 @@
 """Unit Tests for the Example module"""
 
 # pylint: disable=R0904, C0103
-
 from django.test import TestCase
-
-from django.core.exceptions import ObjectDoesNotExist
 import logging
 
 LOGGER = logging.getLogger(name='example')

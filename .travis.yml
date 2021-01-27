@@ -32,7 +32,7 @@ before_install:
 install:
   - python setup.py install
 script:
-  - flake8 .
+  - flake8 --ignore=E501 DLRSP/example
   - coverage run DLRSP/example/manage.py test --exe --all-modules
 after_success:
   - codecov
