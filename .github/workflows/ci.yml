@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install codecov
+          pip install codecov flake8
           grep -v "^django==" requirements.txt > /tmp/reqs.txt
           pip install -r /tmp/reqs.txt
           pip install "django~=${{ matrix.django-version }}.0" -U
@@ -58,7 +58,7 @@ jobs:
 #          ./scripts/ci_runtests.sh
       - name: Coverage
         run: |
-          flake8 --ignore=E501 DLRSP/example
+          python -m flake8 --ignore=E501 DLRSP/example
           coverage run DLRSP/example/manage.py test --exe --all-modules
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
