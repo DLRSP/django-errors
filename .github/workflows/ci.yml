@@ -56,9 +56,9 @@ jobs:
 #          BROWSER_TAG:  chrome-latest
 #        run: |
 #          ./scripts/ci_runtests.sh
-      - name: Test with pytest
-        run: |
-          pytest
+#      - name: Test with pytest
+#        run: |
+#          pytest
       - name: Coverage
         run: |
           python -m flake8 --ignore=E501 DLRSP/example
@@ -66,5 +66,5 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
-#          fail_ci_if_error: true
+          fail_ci_if_error: true
           name: ${{ matrix.python-version }}-${{ matrix.django-version }}
