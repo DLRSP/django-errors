@@ -52,7 +52,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -60,6 +59,9 @@ setup(
         'Operating System :: MacOS',
         'Operating System :: POSIX :: Linux',
         'Operating System :: Microsoft :: Windows',
-        'Topic :: Software Development :: Version Control :: Git :: Libraries :: Python Modules :: Internet :: WWW/HTTP',
+        'Topic :: Software Development :: Version Control :: Git',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
     ]
 )
