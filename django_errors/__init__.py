@@ -10,4 +10,4 @@ Release logic:
 6. git commit
 7. push to github (to avoid confusion)
 """
-__version__ = '0.4b8'
+__version__ = '0.4b9'
