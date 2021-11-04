@@ -2,8 +2,6 @@
     Django Errors URL Pattern List.
 """
 
-# pylint: disable=W0401, W0614, E1120
-
 from django.conf.urls import url
 from django.views.decorators.cache import never_cache
 from . import views
