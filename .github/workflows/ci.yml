@@ -10,7 +10,8 @@ on:
 
 jobs:
   test-django:
-    name: py${{ matrix.python-version }} dj-${{ matrix.django-version }} cm-${{ matrix.use-custom-model }} wt-${{ matrix.run-web-tests }}
+    name: py${{ matrix.python-version }} dj-${{ matrix.django-version }}
+#    name: py${{ matrix.python-version }} dj-${{ matrix.django-version }} cm-${{ matrix.use-custom-model }} wt-${{ matrix.run-web-tests }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -61,7 +62,6 @@ jobs:
 #      - name: Test with pytest
 #        run: |
 #          pytest
-      - uses: actions/checkout@v2
       - name: Coverage
         run: |
           python -m flake8 --ignore=E501 DLRSP/example
