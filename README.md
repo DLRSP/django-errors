@@ -16,6 +16,12 @@ pip install django-errors
 
 ## Test [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master) [![travis-ci.org](https://travis-ci.org/DLRSP/django-errors.svg?branch=master)](https://travis-ci.org/DLRSP/django-errors) [![circleci.com](https://circleci.com/gh/DLRSP/django-errors.svg?style=shield&circle-token=b2c2b63556f8dfc17f9058adfbaae1fd16b3bc01)](https://circleci.com/gh/DLRSP/django-errors)
 
+## Supported Django versions
+* Django 4.0
+* Django 3.2
+* Django 3.1
+* Django 2.2
+
 ## Configurations
 
 1. modify `settings.py` by adding the app to `INSTALLED_APPS`:
@@ -49,6 +55,10 @@ handler500 = errors_views.custom_500
 """ Handle 500 error """
 ```
 
+## Check Demo Project
+* Browser the app on [Heroku](https://django-errors.herokuapp.com/)
+* Check the repo on [GitHub](https://github.com/DLRSP/example/tree/django-errors)
+
 ## Run Example Project
 
 ```shell
@@ -62,3 +72,6 @@ Now browser the app @ http://127.0.0.1:8000
 ## About Landing Page Errors
 http://www.onextrapixel.com/2011/03/09/the-secret-of-a-successful-error-page-with-35-amazing-404-page-designs/
 http://www.onextrapixel.com/2011/10/21/applying-defensive-design-for-the-web/
+
+## Examples
+https://www.py4u.net/discuss/1267324
