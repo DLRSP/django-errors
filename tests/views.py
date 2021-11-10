@@ -1,6 +1,12 @@
 """Test's view for django-errors"""
-from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden, \
-    HttpResponseNotAllowed, HttpResponseServerError, HttpResponse
+from django.http import (
+    HttpResponseNotFound,
+    HttpResponseBadRequest,
+    HttpResponseForbidden,
+    HttpResponseNotAllowed,
+    HttpResponseServerError,
+    HttpResponse,
+)
 
 
 def test_view(request):

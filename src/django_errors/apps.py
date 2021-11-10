@@ -4,4 +4,5 @@ from django.apps import AppConfig
 
 class DjangoErrorsConfig(AppConfig):
     """django-errors apps config"""
-    name = 'django_errors'
+
+    name = "django_errors"
