@@ -1,22 +1,22 @@
-"""Unit Tests for the Example module"""
+"""Unit Tests for the module"""
 
 # pylint: disable=R0904, C0103
 from django.test import TestCase
 import logging
 
-LOGGER = logging.getLogger(name='example')
+LOGGER = logging.getLogger(name='django-errors')
 
 
-class ExampleTestCase(TestCase):
-    """Test Case for Social Profile"""
+class ErrorsTestCase(TestCase):
+    """Test Case for django-errors"""
 
     def setUp(self):
         """Set up common assets for tests"""
-        LOGGER.debug("Example Tests setUp")
+        LOGGER.debug("Tests setUp")
 
     def tearDown(self):
         """Remove Test Data"""
-        LOGGER.debug("Example Tests tearDown")
+        LOGGER.debug("Tests tearDown")
 
     def test_400_urls(self):
         """Test the url of 400 page."""
