@@ -10,21 +10,21 @@ def test_view(request):
     return HttpResponse("Test view")
 
 
-def test_view_400():
+def test_view_400(request):
     """Test's view code 400"""
     return HttpResponseBadRequest("400 view")
 
 
-def test_view_403():
+def test_view_403(request):
     """Test's view code 403"""
     return HttpResponseForbidden("403 view")
 
 
-def test_view_405():
+def test_view_405(request):
     """Test's view code 405"""
     return HttpResponseNotAllowed("405 view")
 
 
-def test_view_500():
+def test_view_500(request):
     """Test's view code 400"""
     return HttpResponseServerError("500 view")
