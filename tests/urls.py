@@ -1,4 +1,4 @@
-from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotAllowed, HttpResponse
+from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotAllowed, HttpResponseServerError, HttpResponse
 from django.urls import path
 
 
@@ -20,9 +20,14 @@ def test_view_http405(request):
     return HttpResponseNotAllowed("POST", "Test 405 view")
 
 
+def test_view_http500(request):
+    return HttpResponseServerError("Test 500 view")
+
+
 urlpatterns = [
     path("", test_view),
     path("test-400/", test_view_http400),
     path("test-403/", test_view_http403),
-    path("test-405/", test_view_http403),
+    path("test-405/", test_view_http405),
+    path("test-500/", test_view_http500),
 ]
