@@ -1,33 +1,20 @@
-from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotAllowed, HttpResponseServerError, HttpResponse
+"""Test's urls view for django-errors"""
+from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden,\
+    HttpResponseNotAllowed, HttpResponseServerError, HttpResponse
 from django.urls import path
 
 
 def test_view(request):
+    """Test's view"""
     if request.method != "GET":
-        return HttpResponseNotFound("Test 404 view")
+        return HttpResponseNotFound("404 view")
     return HttpResponse("Test view")
-
-
-def test_view_http400(request):
-    return HttpResponseBadRequest("Test 400 view")
-
-
-def test_view_http403(request):
-    return HttpResponseForbidden("Test 403 view")
-
-
-def test_view_http405(request):
-    return HttpResponseNotAllowed("POST", "Test 405 view")
-
-
-def test_view_http500(request):
-    return HttpResponseServerError("Test 500 view")
 
 
 urlpatterns = [
     path("", test_view),
-    path("test-400/", test_view_http400),
-    path("test-403/", test_view_http403),
-    path("test-405/", test_view_http405),
-    path("test-500/", test_view_http500),
+    path("test-400/", HttpResponseBadRequest("400 view")),
+    path("test-403/", HttpResponseForbidden("403 view")),
+    path("test-405/", HttpResponseNotAllowed("POST", "405 view")),
+    path("test-500/", HttpResponseServerError("500 view")),
 ]

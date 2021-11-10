@@ -1,3 +1,4 @@
+"""Test's settings"""
 SECRET_KEY = "NOTASECRET"
 
 ALLOWED_HOSTS = ["*"]
