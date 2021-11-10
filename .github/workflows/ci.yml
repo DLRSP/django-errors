@@ -39,6 +39,9 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade codecov tox tox-py
 
+      - name: Python Code Quality and Lint
+        uses: ricardochaves/python-lint@v1.3.0
+        
       - name: Run tox targets for ${{ matrix.python-version }}
         run: tox --py current
 
