@@ -118,23 +118,23 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
 
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@0.4
-      with:
-        docs-folder: "docs/"
-#        pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
-#        build-command: "make latexpdf"
-    - uses: actions/upload-artifact@v1
-      with:
-        name: DocumentationHTML
-        path: docs/build/html/
+#  docs:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v1
+#    - uses: ammaraskar/sphinx-action@0.4
+#      with:
+#        docs-folder: "docs/"
+##        pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+##        build-command: "make latexpdf"
 #    - uses: actions/upload-artifact@v1
 #      with:
-#        name: DocumentationPDF
-#        path: docs/build/pdf/
+#        name: DocumentationHTML
+#        path: docs/build/html/
+##    - uses: actions/upload-artifact@v1
+##      with:
+##        name: DocumentationPDF
+##        path: docs/build/pdf/
 
   deploy:
     name: PyPI Deploy
