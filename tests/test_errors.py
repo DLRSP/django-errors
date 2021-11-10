@@ -1,6 +1,4 @@
 """Unit Tests for the module"""
-
-# pylint: disable=R0904, C0103
 from django.test import TestCase
 import logging
 
