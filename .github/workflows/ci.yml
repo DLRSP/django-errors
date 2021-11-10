@@ -103,6 +103,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+
     - name: Get pip cache dir
       id: pip-cache
       run: |
@@ -115,10 +120,19 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
-    - name: Quality and Lint
-      uses: ricardochaves/python-lint@v1.4.0
+    - name: Install Python dependencies
+      run: pip install black flake8
+
+    - name: Run linters
+      uses: wearerequired/lint-action@v1
       with:
-        python-root-list: "src/django_errors tests"
+          black: true
+          flake8: true
+
+#    - name: Quality and Lint Tests
+#      uses: ricardochaves/python-lint@v1.4.0
+#      with:
+#        python-root-list: "tests"
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
