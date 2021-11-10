@@ -1,6 +1,5 @@
 # django-errors [![PyPi license](https://img.shields.io/pypi/l/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
 
-## Pypi 
 [![PyPi status](https://img.shields.io/pypi/status/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
 [![PyPi version](https://img.shields.io/pypi/v/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
 [![PyPi python version](https://img.shields.io/pypi/pyversions/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
@@ -8,23 +7,25 @@
 [![PyPi downloads](https://img.shields.io/pypi/dw/django-errors.svg)](https://pypi.python.org/pypi/django_errors) 
 [![PyPi downloads](https://img.shields.io/pypi/dd/django-errors.svg)](https://pypi.python.org/pypi/django_errors)
 
+## GitHub ![GitHub release](https://img.shields.io/github/tag/DLRSP/django-errors.svg) ![GitHub release](https://img.shields.io/github/release/DLRSP/django-errors.svg)
+
+## Test [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master) [![travis-ci.org](https://travis-ci.org/DLRSP/django-errors.svg?branch=master)](https://travis-ci.org/DLRSP/django-errors)
+
+## Check Demo Project
+* Browser the demo app on-line on [Heroku](https://django-errors.herokuapp.com/)
+* Check the demo repo on [GitHub](https://github.com/DLRSP/example/tree/django-errors)
+
+## Requirements
+-   Python 3.6 to 3.10 supported.
+-   Django 2.2 to 4.0 supported.
+
+## Setup 
+1. Install from **pip**:
 ```shell
 pip install django-errors
 ```
 
-## GitHub ![GitHub release](https://img.shields.io/github/tag/DLRSP/django-errors.svg) ![GitHub release](https://img.shields.io/github/release/DLRSP/django-errors.svg)
-
-## Test [![codecov.io](https://codecov.io/github/DLRSP/django-errors/coverage.svg?branch=master)](https://codecov.io/github/DLRSP/django-errors?branch=master) [![travis-ci.org](https://travis-ci.org/DLRSP/django-errors.svg?branch=master)](https://travis-ci.org/DLRSP/django-errors) [![circleci.com](https://circleci.com/gh/DLRSP/django-errors.svg?style=shield&circle-token=b2c2b63556f8dfc17f9058adfbaae1fd16b3bc01)](https://circleci.com/gh/DLRSP/django-errors)
-
-## Supported Django versions
-* Django 4.0
-* Django 3.2
-* Django 3.1
-* Django 2.2
-
-## Configurations
-
-1. modify `settings.py` by adding the app to `INSTALLED_APPS`:
+2. modify `settings.py` by adding the app to `INSTALLED_APPS`:
 ```python
 INSTALLED_APPS = [
     # ...
@@ -33,7 +34,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-2. Finally, modify your project `urls.py` with handlers for all errors:
+3Finally, modify your project `urls.py` with handlers for all errors:
 ```python
 # ...other imports...
 from django_errors import views as errors_views
@@ -55,9 +56,6 @@ handler500 = errors_views.custom_500
 """ Handle 500 error """
 ```
 
-## Check Demo Project
-* Browser the app on [Heroku](https://django-errors.herokuapp.com/)
-* Check the repo on [GitHub](https://github.com/DLRSP/example/tree/django-errors)
 
 ## Run Example Project
 

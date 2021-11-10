@@ -52,11 +52,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade codecov tox tox-py
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip codecov tox tox-py
           pip install -r requirements.txt
           pip install "django~=${{ matrix.django-version }}.0" -U
           git clone --depth=50 --branch=django-errors https://github.com/DLRSP/example.git DLRSP/example
