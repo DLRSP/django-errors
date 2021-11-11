@@ -9,21 +9,37 @@ if __name__ == "__main__":
     # os.environ.pop("PIP_REQUIRE_VIRTUALENV")
 
     common_args = [
-                      "-m",
-                      "piptools",
-                      "compile",
-                      "--generate-hashes",
-                      "--allow-unsafe",
-                  ] + sys.argv[1:]
+        "-m",
+        "piptools",
+        "compile",
+        "--generate-hashes",
+        "--allow-unsafe",
+    ] + sys.argv[1:]
 
-    subprocess.run(["python36", "-m", "pip", "install", "pip", "--upgrade", ],
-                   check=True,
-                   capture_output=True,
-                   )
-    subprocess.run(["python36", "-m", "pip", "install", "pip-tools", "--upgrade", ],
-                   check=True,
-                   capture_output=True,
-                   )
+    subprocess.run(
+        [
+            "python36",
+            "-m",
+            "pip",
+            "install",
+            "pip",
+            "--upgrade",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "python36",
+            "-m",
+            "pip",
+            "install",
+            "pip-tools",
+            "--upgrade",
+        ],
+        check=True,
+        capture_output=True,
+    )
     subprocess.run(
         [
             "python36",
@@ -82,14 +98,30 @@ if __name__ == "__main__":
     #     capture_output=True,
     # )
 
-    subprocess.run(["python38", "-m", "pip", "install", "pip", "--upgrade", ],
-                   check=True,
-                   capture_output=True,
-                   )
-    subprocess.run(["python38", "-m", "pip", "install", "pip-tools", "--upgrade", ],
-                   check=True,
-                   capture_output=True,
-                   )
+    subprocess.run(
+        [
+            "python38",
+            "-m",
+            "pip",
+            "install",
+            "pip",
+            "--upgrade",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        [
+            "python38",
+            "-m",
+            "pip",
+            "install",
+            "pip-tools",
+            "--upgrade",
+        ],
+        check=True,
+        capture_output=True,
+    )
     subprocess.run(
         [
             "python38",
