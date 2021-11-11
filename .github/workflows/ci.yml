@@ -89,7 +89,7 @@ jobs:
           black: true
           flake8: true
           stylelint: true
-          eslint: true
+#          eslint: true
           prettier: true
 
     - name: Initialize CodeQL
