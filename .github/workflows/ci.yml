@@ -94,6 +94,7 @@ jobs:
     permissions:
       actions: read
       contents: read
+      checks: write
       security-events: write
     strategy:
       fail-fast: false
@@ -126,7 +127,6 @@ jobs:
     - name: Run linters
       uses: wearerequired/lint-action@v1
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           black: true
           flake8: true
 
