@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
   pull_request:
   schedule:
     - cron: '24 18 * * 2'
@@ -27,15 +26,14 @@ jobs:
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Cache
-        uses: actions/cache@v2
+      - uses: actions/cache@v2
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements/*.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade codecov tox tox-py
@@ -101,11 +99,9 @@ jobs:
       matrix:
         language: [ 'python' ]
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - uses: actions/setup-python@v2
       with:
         python-version: "3.8"
 
@@ -146,7 +142,23 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
 
-#  docs:
+  docs:
+    name: PyPI Deploy
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install Python dependencies
+        run: pip install mkdocs-material mkdocs-git-revision-date-plugin
+
+#      - run: mkdocs gh-deploy --force
+      - uses: mhausenblas/mkdocs-deploy-gh-pages@master
+
 #    runs-on: ubuntu-latest
 #    steps:
 #    - uses: actions/checkout@v1
@@ -171,17 +183,19 @@ jobs:
     needs: [test-django, analyze]
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
+
+      - uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      - name: Install dependencies
+
+      - name: Install Python dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install setuptools wheel
-      - name: Build a binary wheel, egg  and a source tarball
+          python -m pip install --upgrade pip setuptools wheel
+
+      - name: Build a binary wheel, egg and a source tarball
         run: |
           python setup.py sdist bdist_wheel bdist_egg
+
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
         with:

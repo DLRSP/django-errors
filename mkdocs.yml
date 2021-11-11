@@ -1,0 +1,43 @@
+site_name: Django-Errors
+site_url: https://github.com/DLRSP/django-errors/
+site_description: Django application for handling the server errors.
+
+repo_name: DLRSP/django-errors
+repo_url: https://github.com/DLRSP/django-errors/
+
+theme:
+    name: 'material'
+    palette:
+      primary: 'black'
+      accent: 'indigo'
+    features:
+      - navigation.instant
+      - navigation.top
+      - content.code.annotate
+      - search.suggest
+      - search.highlight
+    icon:
+        repo: fontawesome/brands/github-alt
+
+plugins:
+  - search
+  - git-revision-date
+#  - tags
+
+extra:
+  analytics:
+    provider: google
+    property: G-WL6PWX05L4
+
+markdown_extensions:
+ - toc:
+    anchorlink: True
+ - pymdownx.highlight
+ - pymdownx.inlinehilite
+ - pymdownx.superfences
+ - pymdownx.snippets
+
+nav:
+ - Home: 'index.md'
+ - Tutorial:
+    - 'Quickstart': 'tutorial/quickstart.md'

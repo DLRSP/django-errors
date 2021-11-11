@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-3Finally, modify your project `urls.py` with handlers for all errors:
+3. Finally, modify your project `urls.py` with handlers for all errors:
 ```python
 # ...other imports...
 from django_errors import views as errors_views
