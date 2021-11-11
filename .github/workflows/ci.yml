@@ -2,8 +2,8 @@ name: CI
 
 on:
   push:
-    paths:
-    - '!docs/**'
+    paths-ignore:
+    - 'docs/**'
   pull_request:
   schedule:
     - cron: '24 18 * * 2'
@@ -48,45 +48,6 @@ jobs:
           coverage combine
           codecov
 
-#      - name: Test
-#        env:
-#          USE_CUSTOM_MODEL: ${{ matrix.use-custom-model }}
-#          RUN_WEB_TESTS: ${{ matrix.run-web-tests }}
-#          BROWSER_TAG:  chrome-latest
-#        run: |
-#          ./scripts/ci_runtests.sh
-#      - name: Test with pytest
-#        run: |
-#          pytest
-
-#      - name: Generate coverage report
-#        run: |
-#          pip install pytest pytest-cov
-#          pytest --cov=./ --cov-report=xml
-
-#      - name: Upload coverage to Codecov
-#        uses: codecov/codecov-action@v2
-#        with:
-##          token: ${{ secrets.CODECOV_TOKEN }}
-#          directory: ./coverage/reports/
-#          env_vars: OS,PYTHON
-#          fail_ci_if_error: true
-#          files: ./coverage1.xml,./coverage2.xml
-#          flags: unittests
-#          name: codecov-umbrella
-#          path_to_write_report: ./coverage/codecov_report.txt
-#          verbose: true
-
-#      - name: Coverage
-#        run: |
-#          python -m flake8 --ignore=E501 DLRSP/example
-#          coverage run DLRSP/example/manage.py test --exe --all-modules
-#      - name: Upload coverage to Codecov
-#        uses: codecov/codecov-action@v1
-#        with:
-#          fail_ci_if_error: true
-#          name: ${{ matrix.python-version }}-${{ matrix.django-version }}
-
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
@@ -130,11 +91,6 @@ jobs:
           stylelint: true
           eslint: true
           prettier: true
-          
-#    - name: Quality and Lint Tests
-#      uses: ricardochaves/python-lint@v1.4.0
-#      with:
-#        python-root-list: "tests"
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
@@ -146,23 +102,6 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v1
-#    - uses: ammaraskar/sphinx-action@0.4
-#      with:
-#        docs-folder: "docs/"
-##        pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
-##        build-command: "make latexpdf"
-#    - uses: actions/upload-artifact@v1
-#      with:
-#        name: DocumentationHTML
-#        path: docs/build/html/
-##    - uses: actions/upload-artifact@v1
-##      with:
-##        name: DocumentationPDF
-##        path: docs/build/pdf/
 
   deploy:
     name: PyPI Deploy
