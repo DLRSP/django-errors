@@ -88,9 +88,9 @@ jobs:
       with:
           black: true
           flake8: true
-          stylelint: true
+#          stylelint: true
 #          eslint: true
-          prettier: true
+#          prettier: true
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
