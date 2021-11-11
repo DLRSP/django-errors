@@ -2,6 +2,8 @@ name: CI
 
 on:
   push:
+    paths:
+    - '!docs/**'
   pull_request:
   schedule:
     - cron: '24 18 * * 2'

@@ -8,8 +8,16 @@ repo_url: https://github.com/DLRSP/django-errors/
 theme:
     name: 'material'
     palette:
-      primary: 'black'
-      accent: 'indigo'
+#      - primary: 'black'
+#      - accent: 'indigo'
+      - scheme: default
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to dark mode
+      - scheme: slate #
+        toggle:
+          icon: material/weather-night
+          name: Switch to light mode
     features:
       - navigation.instant
       - navigation.top
@@ -28,6 +36,14 @@ extra:
   analytics:
     provider: google
     property: G-WL6PWX05L4
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/DlrspTwits
+      name: DLRSP on Twitter
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:dlrsp.dev@gmail.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/DLRSP
 
 markdown_extensions:
  - toc:
@@ -41,3 +57,8 @@ nav:
  - Home: 'index.md'
  - Tutorial:
     - 'Quickstart': 'tutorial/quickstart.md'
+ - Community:
+    - 'Contributing': 'community/contributing.md'
+    - 'Third-Party-Packages': 'community/third-party-packages.md'
+
+copyright: Copyright &copy; 2016 - 2020 DLRSP
