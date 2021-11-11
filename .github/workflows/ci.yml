@@ -127,7 +127,10 @@ jobs:
       with:
           black: true
           flake8: true
-
+          stylelint: true
+          eslint: true
+          prettier: true
+          
 #    - name: Quality and Lint Tests
 #      uses: ricardochaves/python-lint@v1.4.0
 #      with:
@@ -143,23 +146,6 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
-  docs:
-    name: PyPI Deploy
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
-
-      - name: Install Python dependencies
-        run: pip install mkdocs-material mkdocs-git-revision-date-plugin
-
-#      - run: mkdocs gh-deploy --force
-      - uses: mhausenblas/mkdocs-deploy-gh-pages@master
 
 #    runs-on: ubuntu-latest
 #    steps:
