@@ -5,15 +5,25 @@ from pathlib import Path
 
 if __name__ == "__main__":
     os.chdir(Path(__file__).parent)
-    # os.environ["CUSTOM_COMPILE_COMMAND"] = "requirements/compile.py"
+    os.environ["CUSTOM_COMPILE_COMMAND"] = "requirements/compile.py"
     # os.environ.pop("PIP_REQUIRE_VIRTUALENV")
+
     common_args = [
-        "-m",
-        "piptools",
-        "compile",
-        "--generate-hashes",
-        "--allow-unsafe",
-    ] + sys.argv[1:]
+                      "-m",
+                      "piptools",
+                      "compile",
+                      "--generate-hashes",
+                      "--allow-unsafe",
+                  ] + sys.argv[1:]
+
+    subprocess.run(["python36", "-m", "pip", "install", "pip", "--upgrade", ],
+                   check=True,
+                   capture_output=True,
+                   )
+    subprocess.run(["python36", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+                   check=True,
+                   capture_output=True,
+                   )
     subprocess.run(
         [
             "python36",
@@ -38,6 +48,15 @@ if __name__ == "__main__":
         check=True,
         capture_output=True,
     )
+
+    # subprocess.run(["python37", "-m", "pip", "install", "pip", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
+    # subprocess.run(["python37", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
     # subprocess.run(
     #     [
     #         "python37",
@@ -62,6 +81,15 @@ if __name__ == "__main__":
     #     check=True,
     #     capture_output=True,
     # )
+
+    subprocess.run(["python38", "-m", "pip", "install", "pip", "--upgrade", ],
+                   check=True,
+                   capture_output=True,
+                   )
+    subprocess.run(["python38", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+                   check=True,
+                   capture_output=True,
+                   )
     subprocess.run(
         [
             "python38",
@@ -98,6 +126,15 @@ if __name__ == "__main__":
         check=True,
         capture_output=True,
     )
+
+    # subprocess.run(["python39", "-m", "pip", "install", "pip", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
+    # subprocess.run(["python39", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
     # subprocess.run(
     #     [
     #         "python39",
@@ -134,6 +171,15 @@ if __name__ == "__main__":
     #     check=True,
     #     capture_output=True,
     # )
+
+    # subprocess.run(["python310", "-m", "pip", "install", "pip", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
+    # subprocess.run(["python310", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
     # subprocess.run(
     #     [
     #         "python310",
