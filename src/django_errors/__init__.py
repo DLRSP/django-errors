@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 See PEP 386 (http://www.python.org/dev/peps/pep-0386/)
 Release logic:

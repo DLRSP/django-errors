@@ -1,5 +1,6 @@
 """Unit Tests for the module"""
 import logging
+
 from django.test import TestCase
 
 LOGGER = logging.getLogger(name="django-errors")

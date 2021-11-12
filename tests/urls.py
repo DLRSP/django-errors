@@ -1,5 +1,6 @@
 """Test's urls view for django-errors"""
 from django.urls import path
+
 from . import views
 
 urlpatterns = [

@@ -6,8 +6,8 @@ from django.http import (
     HttpResponseServerError,
 )
 from django.template import loader
-from django.views.decorators.http import require_http_methods
 from django.utils.translation import ugettext_lazy as _
+from django.views.decorators.http import require_http_methods
 
 
 @require_http_methods(["GET"])
