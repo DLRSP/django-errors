@@ -1,5 +1,8 @@
 name: Docs
 
+permissions:
+  deployments: write
+
 on:
   push:
     paths:
