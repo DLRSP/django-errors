@@ -2,6 +2,7 @@ include *.rst
 include *.md
 include *.yaml
 include *.yml
+include *.cfg
 include tox.ini
 include LICENSE
 
