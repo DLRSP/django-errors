@@ -1,11 +1,14 @@
+include *.rst
+include *.md
+include *.yaml
+include *.yml
+include tox.ini
 include LICENSE
-include README.rst
-include README.md
 
+recursive-include requirements *.in
+recursive-include requirements *.py
+recursive-include requirements *.txt
+recursive-include src *.html
+recursive-include src *.po
+recursive-include tests *.py
 recursive-include docs *
-
-recursive-include django_errors/tests *
-recursive-include django_errors/locale *
-recursive-include django_errors/static *
-recursive-include django_errors/templates *
-
