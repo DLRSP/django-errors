@@ -9,7 +9,23 @@ Release logic:
 6. git commit
 7. push to github (to avoid confusion)
 """
-__version__ = "0.5b0"
-# __version__ = "0.5.0-dev"
+import django
+
+__version__ = "0.5.2"
 __license__ = "MIT"
 __title__ = "django_errors"
+
+__author__ = 'DLRSP'
+__copyright__ = 'Copyright 2010-2019 Encode OSS Ltd'
+
+# Version synonym
+VERSION = __version__
+
+# Header encoding (see RFC5987)
+HTTP_HEADER_ENCODING = 'iso-8859-1'
+
+# Default datetime input and output formats
+ISO_8601 = 'iso-8601'
+
+if django.VERSION < (3, 2):
+    default_app_config = 'django_errors.apps.DjangoErrorsConfig'
