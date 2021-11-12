@@ -11,21 +11,21 @@ Release logic:
 """
 import django
 
-__version__ = "0.9.2-dev-dev"
+__version__ = "0.9.3-dev"
 __license__ = "MIT"
 __title__ = "django_errors"
 
-__author__ = 'DLRSP'
-__copyright__ = 'Copyright 2010-2019 Encode OSS Ltd'
+__author__ = "DLRSP"
+__copyright__ = "Copyright 2010-present DLRSP"
 
 # Version synonym
 VERSION = __version__
 
 # Header encoding (see RFC5987)
-HTTP_HEADER_ENCODING = 'iso-8859-1'
+HTTP_HEADER_ENCODING = "iso-8859-1"
 
 # Default datetime input and output formats
-ISO_8601 = 'iso-8601'
+ISO_8601 = "iso-8601"
 
 if django.VERSION < (3, 2):
-    default_app_config = 'django_errors.apps.DjangoErrorsConfig'
+    default_app_config = "django_errors.apps.DjangoErrorsConfig"
