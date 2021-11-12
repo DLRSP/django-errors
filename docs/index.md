@@ -6,8 +6,8 @@ Django-Errors is an app to wrap Django errors.
 
 Django-Errors requires the following:
 
-* Python (3.5, 3.6, 3.7, 3.8, 3.9, 3.10)
-* Django (2.2, 3.0, 3.1, 3.2)
+* Python (3.6, 3.7, 3.8, 3.9, 3.10)
+* Django (2.2, 3.2)
 
 We **highly recommend** and only officially support the latest patch release of each Python and Django series.
 
@@ -83,7 +83,7 @@ Send a description of the issue via email to [dlrsp.issue@gmail.com][security-ma
 
 MIT License
 
-Copyright (c) 2010-2021 DLRSP (https://dlrsp.org) and other contributors.
+Copyright (c) 2010-present DLRSP (https://dlrsp.org) and other contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
