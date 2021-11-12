@@ -1,4 +1,4 @@
-Django_Errors **unreleased** **v0.9.3-dev** 0.9.2-dev
+Django_Errors **unreleased** **v0.9.4-dev** **v0.9.3-dev**
 ================================
 **future release**
 
