@@ -81,7 +81,6 @@ To run the tests, clone the repository, and then:
 
 Run using a more concise output style.
 
-    ``` shell
     python runtests.py -q
 
 Run the tests for a given test case.
