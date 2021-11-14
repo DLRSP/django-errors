@@ -7,6 +7,7 @@ from django.http import (
     HttpResponseNotFound,
     HttpResponseServerError,
 )
+from django.views.decorators.http import require_http_methods
 
 
 def test_view(request):
@@ -26,6 +27,7 @@ def test_view_403(request):
     return HttpResponseForbidden("403 view")
 
 
+@require_http_methods(["POST"])
 def test_view_405(request):
     """Test's view code 405"""
     return HttpResponseNotAllowed("405 view")

@@ -22,6 +22,7 @@ theme:
       - navigation.instant
       - navigation.top
       - content.code.annotate
+      - content.tabs.link
       - search.suggest
       - search.highlight
     icon:
@@ -48,10 +49,12 @@ extra:
 markdown_extensions:
  - toc:
     anchorlink: True
- - pymdownx.highlight
- - pymdownx.inlinehilite
- - pymdownx.superfences
- - pymdownx.snippets
+ - pymdownx.tabbed:
+    alternate_style: true
+ - pymdownx.highlight:
+ - pymdownx.inlinehilite:
+ - pymdownx.superfences:
+ - pymdownx.snippets:
 
 nav:
  - Home: 'index.md'

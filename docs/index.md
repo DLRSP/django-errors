@@ -58,6 +58,26 @@ handler500 = errors_views.custom_500
 """ Handle 500 error """
 ```
 
+4. If you would like to trap also the "405 - Method not allowed", add the following middleware to your `INSTALLED_APPS` setting.
+
+``` python title="settings.py"
+MIDDLEWARE = [
+    ...
+    "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
+    ...
+]
+```
+
+5. If you would like to receive email message for "404 - Not Found" error, add the following middleware at **top** to your `INSTALLED_APPS` setting.
+
+``` python title="settings.py"
+MIDDLEWARE = [
+    "django.middleware.common.BrokenLinkEmailsMiddleware",  # <-- Error Manager 404
+    ...
+]
+```
+
+
 ## Example
 
 Let's take a look at a quick example of using **django-errors** to build a simple App with custom error pages.

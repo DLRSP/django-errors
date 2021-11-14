@@ -38,9 +38,9 @@ def custom_404(request, exception=None):
 
 
 @require_http_methods(["GET"])
-def custom_500(request):
+def custom_500(request, exception=None):
     """Custom Page for 500 error (Internal Server Errors). url: /500"""
     error_msg = _("System Error")
     template = loader.get_template("errors/500.html")
-    context = {"messages": error_msg}
+    context = {"messages": error_msg, "exception": exception}
     return HttpResponseServerError(template.render(context, request))
