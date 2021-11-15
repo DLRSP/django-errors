@@ -1,10 +1,11 @@
 import sys
+
 import pytest
 
 
 def split_class_and_function(string):
     class_string, function_string = string.split(".", 1)
-    return "%s and %s" % (class_string, function_string)
+    return f"{class_string} and {function_string}"
 
 
 def is_function(string):
