@@ -3,11 +3,6 @@ from django.http import HttpResponseNotAllowed
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
 
-# Reference:
-# https://stackoverflow.com/questions/49162214/why-django-doesnt-have-error-page-handler-for-405-method-not-allowed
-# https://medium.com/scalereal/everything-you-need-to-know-about-middleware-in-django-2a3bd3853cd6
-# https://dev.to/bikramjeetsingh/a-comprehensive-guide-to-django-middleware-2fee
-
 
 class HttpResponseNotAllowedMiddleware:
     def __init__(self, get_response):

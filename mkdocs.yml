@@ -61,6 +61,7 @@ nav:
  - Tutorial:
     - 'Quickstart': 'tutorial/quickstart.md'
  - Community:
+    - 'References': 'community/references.md'
     - 'Contributing': 'community/contributing.md'
     - 'Third-Party-Packages': 'community/third-party-packages.md'
 

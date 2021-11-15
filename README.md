@@ -67,9 +67,3 @@ python manage.py runserver
 
 Now browser the app @ http://127.0.0.1:8000
 
-## About Landing Page Errors
-http://www.onextrapixel.com/2011/03/09/the-secret-of-a-successful-error-page-with-35-amazing-404-page-designs/
-http://www.onextrapixel.com/2011/10/21/applying-defensive-design-for-the-web/
-
-## Examples
-https://www.py4u.net/discuss/1267324
