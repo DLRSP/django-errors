@@ -12,8 +12,15 @@ class HttpResponseNotAllowedMiddleware:
         response = self.get_response(request)
 
         if isinstance(response, HttpResponseNotAllowed):
-            error_msg = _("Method Not Allowed")
-            context = {"messages": f"{error_msg} ({request.method})", "exception": None}
+            error = _("Method Not Allowed")
+            error_msg = _(
+                "Sorry, the used method is not allowed for the page with that URL."
+            )
+            context = {
+                "error": error,
+                "error_message": f"{error_msg} ({request.method})",
+                "exception": None,
+            }
             return render(request, "errors/405.html", context=context, status=405)
 
         return response

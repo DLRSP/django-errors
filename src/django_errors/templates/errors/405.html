@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% load i18n %}
 
 {% block headtitle %}
-	{% trans 'Method Not Allowed' %} ({{ request.method }})
+	{{ error }} ({{ request.method }})
 {% endblock headtitle %}
 
 {% block content %}
-    <section title="{% trans 'Method Not Allowed' %} ({{ request.method }})" data-role="content" data-theme="e">
+    <section title="{{ error }} ({{ request.method }})" data-role="content" data-theme="e">
         <h2>
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
-			{% trans "Sorry, the used method is not allowed for the page with that URL." %}
+			{{ error_message }}
 		</h2>
 		{% if exception %}
        		<p>{{ exception }}</p>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 16:15+0100\n"
+"POT-Creation-Date: 2021-11-15 18:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,52 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/base.html:9
-msgid "An app to manage errors page ..."
+#: .\src\django_errors\middleware\handler.py:15
+msgid "Method Not Allowed"
 msgstr ""
 
-#: templates/django_errors/400.html:5 templates/django_errors/400.html.py:9
+#: .\src\django_errors\middleware\handler.py:16
+msgid "Sorry, the used method is not allowed for the page with that URL."
+msgstr ""
+
+#: .\src\django_errors\views.py:16
 msgid "Bad Request"
 msgstr ""
 
-#: templates/django_errors/400.html:12
+#: .\src\django_errors\views.py:17
 msgid ""
 "The request could not be understood by the server due to malformed syntax."
 msgstr ""
 
-#: templates/django_errors/400.html:16
-msgid "The browser SHOULD NOT repeat the request without modifications."
-msgstr ""
-
-#: templates/django_errors/400.html:24 templates/django_errors/403.html:20
-#: templates/django_errors/404.html:20 templates/django_errors/500.html:20
-msgid "Details"
-msgstr ""
-
-#: templates/django_errors/403.html:5 templates/django_errors/403.html.py:9
+#: .\src\django_errors\views.py:26
 msgid "Permission Denied"
 msgstr ""
 
-#: templates/django_errors/403.html:12
+#: .\src\django_errors\views.py:27
 msgid "You don't have permissions to see this page!"
 msgstr ""
 
-#: templates/django_errors/404.html:5 templates/django_errors/404.html.py:9
+#: .\src\django_errors\views.py:36
 msgid "Page Not Found"
 msgstr ""
 
-#: templates/django_errors/404.html:12
-msgid "I'm sorry, we don't have a page with that URL."
+#: .\src\django_errors\views.py:37
+msgid "Sorry, we don't have a page with that URL."
 msgstr ""
 
-#: templates/django_errors/500.html:5
+#: .\src\django_errors\views.py:46
 msgid "Internal Server Error"
 msgstr ""
 
-#: templates/django_errors/500.html:9
-msgid "Server Error"
-msgstr ""
-
-#: templates/django_errors/500.html:12
-msgid "I'm sorry, an error has occurred with the application."
+#: .\src\django_errors\views.py:47
+msgid "Sorry, an error has occurred with the application."
 msgstr ""

@@ -1,20 +1,15 @@
 {% extends "base.html" %}
-{% load i18n %}
 
 {% block headtitle %}
-	{% trans 'Bad Request' %} (400)
+	{{ error }} (400)
 {% endblock headtitle %}
 
 {% block content %}
-    <section title="{% trans 'Bad Request' %}" data-role="content" data-theme="e">
+    <section title="{{ error }}" data-role="content" data-theme="e">
         <h2>
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
-			{% trans 'The request could not be understood by the server due to malformed syntax.' %}
+			{{ error_message }}
 		</h2>
-        <h3>
-			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="align:center;display:inline-block;margin-right:20px;">&nbsp;</span>
-			<i>{% trans 'The browser SHOULD NOT repeat the request without modifications.' %}</i>
-		</h3>
 		{% if exception %}
        		<p>{{ exception }}</p>
 		{% endif%}

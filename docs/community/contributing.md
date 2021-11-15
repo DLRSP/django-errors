@@ -64,6 +64,18 @@ Then run:
 
     pre-commit install
 
+## Translation
+
+To run the translation, clone the repository, and then:
+
+    django-admin makemessages -l it
+
+Modify the .po file for your locale, and then:
+
+    django-admin compilemessages -l it
+
+Contribute with your translation, test it in your local example and then push the commit as "Pull request"
+
 ## Testing
 
 To run the tests, clone the repository, and then:

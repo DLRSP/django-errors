@@ -2,14 +2,14 @@
 {% load i18n %}
 
 {% block headtitle %}
-	{% trans 'Permission Denied' %} (403)
+	{{ error }} (403)
 {% endblock headtitle %}
 
 {% block content %}
-    <section title="{% trans 'Permission Denied' %}!" data-role="content" data-theme="e">
+    <section title="{{ error }}" data-role="content" data-theme="e">
         <h2>
 			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
-			{% trans "You don't have permissions to see this page!" %}
+			{{ error_message }}
 		</h2>
 		{% if exception %}
        		<p>{{ exception }}</p>
