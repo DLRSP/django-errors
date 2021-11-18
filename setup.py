@@ -1,68 +1,43 @@
-from setuptools import setup
+import os
+from distutils.cmd import Command
+from distutils.command.build import build as _build
+from setuptools.command.install_lib import install_lib as _install_lib
 
-#
-# with open('requirements.txt') as fd:
-#     requirements = [line.strip() for line in fd if line.strip()]
-#
-# testing_requirements = [
-#     'codecov',
-#     'django_nose',
-# ]
-#
-# linting_requirements = [
-#     'flake8',
-#     'pylint',
-#     'bandit<1.7',
-# ]
-#
-# with open('README.md') as fd:
-#     long_description = fd.read()
-#
-# if 'a' in version:
-#     dev_status = '3 - Alpha'
-# elif 'b' in version:
-#     dev_status = '4 - Beta'
-# else:
-#     dev_status = '5 - Production/Stable'
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-setup()
-# setup(
-#     name="django_errors",
-#     version=version,
-#     url='https://github.com/DLRSP/django-errors',
-#     license='MIT',
-#     description="Wrapper Views for common errors",
-#     author='DLRSP',
-#     author_email='dlrsp.dev@gmail.com',
-#     packages=['django_errors', ],
-#     long_description=long_description,
-#     long_description_content_type="text/markdown",
-#     include_package_data=True,
-#     zip_safe=False,
-#     data_files=[('', ['requirements.txt'])],
-#     install_requires=requirements,
-#     tests_require=testing_requirements,
-#     extras_require={
-#         'testing': testing_requirements,
-#         'linting': linting_requirements,
-#     },
-#     keywords='python django errors',
-#     classifiers=[
-#         f'Development Status :: {dev_status}',
-#         'Framework :: Django',
-#         'Intended Audience :: Developers',
-#         'License :: OSI Approved :: MIT License',
-#         'Operating System :: OS Independent',
-#         'Programming Language :: Python :: 3.6',
-#         'Programming Language :: Python :: 3.7',
-#         'Programming Language :: Python :: 3.8',
-#         'Programming Language :: Python :: 3.9',
-#         'Operating System :: MacOS',
-#         'Operating System :: POSIX :: Linux',
-#         'Operating System :: Microsoft :: Windows',
-#         'Topic :: Software Development :: Version Control :: Git',
-#         'Topic :: Software Development :: Libraries',
-#         'Topic :: Internet :: WWW/HTTP',
-#         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
-#     ]
-# )
+
+class CompileTranslations(Command):
+    description = "compile message catalogs to MO files via django compilemessages"
+    user_options = []  # type: list
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        curdir = os.getcwd()
+        os.chdir(os.path.realpath(os.path.join("src", "django_errors")))
+        from django.core.management import call_command
+
+        call_command("compilemessages")
+        os.chdir(curdir)
+
+
+class Build(_build):
+    sub_commands = [("compile_translations", None)] + _build.sub_commands
+
+
+class InstallLib(_install_lib):
+    def run(self):
+        self.run_command("compile_translations")
+        _install_lib.run(self)
+
+
+setup(
+    cmdclass={"build": Build, "install_lib": InstallLib, "compile_translations": CompileTranslations},
+)
