@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 18:39+0100\n"
+"POT-Creation-Date: 2021-11-15 19:02+0100\n"
 "PO-Revision-Date: 2016-01-04 16:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Method Not Allowed"
 msgstr "Metodo non consentito"
 
-#: .\src\django_errors\middleware\handler.py:16
+#: .\src\django_errors\middleware\handler.py:17
 msgid "Sorry, the used method is not allowed for the page with that URL."
 msgstr "Scusa, il metodo usato non è consentito per la pagina con questo URL."
 
@@ -30,32 +30,32 @@ msgstr "Scusa, il metodo usato non è consentito per la pagina con questo URL."
 msgid "Bad Request"
 msgstr "Brutta Richiesta"
 
-#: .\src\django_errors\views.py:17
+#: .\src\django_errors\views.py:18
 msgid ""
 "The request could not be understood by the server due to malformed syntax."
 msgstr ""
 "La richiesta non può essere compresa dal server a causa di sintassi errata."
 
-#: .\src\django_errors\views.py:26
+#: .\src\django_errors\views.py:28
 msgid "Permission Denied"
 msgstr "Permesso Negato"
 
-#: .\src\django_errors\views.py:27
+#: .\src\django_errors\views.py:29
 msgid "You don't have permissions to see this page!"
 msgstr "Non hai il permesso per vedere questa pagina!"
 
-#: .\src\django_errors\views.py:36
+#: .\src\django_errors\views.py:38
 msgid "Page Not Found"
 msgstr "Pagina non trovata"
 
-#: .\src\django_errors\views.py:37
+#: .\src\django_errors\views.py:39
 msgid "Sorry, we don't have a page with that URL."
 msgstr "Scusa, non abbiamo una pagina con questo URL."
 
-#: .\src\django_errors\views.py:46
+#: .\src\django_errors\views.py:48
 msgid "Internal Server Error"
 msgstr "Errore Interno del Server"
 
-#: .\src\django_errors\views.py:47
+#: .\src\django_errors\views.py:49
 msgid "Sorry, an error has occurred with the application."
 msgstr "Scusa, si è verificato un errore con il programma."

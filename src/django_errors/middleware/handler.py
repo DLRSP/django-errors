@@ -1,4 +1,5 @@
 """Django App's middleware for django-errors app"""
+from django.conf import settings
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
@@ -18,10 +19,21 @@ class HttpResponseNotAllowedMiddleware:
             )
             context = {
                 "error": error,
+                "error_code": 405,
                 "error_message": f"{error_msg} ({request.method})",
+                "error_request_method": request.method,
                 "exception": None,
             }
-            return render(request, "errors/405.html", context=context, status=405)
+            return render(
+                request,
+                getattr(
+                    settings,
+                    "TEMPLATE_ERROR_405",
+                    getattr(settings, "TEMPLATE_ERROR_ALL", "errors/405.html"),
+                ),
+                context=context,
+                status=405,
+            )
 
         return response
 
