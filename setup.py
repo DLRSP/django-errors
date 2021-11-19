@@ -1,6 +1,7 @@
 import os
 from distutils.cmd import Command
 from distutils.command.build import build as _build
+
 from setuptools.command.install_lib import install_lib as _install_lib
 
 try:
@@ -39,5 +40,9 @@ class InstallLib(_install_lib):
 
 
 setup(
-    cmdclass={"build": Build, "install_lib": InstallLib, "compile_translations": CompileTranslations},
+    cmdclass={
+        "build": Build,
+        "install_lib": InstallLib,
+        "compile_translations": CompileTranslations,
+    },
 )

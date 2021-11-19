@@ -1,10 +1,10 @@
 # Quickstart
 
-We're going to create a simple App to allow admin users wrap django errors.
+Create a simple App to allow admin users wrap Django errors.
 
 ## Example Project setup
 
-Clone the new Django project named `example`
+Clone the Django project named `example`
 
 ```shell
 # Clone the example's project repository

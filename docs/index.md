@@ -1,10 +1,10 @@
-Django-Errors is an app to wrap Django errors.
+It's an app to wrap Django errors.
 
 ---
 
 ## Requirements
 
-Django-Errors requires the following:
+These packages are required:
 
 * Python (3.6, 3.7, 3.8, 3.9, 3.10)
 * Django (2.2, 3.2)
@@ -15,79 +15,84 @@ We **highly recommend** and only officially support the latest patch release of 
 ## Installation
 
 1. Install using `pip`, including any optional packages you want...
+    
+    ``` shell
+    pip install django-errors
+    ```
 
-``` shell
-pip install django-errors
-```
+    ...or clone the project from github.
 
-...or clone the project from github.
-
-``` shell
-git clone https://github.com/DLRSP/django-errors/
-```
+    ``` shell
+    git clone https://github.com/DLRSP/django-errors/
+    ```
 
 2. Add `'django_errors'` to your `INSTALLED_APPS` setting.
 
-``` python title="settings.py"
-INSTALLED_APPS = [
-    ...
-    'django_errors',
-]
-```
+    ``` python title="settings.py"
+    INSTALLED_APPS = [
+        ...
+        'django_errors',
+    ]
+    ```
 
 3. Add the following to your root `urls.py` file.
+    
+    ``` python title="urls.py"
+    # ...other imports...
+    from django_errors import views as errors_views
+    
+    urlpatterns = [
+        # ...other urls...
+    ]
+    
+    handler400 = errors_views.custom_400
+    """ Handle 400 error """
+    
+    handler403 = errors_views.custom_403
+    """ Handle 403 error """
+    
+    handler404 = errors_views.custom_404
+    """ Handle 404 error """
+    
+    handler500 = errors_views.custom_500
+    """ Handle 500 error """
+    ```
 
-``` python title="urls.py"
-# ...other imports...
-from django_errors import views as errors_views
+4. If you would like to handle also the "405 - Method not allowed", add the following middleware to your `INSTALLED_APPS` setting.
 
-urlpatterns = [
-    # ...other urls...
-]
-
-handler400 = errors_views.custom_400
-""" Handle 400 error """
-
-handler403 = errors_views.custom_403
-""" Handle 403 error """
-
-handler404 = errors_views.custom_404
-""" Handle 404 error """
-
-handler500 = errors_views.custom_500
-""" Handle 500 error """
-```
-
-4. If you would like to trap also the "405 - Method not allowed", add the following middleware to your `INSTALLED_APPS` setting.
-
-``` python title="settings.py"
-MIDDLEWARE = [
-    ...
-    "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
-    ...
-]
-```
+    ``` python title="settings.py"
+    MIDDLEWARE = [
+        ...
+        "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
+        ...
+    ]
+    ```
 
 5. If you would like to receive email message for "404 - Not Found" error, add the following middleware at **top** to your `INSTALLED_APPS` setting.
 
-``` python title="settings.py"
-MIDDLEWARE = [
-    "django.middleware.common.BrokenLinkEmailsMiddleware",  # <-- Error Manager 404
-    ...
-]
-```
+    ``` python title="settings.py"
+    MIDDLEWARE = [
+        "django.middleware.common.BrokenLinkEmailsMiddleware",  # <-- Error Manager 404
+        ...
+    ]
+    ```
 
 
 ## Example
 
-Let's take a look at a quick example of using **django-errors** to build a simple App with custom error pages.
+Let's take a look at a quick example of using this project to build a simple App with **custom error pages**.
 
 * Browser the demo app on-line on [Heroku][sandbox]
 * Check the demo repo on [GitHub][github-demo]
 
 ## Quickstart
 
-Can't wait to get started? The [quickstart guide][quickstart] is the fastest way to get up and running and building Apps with **django-errors**.
+Can't wait to get started? The [quickstart guide][quickstart] is the fastest way to get up and running and building a **demo App**.
+
+## Customize
+
+Do you want custom solutions? The [customize][customize] section is an overview of which part are easy to design.
+If you find how to personalize different scenarios or behaviors, a [pull request][pull-request] is welcome!
 
 ## Development
 
@@ -95,7 +100,7 @@ See the [Contribution guidelines][contributing] for information on how to clone 
 
 ## Security
 
-If you believe you’ve found something in django-errors which has security implications, please **do not raise the issue in a public forum**.
+If you believe you’ve found something in this project which has security implications, please **do not raise the issue in a public forum**.
 
 Send a description of the issue via email to [dlrsp.issue@gmail.com][security-mail].  The project maintainers will then work with you to resolve any issues where required, prior to any public disclosure.
 
@@ -128,7 +133,9 @@ SOFTWARE.
 [github-demo]: https://github.com/DLRSP/example/tree/django-errors
 
 [quickstart]: tutorial/quickstart.md
+[customize]: tutorial/customize.md
 
 [contributing]: community/contributing.md
+[pull-request]: community/contributing.png#pull-request
 
 [security-mail]: mailto:dlrsp.issue@gmail.com

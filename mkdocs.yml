@@ -60,6 +60,11 @@ nav:
  - Home: 'index.md'
  - Tutorial:
     - 'Quickstart': 'tutorial/quickstart.md'
+    - 'Customize':
+      - 'Templates': 'tutorial/templates.md'
+      - 'Images': 'tutorial/images.md'
+      - 'Alert': 'tutorial/alert.md'
+      - 'Google': 'tutorial/google.md'
  - Community:
     - 'References': 'community/references.md'
     - 'Contributing': 'community/contributing.md'
