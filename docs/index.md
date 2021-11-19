@@ -15,7 +15,7 @@ We **highly recommend** and only officially support the latest patch release of 
 ## Installation
 
 1. Install using `pip`, including any optional packages you want...
-    
+
     ``` shell
     pip install django-errors
     ```
@@ -36,24 +36,24 @@ We **highly recommend** and only officially support the latest patch release of 
     ```
 
 3. Add the following to your root `urls.py` file.
-    
+
     ``` python title="urls.py"
     # ...other imports...
     from django_errors import views as errors_views
-    
+
     urlpatterns = [
         # ...other urls...
     ]
-    
+
     handler400 = errors_views.custom_400
     """ Handle 400 error """
-    
+
     handler403 = errors_views.custom_403
     """ Handle 403 error """
-    
+
     handler404 = errors_views.custom_404
     """ Handle 404 error """
-    
+
     handler500 = errors_views.custom_500
     """ Handle 500 error """
     ```

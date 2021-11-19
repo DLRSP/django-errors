@@ -7,8 +7,8 @@ If you like to add an image for your error's page, the suggested way is implemen
     ``` python title="example/models.py"
     from django.db import models
     from filer.fields.image import FilerImageField
-    
-    
+
+
     class MyBackground(models.Model):
         name = models.CharField(verbose_name="Background", max_length=50, null=True)
         image = FilerImageField(null=True, blank=True, on_delete=models.CASCADE)
@@ -23,10 +23,10 @@ If you like to add an image for your error's page, the suggested way is implemen
     from django import template
     from django.core.cache import cache
     from example.models import MyBackground
-    
+
     register = template.Library()
-    
-    
+
+
     @register.simple_tag(takes_context=True)
     def load_error_img(context):
         cache_key = f"site_error_{context['error_code']}_context"
@@ -34,7 +34,7 @@ If you like to add an image for your error's page, the suggested way is implemen
             context_cache = cache.get(cache_key)
         except Exception as err:
             context_cache = None
-    
+
         if context_cache is None:
             try:
                 custom_context = MyBackground.objects.values('image__file').filter(name=context['error_code']).first()
@@ -42,7 +42,7 @@ If you like to add an image for your error's page, the suggested way is implemen
                 return custom_context["image__file"]
             except Exception as err:
                 print(err)
-    
+
         return context_cache or ""
     ```
 
@@ -51,15 +51,15 @@ If you like to add an image for your error's page, the suggested way is implemen
     ``` html title="example/template/errors.html"
     {% extends 'base.html' %}
     {% load static errors %}
-    
+
     {% block content %}
-        
+
         {% load_error_img as error_img %}
-    
+
         <div style="background-image: url( {% static error_img %} );">
             <strong>Oops! </strong> {{ error_message }}
         </div>
-        
+
     {% endblock content %}
     ```
 

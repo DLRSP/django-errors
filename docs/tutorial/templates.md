@@ -32,4 +32,3 @@ The order to find template is:
 2. Custom template for all errors page (example: `settings.TEMPLATE_ERROR_ALL`)
 3. Custom template for specific error page by to overwrite default (example: `example/templates/errors/404.html`)
 4. Default template for specific error page
-
