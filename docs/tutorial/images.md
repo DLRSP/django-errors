@@ -82,7 +82,7 @@ If you like to add an image for your error's page, the suggested way is implemen
           },
       ]
    ```
-   
+
 6. *(optional)* And then use the `MEDIA_URL` tag inside template:
    ``` html title="example/template/errors.html" hl_lines="2"
       ...
