@@ -63,7 +63,7 @@ If you like to add an image for your error's page, the suggested way is implemen
     {% endblock content %}
     ```
 
-(optional) It could be useful use the `MEDIA_URL` setting inside template. To do it, add the 
+(optional) It could be useful use the `MEDIA_URL` setting inside template. To do it, add the
 
    ``` python title="settings.py" hl_lines="12"
    TEMPLATES = [
@@ -84,13 +84,13 @@ If you like to add an image for your error's page, the suggested way is implemen
    ]
    ```
 
-    ``` html title="example/template/errors.html" hl_lines="2"
-      ...
-        <div style="background-image: url( {{ MEDIA_URL }}{% static error_img %} );">
-            <strong>Oops! </strong> {{ error_message }}
-        </div>
-      ...
-    ```
+   ``` html title="example/template/errors.html" hl_lines="2"
+     ...
+       <div style="background-image: url( {{ MEDIA_URL }}{% static error_img %} );">
+           <strong>Oops! </strong> {{ error_message }}
+       </div>
+     ...
+   ```
 
 [simple_tag]: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/#django.template.Library.simple_tag
 [django-filer]: https://github.com/django-cms/django-filer
