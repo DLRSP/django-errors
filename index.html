@@ -308,6 +308,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#customize" class="md-nav__link">
+    Customize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#development" class="md-nav__link">
     Development
   </a>
@@ -378,6 +385,95 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Customize
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Customize" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Customize
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/alert.md" class="md-nav__link">
+        Alert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/google.md" class="md-nav__link">
+        Google
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -411,6 +507,20 @@
           Community
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community/references/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -500,6 +610,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#customize" class="md-nav__link">
+    Customize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#development" class="md-nav__link">
     Development
   </a>
@@ -539,10 +656,10 @@
                 
                   <h1>Home</h1>
                 
-                <p>Django-Errors is an app to wrap Django errors.</p>
+                <p>It's an app to wrap Django errors.</p>
 <hr />
 <h2 id="requirements"><a class="toclink" href="#requirements">Requirements</a></h2>
-<p>Django-Errors requires the following:</p>
+<p>These packages are required:</p>
 <ul>
 <li>Python (3.6, 3.7, 3.8, 3.9, 3.10)</li>
 <li>Django (2.2, 3.2)</li>
@@ -550,24 +667,24 @@
 <p>We <strong>highly recommend</strong> and only officially support the latest patch release of each Python and Django series.</p>
 <h2 id="installation"><a class="toclink" href="#installation">Installation</a></h2>
 <ol>
-<li>Install using <code>pip</code>, including any optional packages you want...</li>
-</ol>
+<li>
+<p>Install using <code>pip</code>, including any optional packages you want...</p>
 <div class="highlight"><pre><span></span><code>pip install django-errors
 </code></pre></div>
 <p>...or clone the project from github.</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/DLRSP/django-errors/
 </code></pre></div>
-<ol>
-<li>Add <code>'django_errors'</code> to your <code>INSTALLED_APPS</code> setting.</li>
-</ol>
+</li>
+<li>
+<p>Add <code>'django_errors'</code> to your <code>INSTALLED_APPS</code> setting.</p>
 <div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">...</span>
     <span class="s1">&#39;django_errors&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 </code></pre></div>
-<ol>
-<li>Add the following to your root <code>urls.py</code> file.</li>
-</ol>
+</li>
+<li>
+<p>Add the following to your root <code>urls.py</code> file.</p>
 <div class="highlight"><span class="filename">urls.py</span><pre><span></span><code><span class="c1"># ...other imports...</span>
 <span class="kn">from</span> <span class="nn">django_errors</span> <span class="kn">import</span> <span class="n">views</span> <span class="k">as</span> <span class="n">errors_views</span>
 
@@ -587,35 +704,40 @@
 <span class="n">handler500</span> <span class="o">=</span> <span class="n">errors_views</span><span class="o">.</span><span class="n">custom_500</span>
 <span class="sd">&quot;&quot;&quot; Handle 500 error &quot;&quot;&quot;</span>
 </code></pre></div>
-<ol>
-<li>If you would like to trap also the "405 - Method not allowed", add the following middleware to your <code>INSTALLED_APPS</code> setting.</li>
-</ol>
+</li>
+<li>
+<p>If you would like to handle also the "405 - Method not allowed", add the following middleware to your <code>INSTALLED_APPS</code> setting.</p>
 <div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">...</span>
     <span class="s2">&quot;django_errors.middleware.handler.HttpResponseNotAllowedMiddleware&quot;</span><span class="p">,</span>
     <span class="o">...</span>
 <span class="p">]</span>
 </code></pre></div>
-<ol>
-<li>If you would like to receive email message for "404 - Not Found" error, add the following middleware at <strong>top</strong> to your <code>INSTALLED_APPS</code> setting.</li>
-</ol>
+</li>
+<li>
+<p>If you would like to receive email message for "404 - Not Found" error, add the following middleware at <strong>top</strong> to your <code>INSTALLED_APPS</code> setting.</p>
 <div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;django.middleware.common.BrokenLinkEmailsMiddleware&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- Error Manager 404</span>
     <span class="o">...</span>
 <span class="p">]</span>
 </code></pre></div>
+</li>
+</ol>
 <h2 id="example"><a class="toclink" href="#example">Example</a></h2>
-<p>Let's take a look at a quick example of using <strong>django-errors</strong> to build a simple App with custom error pages.</p>
+<p>Let's take a look at a quick example of using this project to build a simple App with <strong>custom error pages</strong>.</p>
 <ul>
 <li>Browser the demo app on-line on <a href="https://django-errors.herokuapp.com/">Heroku</a></li>
 <li>Check the demo repo on <a href="https://github.com/DLRSP/example/tree/django-errors">GitHub</a></li>
 </ul>
 <h2 id="quickstart"><a class="toclink" href="#quickstart">Quickstart</a></h2>
-<p>Can't wait to get started? The <a href="tutorial/quickstart/">quickstart guide</a> is the fastest way to get up and running and building Apps with <strong>django-errors</strong>.</p>
+<p>Can't wait to get started? The <a href="tutorial/quickstart/">quickstart guide</a> is the fastest way to get up and running and building a <strong>demo App</strong>.</p>
+<h2 id="customize"><a class="toclink" href="#customize">Customize</a></h2>
+<p>Do you want custom solutions? The <a href="tutorial/customize/">customize</a> section is an overview of which part are easy to design.
+If you find how to personalize different scenarios or behaviors, a <a href="community/contributing.png#pull-request">pull request</a> is welcome!</p>
 <h2 id="development"><a class="toclink" href="#development">Development</a></h2>
 <p>See the <a href="community/contributing/">Contribution guidelines</a> for information on how to clone  the repository, run the test suite and contribute changes back to django-errors.</p>
 <h2 id="security"><a class="toclink" href="#security">Security</a></h2>
-<p>If you believe you’ve found something in django-errors which has security implications, please <strong>do not raise the issue in a public forum</strong>.</p>
+<p>If you believe you’ve found something in this project which has security implications, please <strong>do not raise the issue in a public forum</strong>.</p>
 <p>Send a description of the issue via email to <a href="mailto:dlrsp.issue@gmail.com">dlrsp.issue@gmail.com</a>.  The project maintainers will then work with you to resolve any issues where required, prior to any public disclosure.</p>
 <h2 id="license"><a class="toclink" href="#license">License</a></h2>
 <p>MIT License</p>
@@ -643,7 +765,7 @@ SOFTWARE.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-14
+      Last update: 2021-11-19
     
   </small>
 </div>
@@ -694,7 +816,7 @@ SOFTWARE.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016-present DLRSP
+            Copyright &copy; 2010-present DLRSP
           </div>
         
         
