@@ -63,33 +63,33 @@ If you like to add an image for your error's page, the suggested way is implemen
     {% endblock content %}
     ```
 
-(optional) It could be useful use the `MEDIA_URL` setting inside template. To do it, add the
-
+5. *(optional)* It could be useful use the `MEDIA_URL` setting inside template. To do it, add the `context_processor`:
    ``` python title="settings.py" hl_lines="12"
-   TEMPLATES = [
-       {
-           'BACKEND': 'django.template.backends.django.DjangoTemplates',
-           'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
-           'APP_DIRS': True,
-           'OPTIONS': {
-               'context_processors': [
-                   'django.template.context_processors.debug',
-                   'django.template.context_processors.request',
-                   'django.contrib.auth.context_processors.auth',
-                   'django.contrib.messages.context_processors.messages',
-                   'django.template.context_processors.media',
-               ],
-           },
-       },
-   ]
+      TEMPLATES = [
+          {
+              'BACKEND': 'django.template.backends.django.DjangoTemplates',
+              'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
+              'APP_DIRS': True,
+              'OPTIONS': {
+                  'context_processors': [
+                      'django.template.context_processors.debug',
+                      'django.template.context_processors.request',
+                      'django.contrib.auth.context_processors.auth',
+                      'django.contrib.messages.context_processors.messages',
+                      'django.template.context_processors.media',
+                  ],
+              },
+          },
+      ]
    ```
-
+   
+6. *(optional)* And then use the `MEDIA_URL` tag inside template:
    ``` html title="example/template/errors.html" hl_lines="2"
-     ...
-       <div style="background-image: url( {{ MEDIA_URL }}{% static error_img %} );">
-           <strong>Oops! </strong> {{ error_message }}
-       </div>
-     ...
+      ...
+      <div style="background-image: url( {{ MEDIA_URL }}{% static error_img %} );">
+         <strong>Oops! </strong> {{ error_message }}
+      </div>
+      ...
    ```
 
 [simple_tag]: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/#django.template.Library.simple_tag
