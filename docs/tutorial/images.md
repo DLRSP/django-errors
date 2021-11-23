@@ -64,6 +64,7 @@ If you like to add an image for your error's page, the suggested way is implemen
     ```
 
 5. *(optional)* It could be useful use the `MEDIA_URL` setting inside template. To do it, add the `context_processor`:
+
    ``` python title="settings.py" hl_lines="12"
       TEMPLATES = [
           {
@@ -84,6 +85,7 @@ If you like to add an image for your error's page, the suggested way is implemen
    ```
 
 6. *(optional)* And then use the `MEDIA_URL` tag inside template:
+
    ``` html title="example/template/errors.html" hl_lines="2"
       ...
       <div style="background-image: url( {{ MEDIA_URL }}{% static error_img %} );">
