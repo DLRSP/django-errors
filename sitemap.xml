@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/DLRSP/django-errors/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/community/contributing/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/community/references/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/DLRSP/django-errors/community/status_code/</loc>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/tutorial/customize/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/tutorial/images/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/tutorial/quickstart/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/DLRSP/django-errors/tutorial/templates/</loc>
-         <lastmod>2021-11-22</lastmod>
+         <lastmod>2021-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

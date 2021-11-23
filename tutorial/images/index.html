@@ -441,6 +441,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../community/status_code/" class="md-nav__link">
+        Status Codes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../community/references/" class="md-nav__link">
         References
       </a>
@@ -580,32 +594,35 @@
 {% endblock content %}
 </code></pre></div>
 </li>
+<li>
+<p><em>(optional)</em> It could be useful use the <code>MEDIA_URL</code> setting inside template. To do it, add the <code>context_processor</code>:</p>
+</li>
 </ol>
-<p>(optional) It could be useful use the <code>MEDIA_URL</code> setting inside template. To do it, add the </p>
-<div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
-        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
-<span class="hll">                <span class="s1">&#39;django.template.context_processors.media&#39;</span><span class="p">,</span>
-</span>            <span class="p">],</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">]</span>
+<div class="highlight"><span class="filename">settings.py</span><pre><span></span><code>   <span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
+           <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+           <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
+                   <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
+<span class="hll">                   <span class="s1">&#39;django.template.context_processors.media&#39;</span><span class="p">,</span>
+</span>               <span class="p">],</span>
+           <span class="p">},</span>
+       <span class="p">},</span>
+   <span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>``` html title=&quot;example/template/errors.html&quot; hl_lines=&quot;2&quot;
-  ...
-    &lt;div style=&quot;background-image: url( {{ MEDIA_URL }}{% static error_img %} );&quot;&gt;
-        &lt;strong&gt;Oops! &lt;/strong&gt; {{ error_message }}
-    &lt;/div&gt;
-  ...
-```
+<ol>
+<li><em>(optional)</em> And then use the <code>MEDIA_URL</code> tag inside template:</li>
+</ol>
+<div class="highlight"><span class="filename">example/template/errors.html</span><pre><span></span><code>   ...
+<span class="hll">   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-image: url( {{ MEDIA_URL }}{% static error_img %} );&quot;</span><span class="p">&gt;</span>
+</span>      <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Oops! <span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ error_message }}
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   ...
 </code></pre></div>
                 
                   
@@ -615,7 +632,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-22
+      Last update: 2021-11-23
     
   </small>
 </div>
@@ -660,13 +677,13 @@
       
       
         
-        <a href="../../community/references/" class="md-footer__link md-footer__link--next" aria-label="Next: References" rel="next">
+        <a href="../../community/status_code/" class="md-footer__link md-footer__link--next" aria-label="Next: Status Codes" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              References
+              Status Codes
             </div>
           </div>
           <div class="md-footer__button md-icon">

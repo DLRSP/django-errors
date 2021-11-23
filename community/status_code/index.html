@@ -11,21 +11,21 @@
       
       
       
-        <link rel="canonical" href="https://github.com/DLRSP/django-errors/">
+        <link rel="canonical" href="https://github.com/DLRSP/django-errors/community/status_code/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Django-Errors</title>
+        <title>Status Codes - Django-Errors</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -70,7 +70,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requirements" class="md-skip">
+        <a href="#100s-informational-responses" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Django-Errors" class="md-header__button md-logo" aria-label="Django-Errors" data-md-component="logo">
+    <a href="../.." title="Django-Errors" class="md-header__button md-logo" aria-label="Django-Errors" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Status Codes
             
           </span>
         </div>
@@ -217,7 +217,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Django-Errors" class="md-nav__button md-logo" aria-label="Django-Errors" data-md-component="logo">
+    <a href="../.." title="Django-Errors" class="md-nav__button md-logo" aria-label="Django-Errors" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -247,98 +247,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
-    Quickstart
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customize" class="md-nav__link">
-    Customize
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    Development
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -377,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/quickstart/" class="md-nav__link">
+      <a href="../../tutorial/quickstart/" class="md-nav__link">
         Quickstart
       </a>
     </li>
@@ -417,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/templates/" class="md-nav__link">
+      <a href="../../tutorial/templates/" class="md-nav__link">
         Templates
       </a>
     </li>
@@ -431,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/images/" class="md-nav__link">
+      <a href="../../tutorial/images/" class="md-nav__link">
         Images
       </a>
     </li>
@@ -445,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/alert.md" class="md-nav__link">
+      <a href="../../tutorial/alert.md" class="md-nav__link">
         Alert
       </a>
     </li>
@@ -459,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/google.md" class="md-nav__link">
+      <a href="../../tutorial/google.md" class="md-nav__link">
         Google
       </a>
     </li>
@@ -486,12 +399,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -512,11 +427,77 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="community/status_code/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Status Codes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Status Codes
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#100s-informational-responses" class="md-nav__link">
+    100's - Informational Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#200s-successful-responses" class="md-nav__link">
+    200's - Successful Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#300s-redirection-responses" class="md-nav__link">
+    300's - Redirection Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#400s-client-error-responses" class="md-nav__link">
+    400's - Client Error Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#500s-server-error-responses" class="md-nav__link">
+    500's - Server Error Responses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -528,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="community/references/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         References
       </a>
     </li>
@@ -542,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="community/contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         Contributing
       </a>
     </li>
@@ -556,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="community/third-party-packages.md" class="md-nav__link">
+      <a href="../third-party-packages.md" class="md-nav__link">
         Third-Party-Packages
       </a>
     </li>
@@ -596,57 +577,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#100s-informational-responses" class="md-nav__link">
+    100's - Informational Responses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#200s-successful-responses" class="md-nav__link">
+    200's - Successful Responses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#300s-redirection-responses" class="md-nav__link">
+    300's - Redirection Responses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
-    Quickstart
+  <a href="#400s-client-error-responses" class="md-nav__link">
+    400's - Client Error Responses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#customize" class="md-nav__link">
-    Customize
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    Development
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#500s-server-error-responses" class="md-nav__link">
+    500's - Server Error Responses
   </a>
   
 </li>
@@ -663,114 +623,160 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/DLRSP/django-errors/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/DLRSP/django-errors/edit/master/docs/community/status_code.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Home</h1>
+                  <h1>Status Codes</h1>
                 
-                <p>It's an app to wrap Django errors.</p>
-<hr />
-<h2 id="requirements"><a class="toclink" href="#requirements">Requirements</a></h2>
-<p>These packages are required:</p>
-<ul>
-<li>Python (3.6, 3.7, 3.8, 3.9, 3.10)</li>
-<li>Django (2.2, 3.2)</li>
-</ul>
-<p>We <strong>highly recommend</strong> and only officially support the latest patch release of each Python and Django series.</p>
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a></h2>
-<ol>
-<li>
-<p>Install using <code>pip</code>, including any optional packages you want...</p>
-<div class="highlight"><pre><span></span><code>pip install django-errors
-</code></pre></div>
-<p>...or clone the project from github.</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/DLRSP/django-errors/
-</code></pre></div>
-</li>
-<li>
-<p>Add <code>'django_errors'</code> to your <code>INSTALLED_APPS</code> setting.</p>
-<div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">...</span>
-    <span class="s1">&#39;django_errors&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</code></pre></div>
-</li>
-<li>
-<p>Add the following to your root <code>urls.py</code> file.</p>
-<div class="highlight"><span class="filename">urls.py</span><pre><span></span><code><span class="c1"># ...other imports...</span>
-<span class="kn">from</span> <span class="nn">django_errors</span> <span class="kn">import</span> <span class="n">views</span> <span class="k">as</span> <span class="n">errors_views</span>
-
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c1"># ...other urls...</span>
-<span class="p">]</span>
-
-<span class="n">handler400</span> <span class="o">=</span> <span class="n">errors_views</span><span class="o">.</span><span class="n">custom_400</span>
-<span class="sd">&quot;&quot;&quot; Handle 400 error &quot;&quot;&quot;</span>
-
-<span class="n">handler403</span> <span class="o">=</span> <span class="n">errors_views</span><span class="o">.</span><span class="n">custom_403</span>
-<span class="sd">&quot;&quot;&quot; Handle 403 error &quot;&quot;&quot;</span>
-
-<span class="n">handler404</span> <span class="o">=</span> <span class="n">errors_views</span><span class="o">.</span><span class="n">custom_404</span>
-<span class="sd">&quot;&quot;&quot; Handle 404 error &quot;&quot;&quot;</span>
-
-<span class="n">handler500</span> <span class="o">=</span> <span class="n">errors_views</span><span class="o">.</span><span class="n">custom_500</span>
-<span class="sd">&quot;&quot;&quot; Handle 500 error &quot;&quot;&quot;</span>
-</code></pre></div>
-</li>
-<li>
-<p>If you would like to handle also the "405 - Method not allowed", add the following middleware to your <code>INSTALLED_APPS</code> setting.</p>
-<div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">...</span>
-    <span class="s2">&quot;django_errors.middleware.handler.HttpResponseNotAllowedMiddleware&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">]</span>
-</code></pre></div>
-</li>
-<li>
-<p>If you would like to receive email message for "404 - Not Found" error, add the following middleware at <strong>top</strong> to your <code>INSTALLED_APPS</code> setting.</p>
-<div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;django.middleware.common.BrokenLinkEmailsMiddleware&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- Error Manager 404</span>
-    <span class="o">...</span>
-<span class="p">]</span>
-</code></pre></div>
-</li>
-</ol>
-<h2 id="example"><a class="toclink" href="#example">Example</a></h2>
-<p>Let's take a look at a quick example of using this project to build a simple App with <strong>custom error pages</strong>.</p>
-<ul>
-<li>Browser the demo app on-line on <a href="https://django-errors.herokuapp.com/">Heroku</a></li>
-<li>Check the demo repo on <a href="https://github.com/DLRSP/example/tree/django-errors">GitHub</a></li>
-</ul>
-<h2 id="quickstart"><a class="toclink" href="#quickstart">Quickstart</a></h2>
-<p>Can't wait to get started? The <a href="tutorial/quickstart/">quickstart guide</a> is the fastest way to get up and running and building a <strong>demo App</strong>.</p>
-<h2 id="customize"><a class="toclink" href="#customize">Customize</a></h2>
-<p>Do you want custom solutions? The <a href="tutorial/customize/">customize</a> section is an overview of which part are easy to design.
-If you find how to personalize different scenarios or behaviors, a <a href="community/contributing.png#pull-request">pull request</a> is welcome!</p>
-<h2 id="development"><a class="toclink" href="#development">Development</a></h2>
-<p>See the <a href="community/contributing/">Contribution guidelines</a> for information on how to clone  the repository, run the test suite and contribute changes back to django-errors.</p>
-<h2 id="security"><a class="toclink" href="#security">Security</a></h2>
-<p>If you believe you’ve found something in this project which has security implications, please <strong>do not raise the issue in a public forum</strong>.</p>
-<p>Send a description of the issue via email to <a href="mailto:dlrsp.issue@gmail.com">dlrsp.issue@gmail.com</a>.  The project maintainers will then work with you to resolve any issues where required, prior to any public disclosure.</p>
-<h2 id="license"><a class="toclink" href="#license">License</a></h2>
-<p>MIT License</p>
-<p>Copyright (c) 2010-present DLRSP (https://dlrsp.org) and other contributors.</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+                <h2 id="100s-informational-responses"><a class="toclink" href="#100s-informational-responses">100's - Informational Responses</a></h2>
+<p>100 Continue</p>
+<p><em>An interim response and client should continue with request</em></p>
+<p>101 Switching Protocols</p>
+<p><em>Indicates to client / browser the server is switching protocols</em></p>
+<p>102 Processing</p>
+<p><em>Server is processing the request</em></p>
+<p>103 Checkpoint</p>
+<p><em>Resume aborted PUT or GET requests</em></p>
+<p>122 Request - URI Too Long</p>
+<p><em>The URI is too long and exceeds the maximum 2083 characters</em></p>
+<h2 id="200s-successful-responses"><a class="toclink" href="#200s-successful-responses">200's - Successful Responses</a></h2>
+<p>200 OK</p>
+<p><em>Server successfully processed request</em></p>
+<p>201 Created</p>
+<p><em>Request was successful and server created new resource</em></p>
+<p>202 Accepted</p>
+<p><em>Request accepted but not processed yet</em></p>
+<p>203 Non-Authoritative Information</p>
+<p><em>Request processed successfully but information returned may be from another source</em></p>
+<p>204 No Content</p>
+<p><em>Request completed but no content was returned</em></p>
+<p>205 Reset Content</p>
+<p><em>Request completed but no content was returned; requires requestor reset document view</em></p>
+<p>206 Partial Content</p>
+<p><em>Server delivered a partial GET request</em></p>
+<p>207 Multiple Status</p>
+<p><em>Successful response for WebDAV</em></p>
+<p>208 Already Reported</p>
+<p><em>Results previously returned and not inlcuded again</em></p>
+<p>210 Content Different</p>
+<p><em>Content and/or property mismatch between client and server</em></p>
+<p>226 IM Used</p>
+<p><em>Server has fulfilled the request and response is an instance manipulated result</em></p>
+<h2 id="300s-redirection-responses"><a class="toclink" href="#300s-redirection-responses">300's - Redirection Responses</a></h2>
+<p>300 Multiple Choices</p>
+<p><em>Server has multiple actions available based on the request; user can select from list</em></p>
+<p>301 Moved Permanently</p>
+<p><em>Requested page has been permanently moved to a different URL</em></p>
+<p>302 Moved Temporarily / Found</p>
+<p><em>Requested page has been temporarily moved to a different URL; requestor should continue to use original URL</em></p>
+<p>303 See Other</p>
+<p><em>The requested page can be located at a different URL; user is not automatically forwarded</em></p>
+<p>304 Not Modified</p>
+<p><em>Page has not been modified sonce last request</em></p>
+<p>305 Use Proxy</p>
+<p><em>Requestor must use a proxy to access the requested page</em></p>
+<p>306 Switch Proxy</p>
+<p><em>No longer used</em></p>
+<p>307 Temporary Redirect</p>
+<p><em>Requested page has been temporarily moved to a different URL; requestor should continue to use original URL</em></p>
+<p>308 Resume Incomplete</p>
+<p><em>Used in resumable requests proposal to resume aborted POST and PUT requests</em></p>
+<h2 id="400s-client-error-responses"><a class="toclink" href="#400s-client-error-responses">400's - Client Error Responses</a></h2>
+<p>400 Bad Request</p>
+<p><em>Request cannot be fulfilled due to incorrect syntax</em></p>
+<p>401 Unauthorized</p>
+<p><em>Authentication is required or has not been provided</em></p>
+<p>402 Payment Required</p>
+<p><em>Not currently used. Intended for use in digital cash transactions</em></p>
+<p>403 Forbidden</p>
+<p><em>Client does not have suffcient permissions to access the requested resource</em></p>
+<p>404 Not Found</p>
+<p><em>Requested page cannot be found at current location but could be available in the future</em></p>
+<p>405 Method Not Allowed</p>
+<p><em>Request was made using a method not supported by page</em></p>
+<p>406 Not Acceptable</p>
+<p><em>Server can provide only content that is unacceptable to the client</em></p>
+<p>407 Proxy Authentication Required</p>
+<p><em>Client must authenticate with a proxy to access resource</em></p>
+<p>408 Request Timeout</p>
+<p><em>Server timed out waiting for request from client</em></p>
+<p>409 Conflict</p>
+<p><em>Request could not be processed due to a conflict</em></p>
+<p>410 Gone</p>
+<p><em>The requested page is no longer available and will not be available again</em></p>
+<p>411 Length Required</p>
+<p><em>Server has denied request due to unspecified length of content</em></p>
+<p>412 Precondition Failed</p>
+<p><em>Resource does not meet conditions of client's request</em></p>
+<p>413 Request Entity Too Large</p>
+<p><em>Request is too large to fulfill</em></p>
+<p>414 Request URI Too Long</p>
+<p><em>Requested URL is too long for the server to process</em></p>
+<p>415 Unsupported Media Type</p>
+<p><em>Server does not media type requested</em></p>
+<p>416 Requested Range Not Satisfiable</p>
+<p><em>Client requested portion of file but server cannot satisfy the request</em></p>
+<p>417 Expectation Failed</p>
+<p><em>Server cannot meet requirements of Expect request header field</em></p>
+<p>418 I'm A Teapot</p>
+<p><em>An IETF April Fools' joke</em></p>
+<p>420 Enhance Your Calm</p>
+<p><em>Client rate limiting by Twitter</em></p>
+<p>422 Unprocessable Entity</p>
+<p><em>Unable to process request due to semantic errors</em></p>
+<p>423 Locked</p>
+<p><em>Requested resource is locked</em></p>
+<p>424 Method Failure</p>
+<p><em>Request failed due to failure of a previous request (e.g. a PROPPATCH)</em></p>
+<p>426 Upgrade Required</p>
+<p><em>Client should switch to a different protocol</em></p>
+<p>428 Precondition Required</p>
+<p><em>Server requires request to be conditional to prevent conflicts</em></p>
+<p>429 Too Many Requests</p>
+<p><em>User has sent too many requests in a specified time period</em></p>
+<p>431 Request Header Fields Too Large</p>
+<p><em>Request cannot be processed due to individual field or collective fields are too large</em></p>
+<p>444 No Response</p>
+<p><em>Indicates Nginx server has not returned requested information and has closed connection</em></p>
+<p>449 Retry With</p>
+<p><em>Request should be performed after the specified action</em></p>
+<p>450 Blocked By Windows Parental Controls</p>
+<p><em>Page blocked by Windows Parental Controls</em></p>
+<p>451 Redirect</p>
+<p><em>Either more efficient server available or server can't access user's mailbox</em></p>
+<p>499 Client Closed Request</p>
+<p><em>Indicates client has closed connection prior to server completing request</em></p>
+<h2 id="500s-server-error-responses"><a class="toclink" href="#500s-server-error-responses">500's - Server Error Responses</a></h2>
+<p>500 Internal Server Error</p>
+<p><em>Server encountered an unexpected condition that prevented request fulfillment.</em></p>
+<p>501 Not Implemented</p>
+<p><em>Request is unrecognizable or server lacks ability to fulfill it</em></p>
+<p>502 Bad Gateway</p>
+<p><em>Server received an invalid response from an upstream server and could not fulfill request</em></p>
+<p>503 Service Unavailable</p>
+<p><em>Server is currently unavailable</em></p>
+<p>504 Gateway Timeout</p>
+<p><em>Server did not receive a timely response from upstream server</em></p>
+<p>505 HTTP Version Not Supported</p>
+<p><em>Server does not support the HTTP protocol used in request</em></p>
+<p>506 Variant Also Negotiates</p>
+<p><em>Content negotiation results in circular reference</em></p>
+<p>507 Insufficient Storage</p>
+<p><em>Insufficient storage</em></p>
+<p>508 Loop Detected</p>
+<p><em>Server detected an infinite loop while processing request</em></p>
+<p>509 Bandwidth Limit Exceeded</p>
+<p><em>Apache extension not defined in RFC's to communicate bandwidth allocation exceeded</em></p>
+<p>510 Not Extended</p>
+<p><em>Further extensions to the request are required to fulfill it</em></p>
+<p>511 Network Authentication Required</p>
+<p><em>Client is required to authenticate to gain network access</em></p>
+<p>598 Network Read Timeout Error</p>
+<p><em>Client behind proxy experiences network read timeout error</em></p>
+<p>599 Network Connect Timeout Error</p>
+<p><em>Client behind proxy experiences network connect timeout error</em></p>
                 
                   
                     
@@ -779,7 +785,7 @@ SOFTWARE.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-19
+      Last update: 2021-11-23
     
   </small>
 </div>
@@ -807,15 +813,30 @@ SOFTWARE.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../../tutorial/images/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Images" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Images
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="tutorial/quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
+        <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: References" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Quickstart
+              References
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -875,10 +896,10 @@ SOFTWARE.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.top", "content.code.annotate", "content.tabs.link", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "content.code.annotate", "content.tabs.link", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
