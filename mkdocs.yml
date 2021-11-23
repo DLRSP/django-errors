@@ -66,6 +66,7 @@ nav:
       - 'Alert': 'tutorial/alert.md'
       - 'Google': 'tutorial/google.md'
  - Community:
+    - 'Status Codes': 'community/status_code.md'
     - 'References': 'community/references.md'
     - 'Contributing': 'community/contributing.md'
     - 'Third-Party-Packages': 'community/third-party-packages.md'
