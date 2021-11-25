@@ -5,9 +5,8 @@
 {% endblock headtitle %}
 
 {% block content %}
-    <section title="{{ error }} ({{ request.method }})" data-role="content" data-theme="e">
+    <section title="{{ error }} ({{ request.method }})">
         <h2>
-			<span class="ui-icon ui-icon-alert ui-icon-shadow" style="display:inline-block;margin-right:20px;">&nbsp;</span>
 			{{ error_message }}
 		</h2>
 		{% if exception %}
