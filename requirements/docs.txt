@@ -124,9 +124,9 @@ mkdocs-git-revision-date-plugin==0.3.1 \
     --hash=sha256:4abaef720763a64c952bed6829dcc180f67c97c60dd73914e90715e05d1cfb23 \
     --hash=sha256:8ae50b45eb75d07b150a69726041860801615aae5f4adbd6b1cf4d51abaa03d5
     # via -r requirements/docs.in
-mkdocs-material==8.0.1 \
-    --hash=sha256:3772c854dada5ba996448ca4b56c513d2a6f074815374349fb9597f869a3aa1e \
-    --hash=sha256:66d310f6cd9919cb8621322359f30dfd901d2d3372432281e5461bacc4e680cb
+mkdocs-material==8.1.9 \
+    --hash=sha256:6feb433f29227b862418bd1009edeec2e52870770c476bf02840fc094b8823f2 \
+    --hash=sha256:a15873a5e116bf4615af4fcedc85a0537492464365286cba50310d96fb066958
     # via -r requirements/docs.in
 mkdocs-material-extensions==1.0.3 \
     --hash=sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44 \
