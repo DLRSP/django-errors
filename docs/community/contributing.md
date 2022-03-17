@@ -102,7 +102,7 @@ pip install -r requirements/requirements.in
 # Run the tests
 python runtests.py
 ```
-    
+
 ### Test options
 
 Run using a more concise output style.
@@ -110,25 +110,25 @@ Run using a more concise output style.
 ``` shell
 python runtests.py -q
 ```
-    
+
 Run the tests for a given test case.
 
 ``` shell
 python runtests.py MyTestCase
 ```
-    
+
 Run the tests for a given test method.
 
 ``` shell
 python runtests.py MyTestCase.test_this_method
 ```
-    
+
 Shorter form to run the tests for a given test method.
 
 ``` shell
 python runtests.py test_this_method
 ```
-    
+
 Note: The test case and test method matching is fuzzy and will sometimes run other tests that contain a partial string match to the given  command line input.
 
 ### Running against multiple environments
@@ -138,7 +138,7 @@ You can also use the excellent [tox][tox] testing tool to run the tests against 
 ``` shell
 tox
 ```
-    
+
 ## Pull requests
 
 It's a good idea to make pull requests early on.  A pull request represents the start of a discussion, and doesn't necessarily need to be the final, finished submission.
@@ -174,7 +174,7 @@ To build the documentation, install MkDocs with `pip install mkdocs` and then ru
 ``` shell
 mkdocs build
 ```
-    
+
 This will build the documentation into the `site` directory.
 
 You can build the documentation and open a preview in a browser window by using the `serve` command.
@@ -182,7 +182,7 @@ You can build the documentation and open a preview in a browser window by using 
 ``` shell
 mkdocs serve
 ```
-    
+
 ## Language style
 
 Documentation should be in English.  The tone of the documentation is very important - try to stick to a simple, plain, objective and well-balanced style where possible.
@@ -202,7 +202,7 @@ Headers should use the hash style.  For example:
 
 ``` markdown
 ### Some important topic
-``` 
+```
 
 The underline style should not be used.  **Don't do this:**
 
