@@ -58,23 +58,23 @@ We **highly recommend** and only officially support the latest patch release of 
     """ Handle 500 error """
     ```
 
-4. If you would like to handle also the "405 - Method not allowed", add the following middleware to your `INSTALLED_APPS` setting.
+4. If you would like to handle also the "405 - Method not allowed", add the following middleware to your `MIDDLEWARE` setting.
 
     ``` python title="settings.py"
-    MIDDLEWARE = [
+    MIDDLEWARE = (
         ...
         "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
         ...
-    ]
+    )
     ```
 
-5. If you would like to receive email message for "404 - Not Found" error, add the following middleware at **top** to your `INSTALLED_APPS` setting.
+5. If you would like to receive email message for "404 - Not Found" error, add the following middleware at **top** to your `MIDDLEWARE` setting.
 
     ``` python title="settings.py"
-    MIDDLEWARE = [
+    MIDDLEWARE = (
         "django.middleware.common.BrokenLinkEmailsMiddleware",  # <-- Error Manager 404
         ...
-    ]
+    )
     ```
 
 
@@ -132,8 +132,7 @@ SOFTWARE.
 [sandbox]: https://django-errors.herokuapp.com/
 [github-demo]: https://github.com/DLRSP/example/tree/django-errors
 
-[quickstart]: tutorial/quickstart.md
-[customize]: tutorial/customize.md
+[quickstart]: tutorial/example.md
 
 [contributing]: community/contributing.md
 [pull-request]: community/contributing.png#pull-request

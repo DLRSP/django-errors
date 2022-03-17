@@ -57,9 +57,9 @@ markdown_extensions:
  - pymdownx.snippets:
 
 nav:
- - Home: 'index.md'
- - Tutorial:
-    - 'Quickstart': 'tutorial/quickstart.md'
+ - Quickstart: 'index.md'
+ - Tutorials:
+    - 'Example': 'tutorial/example.md'
     - 'Customize':
       - 'Templates': 'tutorial/templates.md'
       - 'Images': 'tutorial/images.md'

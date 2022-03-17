@@ -50,7 +50,9 @@ To start developing, first create a Fork from the
 Then clone your fork. The clone command will look like this, with your GitHub
 username instead of YOUR-USERNAME:
 
-    git clone https://github.com/YOUR-USERNAME/django-errors
+``` shell
+git clone https://github.com/YOUR-USERNAME/django-errors
+```
 
 See GitHub's [_Fork a Repo_][how-to-fork] Guide for more help.
 
@@ -58,21 +60,31 @@ Changes should broadly follow the [PEP 8][pep-8] style conventions, and we recom
 You can check your contributions against these conventions each time you commit using the [pre-commit](https://pre-commit.com/) hooks, which we also run on CI.
 To set them up, first ensure you have the pre-commit tool installed, for example:
 
-    python -m pip install pre-commit
+``` shell
+python -m pip install pre-commit
+```
 
 Then run:
 
-    pre-commit install
+``` shell
+pre-commit install
+```
 
 ## Translation
 
-To run the translation, clone the repository, and then:
+To run the translation, clone the repository, go inside the package directory, and then:
 
-    django-admin makemessages -l it
+``` shell
+cd src/django_errors
+django-admin makemessages -l it
+django-admin makemessages -d djangojs -l it
+```
 
 Modify the .po file for your locale, and then:
 
-    django-admin compilemessages -l it
+``` shell
+django-admin compilemessages -l it
+```
 
 Contribute with your translation, test it in your local example and then push the commit as "Pull request"
 
@@ -80,41 +92,53 @@ Contribute with your translation, test it in your local example and then push th
 
 To run the tests, clone the repository, and then:
 
-    # Setup the virtual environment
-    python -m venv env
-    source env/bin/activate
-    pip install django
-    pip install -r requirements/requirements.in
+``` shell
+# Setup the virtual environment
+python -m venv env
+source env/bin/activate
+pip install django
+pip install -r requirements/requirements.in
 
-    # Run the tests
-    python runtests.py
-
+# Run the tests
+python runtests.py
+```
+    
 ### Test options
 
 Run using a more concise output style.
 
-    python runtests.py -q
-
+``` shell
+python runtests.py -q
+```
+    
 Run the tests for a given test case.
 
-    python runtests.py MyTestCase
-
+``` shell
+python runtests.py MyTestCase
+```
+    
 Run the tests for a given test method.
 
-    python runtests.py MyTestCase.test_this_method
-
+``` shell
+python runtests.py MyTestCase.test_this_method
+```
+    
 Shorter form to run the tests for a given test method.
 
-    python runtests.py test_this_method
-
+``` shell
+python runtests.py test_this_method
+```
+    
 Note: The test case and test method matching is fuzzy and will sometimes run other tests that contain a partial string match to the given  command line input.
 
 ### Running against multiple environments
 
 You can also use the excellent [tox][tox] testing tool to run the tests against all supported versions of Python and Django.  Install `tox` globally, and then simply run:
 
-    tox
-
+``` shell
+tox
+```
+    
 ## Pull requests
 
 It's a good idea to make pull requests early on.  A pull request represents the start of a discussion, and doesn't necessarily need to be the final, finished submission.
@@ -147,14 +171,18 @@ There are many great Markdown editors that make working with the documentation r
 
 To build the documentation, install MkDocs with `pip install mkdocs` and then run the following command.
 
-    mkdocs build
-
+``` shell
+mkdocs build
+```
+    
 This will build the documentation into the `site` directory.
 
 You can build the documentation and open a preview in a browser window by using the `serve` command.
 
-    mkdocs serve
-
+``` shell
+mkdocs serve
+```
+    
 ## Language style
 
 Documentation should be in English.  The tone of the documentation is very important - try to stick to a simple, plain, objective and well-balanced style where possible.
@@ -172,28 +200,37 @@ There are a couple of conventions you should follow when working on the document
 
 Headers should use the hash style.  For example:
 
-    ### Some important topic
+``` markdown
+### Some important topic
+``` 
 
 The underline style should not be used.  **Don't do this:**
 
-    Some important topic
-    ====================
+``` markdown
+Some important topic
+====================
+```
 
 ##### 2. Links
 
 Links should always use the reference style, with the referenced hyperlinks kept at the end of the document.
 
-    Here is a link to [some other thing][other-thing].
+``` markdown
+Here is a link to [some other thing][other-thing].
 
-    More text...
+More text...
 
-    [other-thing]: http://example.com/other/thing
+[other-thing]: http://example.com/other/thing
+```
 
 This style helps keep the documentation source consistent and readable.
 
 If you are hyperlinking to another document, you should use a relative link, and link to the `.md` suffix.  For example:
 
-    [authentication]: ../api-guide/authentication.md
+``` markdown
+[authentication]: ../api-guide/authentication.md
+```
+
 
 Linking in this style means you'll be able to click the hyperlink in your Markdown editor to open the referenced document.  When the documentation is built, these links will be converted into regular links to HTML pages.
 
@@ -201,11 +238,13 @@ Linking in this style means you'll be able to click the hyperlink in your Markdo
 
 If you want to draw attention to a note or warning, use a pair of enclosing lines, like so:
 
-    ---
+``` markdown
+---
 
-    **Note:** A useful documentation note.
+**Note:** A useful documentation note.
 
-    ---
+---
+```
 
 
 [cite]: https://www.w3.org/People/Berners-Lee/FAQ.html

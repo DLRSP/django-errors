@@ -39,7 +39,7 @@ directory = "news/"
 version = "0.17.0-dev"
 
 # For rendering properly for this project
-issue_format = "`#{issue} <https://github.com/DLRSP/django_errors/issues/{issue}>`_"
+issue_format = "`#{issue} <https://github.com/DLRSP/django-errors/issues/{issue}>`_"
 # template = "tools/news/template.rst"
 
 # Grouping of entries, within our changelog
