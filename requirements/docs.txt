@@ -120,13 +120,12 @@ mkdocs==1.2.3 \
     #   -r requirements/docs.in
     #   mkdocs-git-revision-date-plugin
     #   mkdocs-material
-mkdocs-git-revision-date-plugin==0.3.1 \
-    --hash=sha256:4abaef720763a64c952bed6829dcc180f67c97c60dd73914e90715e05d1cfb23 \
-    --hash=sha256:8ae50b45eb75d07b150a69726041860801615aae5f4adbd6b1cf4d51abaa03d5
+mkdocs-git-revision-date-plugin==0.3.2 \
+    --hash=sha256:2e67956cb01823dd2418e2833f3623dee8604cdf223bddd005fe36226a56f6ef
     # via -r requirements/docs.in
-mkdocs-material==8.0.1 \
-    --hash=sha256:3772c854dada5ba996448ca4b56c513d2a6f074815374349fb9597f869a3aa1e \
-    --hash=sha256:66d310f6cd9919cb8621322359f30dfd901d2d3372432281e5461bacc4e680cb
+mkdocs-material==8.2.5 \
+    --hash=sha256:95283c6af633809f32ba688fcf9bce4604af320e188d3e26fcb40d0e5ab9b823 \
+    --hash=sha256:cdfb39edc77f5c2bbfca02b4fc3764de38b2093eff121aed37674204439901ce
     # via -r requirements/docs.in
 mkdocs-material-extensions==1.0.3 \
     --hash=sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44 \
