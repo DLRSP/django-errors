@@ -16,55 +16,6 @@ if __name__ == "__main__":
         "--allow-unsafe",
     ] + sys.argv[1:]
 
-    subprocess.run(
-        [
-            "python36",
-            "-m",
-            "pip",
-            "install",
-            "pip",
-            "--upgrade",
-        ],
-        check=True,
-        capture_output=True,
-    )
-    subprocess.run(
-        [
-            "python36",
-            "-m",
-            "pip",
-            "install",
-            "pip-tools",
-            "--upgrade",
-        ],
-        check=True,
-        capture_output=True,
-    )
-    subprocess.run(
-        [
-            "python36",
-            *common_args,
-            "-P",
-            "Django>=2.2,<2.3",
-            "-o",
-            "py36-django22.txt",
-        ],
-        check=True,
-        capture_output=True,
-    )
-    subprocess.run(
-        [
-            "python36",
-            *common_args,
-            "-P",
-            "Django>=3.2a1,<3.3",
-            "-o",
-            "py36-django32.txt",
-        ],
-        check=True,
-        capture_output=True,
-    )
-
     # subprocess.run(["python37", "-m", "pip", "install", "pip", "--upgrade", ],
     #                check=True,
     #                capture_output=True,
@@ -232,6 +183,39 @@ if __name__ == "__main__":
     #         "Django>=4.0a1,<4.1",
     #         "-o",
     #         "py310-django40.txt",
+    #     ],
+    #     check=True,
+    #     capture_output=True,
+    # )
+
+    # subprocess.run(["python311", "-m", "pip", "install", "pip", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
+    # subprocess.run(["python311", "-m", "pip", "install", "pip-tools", "--upgrade", ],
+    #                check=True,
+    #                capture_output=True,
+    #                )
+    # subprocess.run(
+    #     [
+    #         "python311",
+    #         *common_args,
+    #         "-P",
+    #         "Django>=3.2a1,<3.3",
+    #         "-o",
+    #         "py311-django32.txt",
+    #     ],
+    #     check=True,
+    #     capture_output=True,
+    # )
+    # subprocess.run(
+    #     [
+    #         "python311",
+    #         *common_args,
+    #         "-P",
+    #         "Django>=4.0a1,<4.1",
+    #         "-o",
+    #         "py311-django40.txt",
     #     ],
     #     check=True,
     #     capture_output=True,
