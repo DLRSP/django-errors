@@ -16,7 +16,6 @@ If you like to add an image for your error's page, the suggested way is implemen
 
 2. Upload your images with `name` like the error's code of the page to be able to dynamically load different images with same html file.
 
-
 3. Create your own template tags to store the image inside the context view where you want to load image
 
     ``` python title="example/templatetags/errors.py"
