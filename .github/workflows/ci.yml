@@ -71,7 +71,7 @@ jobs:
 
     - uses: actions/setup-python@v4
       with:
-        python-version: "3.8"
+        python-version: "3.x"
 
     - name: Get pip cache dir
       id: pip-cache
@@ -155,10 +155,10 @@ jobs:
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-      # Finally, this sets the PR to allow auto-merging for patch and minor
+      # Finally, this sets the PR to allow auto-merging for patch, minor and major
       # updates if all checks pass
       - name: Enable auto-merge for Dependabot PRs
-        if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
+        # if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
