@@ -134,17 +134,18 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
 
-  dependabot:
-    name: Dependabot Pull Request Approve and Merge
+  bots:
+    name: BOTs (Dependabot/Pre-Commit-CI) Pull Request Approve and Merge
     runs-on: ubuntu-latest
     needs: [test-django, analyze]
-    # Checking the actor will prevent your Action run failing on non-Dependabot
-    # PRs but also ensures that it only does work for Dependabot PRs.
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    # Checking the actor will prevent your Action run failing on non-Dependabot or non-Pre-Commit-CI
+    # PRs but also ensures that it only does work for Dependabot PRs and Pre-Commit-CI
+    if: ${{ (github.actor == 'dependabot[bot]') || (github.actor == 'pre-commit-ci')) }}
     steps:
       # This first step will fail if there's no metadata and so the approval
       # will not occur.
       - name: Dependabot metadata
+        if: ${{ github.actor == 'dependabot[bot]'
         id: dependabot-metadata
         uses: dependabot/fetch-metadata@v1.5.1
         with:
