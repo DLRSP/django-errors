@@ -64,8 +64,5 @@ jobs:
           labels: |
             dependencies
             automated pr
-          assignees: dlrsp-bot
-          reviewers: dlrsp-dev
-          team-reviewers: |
-            DjangoTeam
+          assignees: ${{ github.actor }}
           draft: false
