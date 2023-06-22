@@ -64,8 +64,6 @@ jobs:
           git push -f origin ${{ github.ref_name }}:$BRANCH_NAME
       - name: Open pull request if needed
         if: steps.changes.outputs.count > 0
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         # Only open a PR if the branch is not attached to an existing one
         run: |
           PR=$(gh pr list --head $BRANCH_NAME --json number -q '.[0].number')
