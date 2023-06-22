@@ -49,7 +49,7 @@ jobs:
           done
           if [[ "${{ matrix.python-version }}" == "3.9" ]] ; then
             pip-compile --upgrade --generate-hashes --allow-unsafe -o requirements/docs.txt requirements/docs.in
-          fi         
+          fi
 
       - name: Create Pull Request
         id: cpr
