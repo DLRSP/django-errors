@@ -16,8 +16,8 @@
 * Check the demo repo on [GitHub](https://github.com/DLRSP/example/tree/django-errors)
 
 ## Requirements
--   Python 3.6 to 3.10 supported.
--   Django 2.2 to 4.0 supported.
+-   Python 3.8+ supported.
+-   Django 3.2+ supported.
 
 ## Setup
 1. Install from **pip**:

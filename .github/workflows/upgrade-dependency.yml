@@ -13,12 +13,11 @@ jobs:
     name: Upgrade & Open Pull Request
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: auto-dependency-upgrades-py-${{ matrix.python-version }}-dj-${{ matrix.django-version }}
+      BRANCH_NAME: auto-dependency-upgrades-py-${{ matrix.python-version }}
     strategy:
       max-parallel: 5
       matrix:
         python-version: [ "3.8", "3.9", "3.10", "3.11" ]
-        django-version: [ "2.2", "3.2", "4.2" ]
     steps:
       - uses: actions/checkout@v3
 
@@ -38,26 +37,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Upgrade Python dependencies ${{ matrix.python-version }} ${{ matrix.django-version }}
+      - name: Upgrade Python dependencies ${{ matrix.python-version }}
         run: |
-          typeset -A ranges=(["2.2"]="Django>=2.2,<2.3" ["3.2"]="Django>=3.2a1,<3.3" ["4.2"]="Django>=4.2,<4.3")
-          RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${{ matrix.django-version }}"
-          DJANGO_ENV=$(echo ${RAW_DJANGO_ENV} | sed 's/\.//g')
-          pip install -U pip pip-tools
-          pip-compile --upgrade --generate-hashes --allow-unsafe -P ${ranges[${{ matrix.django-version }}]} -o requirements/${DJANGO_ENV}.txt requirements/requirements.in
+          typeset -A ranges=(["3.2"]="Django>=3.2a1,<3.3" ["4.2"]="Django>=4.2,<4.3")
+          for x_dj_version in "3.2" "4.2"
+          do
+            RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${x_dj_version}"
+            DJANGO_ENV=$(echo ${RAW_DJANGO_ENV} | sed 's/\.//g')
+            pip install -U pip pip-tools
+            pip-compile --upgrade --generate-hashes --allow-unsafe -P ${ranges[${x_dj_version}]} -o requirements/${DJANGO_ENV}.txt requirements/requirements.in
+          done
+          if [[ "${{ matrix.python-version }}" == "3.9" ]] ; then
+            pip-compile --upgrade --generate-hashes --allow-unsafe -o requirements/docs.txt requirements/docs.in
+          fi         
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.BOT_PAT }}
-          commit-message: "[py-${{ matrix.python-version }}][dj-${{ matrix.django-version }}] Automated dependency upgrades"
+          commit-message: "[py-${{ matrix.python-version }}] Automated dependency upgrades"
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
-          title: '[py-${{ matrix.python-version }}][dj-${{ matrix.django-version }}] Automated dependency upgrades'
+          title: '[py-${{ matrix.python-version }}] Automated dependency upgrades'
           body: "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           labels: |
             dependencies
