@@ -32,6 +32,7 @@ jobs:
       - name: Upgrade Python dependencies ${{ matrix.python-version }} ${{ matrix.django-version }}
         # ADD YOUR CUSTOM DEPENDENCY UPGRADE COMMANDS BELOW
         run: |
+          ls -lrt 
           RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${{ matrix.django-version }}"
           DJANGO_ENV=$(echo ${RAW_ENV} | sed 's/\.//')
           pip install -U pip pip-tools
