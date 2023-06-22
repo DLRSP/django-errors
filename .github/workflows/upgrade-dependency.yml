@@ -23,6 +23,8 @@ jobs:
         django-version: [ "2.2", "3.2", "4.2" ]
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_PAT }}
 
       # START PYTHON DEPENDENCIES
       - uses: actions/setup-python@v3
