@@ -5,7 +5,7 @@ name: Upgrade dependencies
 on:
   workflow_dispatch: # Allow running on-demand
   schedule:
-    # Runs every Monday at 8:00 UTC (4:00 Eastern)
+    # Runs every Monday at 8:00 UTC
     - cron: '0 8 * * 1'
 
 jobs:
@@ -68,5 +68,4 @@ jobs:
           reviewers: dlrsp-dev
           team-reviewers: |
             DjangoTeam
-          milestone: 1
           draft: false
