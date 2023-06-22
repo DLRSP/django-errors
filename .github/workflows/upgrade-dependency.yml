@@ -28,11 +28,22 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3.3.1
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements/*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Upgrade Python dependencies ${{ matrix.python-version }} ${{ matrix.django-version }}
         # ADD YOUR CUSTOM DEPENDENCY UPGRADE COMMANDS BELOW
         run: |
-          ls -lrt 
           RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${{ matrix.django-version }}"
           DJANGO_ENV=$(echo ${RAW_ENV} | sed 's/\.//')
           pip install -U pip pip-tools
