@@ -28,12 +28,11 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-          django-version: ${{ matrix.django-version }}
           cache: pip
       - name: Upgrade Python dependencies ${{ matrix.python-version }} ${{ matrix.django-version }}
         # ADD YOUR CUSTOM DEPENDENCY UPGRADE COMMANDS BELOW
         run: |
-          RAW_DJANGO_ENV="py${{ matrix.python }}-django${{ matrix.django }}"
+          RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${{ matrix.django-version }}"
           DJANGO_ENV=$(echo ${RAW_ENV} | sed 's/\.//')
           pip install -U pip pip-tools
           pip-compile --upgrade -o requirements/${DJANGO_ENV}.txt requirements/requirements.in
