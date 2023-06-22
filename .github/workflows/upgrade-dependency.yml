@@ -44,7 +44,7 @@ jobs:
       - name: Upgrade Python dependencies ${{ matrix.python-version }} ${{ matrix.django-version }}
         run: |
           RAW_DJANGO_ENV="py${{ matrix.python-version }}-django${{ matrix.django-version }}"
-          DJANGO_ENV=$(echo ${RAW_DJANGO_ENV} | sed 's/\.//')
+          DJANGO_ENV=$(echo ${RAW_DJANGO_ENV} | sed 's/\.//g')
           pip install -U pip pip-tools
           pip-compile --upgrade --generate-hashes --allow-unsafe -o requirements/${DJANGO_ENV}.txt requirements/requirements.in
 
@@ -72,7 +72,7 @@ jobs:
           if [ -z $PR ]; then
             gh pr create \
             --head $BRANCH_NAME \
-            --title "Automated dependency upgrades" \
+            --title "Automated dependency upgrades Python [${{ matrix.python-version }}] Django [${{ matrix.django-version }}]" \
             --body "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           else
             echo "Pull request already exists, won't create a new one."
