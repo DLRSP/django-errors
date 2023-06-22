@@ -53,11 +53,11 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.BOT_PAT }}
-          commit-message: Update report
+          commit-message: "Automated dependency upgrades"
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: $BRANCH_NAME
+          branch: ${{ BRANCH_NAME }}
           delete-branch: true
           title: '[py-${{ matrix.python-version }}][dj-${{ matrix.django-version }}] Automated dependency upgrades'
           body: "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
