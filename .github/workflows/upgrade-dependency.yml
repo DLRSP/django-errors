@@ -13,8 +13,6 @@ jobs:
     name: Upgrade & Open Pull Request
     runs-on: ubuntu-latest
     env:
-      # This branch will receive updates each time the workflow runs
-      # It doesn't matter if it's deleted when merged, it'll be re-created
       BRANCH_NAME: auto-dependency-upgrades-py-${{ matrix.python-version }}-dj-${{ matrix.django-version }}
     strategy:
       max-parallel: 5
@@ -24,7 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # START PYTHON DEPENDENCIES
       - uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
@@ -54,7 +51,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.BOT_PAT }}
-          commit-message: "Automated dependency upgrades"
+          commit-message: "[py-${{ matrix.python-version }}][dj-${{ matrix.django-version }}] Automated dependency upgrades"
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
@@ -64,6 +61,6 @@ jobs:
           body: "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           labels: |
             dependencies
-            automated pr
+            python
           assignees: ${{ github.actor }}
           draft: false
