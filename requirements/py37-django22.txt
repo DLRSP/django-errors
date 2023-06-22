@@ -74,9 +74,9 @@ django==2.2.25 \
     --hash=sha256:08bad7ef7e90286b438dbe1412c3e633fbc7b96db04735f0c7baadeed52f3fad \
     --hash=sha256:b1e65eaf371347d4b13eb7e061b09786c973061de95390c327c85c1e2aa2349c
     # via -r requirements.in
-importlib-metadata==6.0.0 \
-    --hash=sha256:7efb448ec9a5e313a57655d35aa54cd3e01b7e1fbcf72dce1bf06119420f5bad \
-    --hash=sha256:e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d
+importlib-metadata==6.7.0 \
+    --hash=sha256:1aaf550d4f73e5d6783e7acb77aec43d49da8017410afae93822cc9cca98c4d4 \
+    --hash=sha256:cb52082e659e97afc5dac71e79de97d8681de3aa07ff18578330904a9d18e5b5
     # via
     #   pluggy
     #   pytest
