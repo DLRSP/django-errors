@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allow running on-demand
   schedule:
     # Runs every Monday at 8:00 UTC
-    - cron: '0 8 * * 1'
+    - cron: '0 8 * * *'
 
 jobs:
   upgrade:
