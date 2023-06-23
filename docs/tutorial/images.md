@@ -63,10 +63,10 @@ If you like to add an image for your error's page, the suggested way is implemen
     ```
 
 5. *(optional)* It could be useful use the `MEDIA_URL` setting inside template. To do it, add the `context_processor`:
-
+ 
     ``` python title="settings.py" hl_lines="12"
     TEMPLATES = [
-       {
+        {
            'BACKEND': 'django.template.backends.django.DjangoTemplates',
            'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
            'APP_DIRS': True,
@@ -79,17 +79,17 @@ If you like to add an image for your error's page, the suggested way is implemen
                    'django.template.context_processors.media',
                ],
            },
-      },
+        },
     ]
     ```
 
 6. *(optional)* And then use the `MEDIA_URL` tag inside template instead of `static` templatetags:
 
-    ``` html title="example/template/errors.html" hl_lines="8"
-    {% extends 'base.html' %}
-    {% load static errors %}
+   ``` html title="example/template/errors.html" hl_lines="8"
+   {% extends 'base.html' %}
+   {% load static errors %}
 
-    {% block content %}
+   {% block content %}
 
         {% load_error_img as error_img %}
 
