@@ -1,8 +1,10 @@
 name: Release
 
 on:
-  workflow_dispatch: # Trigger manually
+  push:
     branches: main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
     new-release:
@@ -10,19 +12,38 @@ jobs:
       steps:
         - uses: actions/checkout@v3
 
-        - name: Conventional Changelog Action
-          uses: TriPSs/conventional-changelog-action@v3
-          id: changelog
-          with:
-              github-token: ${{ secrets.PERSONAL_TOKEN }}
-              output-file: "false"
+        - name: Changelog
+          uses: scottbrenner/generate-changelog-action@master
+          id: Changelog
+          env:
+            REPO: ${{ github.repository }}
 
         - name: Create Release
-          uses: actions/create-release@v1
-          if: ${{ steps.changelog.outputs.skipped == 'false' }}
+          id: create_release
+          uses: actions/create-release@latest
           env:
-              GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           with:
-              tag_name: ${{ steps.changelog.outputs.tag }}
-              release_name: ${{ steps.changelog.outputs.tag }}
-              body: ${{ steps.changelog.outputs.clean_changelog }}
+            tag_name: ${{ github.ref }}
+            release_name: Release ${{ github.ref }}
+            body: |
+              ${{ steps.Changelog.outputs.changelog }}
+            draft: false
+            prerelease: false
+
+#        - name: Conventional Changelog Action
+#          uses: TriPSs/conventional-changelog-action@v3
+#          id: changelog
+#          with:
+#              github-token: ${{ secrets.PERSONAL_TOKEN }}
+#              output-file: "false"
+#
+#        - name: Create Release
+#          uses: actions/create-release@v1
+#          if: ${{ steps.changelog.outputs.skipped == 'false' }}
+#          env:
+#              GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+#          with:
+#              tag_name: ${{ steps.changelog.outputs.tag }}
+#              release_name: ${{ steps.changelog.outputs.tag }}
+#              body: ${{ steps.changelog.outputs.clean_changelog }}
