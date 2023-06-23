@@ -11,7 +11,7 @@ Release logic:
 """
 import django
 
-__version__ = "1.5.1-dev"
+__version__ = "1.5.1"
 __license__ = "MIT"
 __title__ = "django_errors"
 
