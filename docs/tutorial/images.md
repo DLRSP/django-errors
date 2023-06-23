@@ -85,17 +85,17 @@ If you like to add an image for your error's page, the suggested way is implemen
 
 6. *(optional)* And then use the `MEDIA_URL` tag inside template instead of `static` templatetags:
 
-   ``` html title="example/template/errors.html" hl_lines="8"
-   {% extends 'base.html' %}
-   {% load static errors %}
+    ``` html title="example/template/errors.html" hl_lines="8"
+    {% extends 'base.html' %}
+    {% load static errors %}
 
-   {% block content %}
+    {% block content %}
 
-        {% load_error_img as error_img %}
+         {% load_error_img as error_img %}
 
-        <div style="background-image: url( {{ MEDIA_URL }}{{ error_img }} );">
-            <strong>Oops! </strong> {{ error_message }}
-        </div>
+         <div style="background-image: url( {{ MEDIA_URL }}{{ error_img }} );">
+             <strong>Oops! </strong> {{ error_message }}
+         </div>
 
     {% endblock content %}
     ...
