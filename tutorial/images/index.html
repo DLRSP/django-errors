@@ -630,26 +630,26 @@
 </li>
 <li>
 <p><em>(optional)</em> And then use the <code>MEDIA_URL</code> tag inside template instead of <code>static</code> templatetags:</p>
-</li>
-</ol>
-<p>``` html title="example/template/errors.html" hl_lines="8"
-   {% extends 'base.html' %}
-   {% load static errors %}</p>
-<p>{% block content %}</p>
-<div class="highlight"><pre><span></span><code>    {% load_error_img as error_img %}
+<div class="highlight"><span class="filename">example/template/errors.html</span><pre><span></span><code>{% extends &#39;base.html&#39; %}
+{% load static errors %}
 
-    &lt;div style=&quot;background-image: url( {{ MEDIA_URL }}{{ error_img }} );&quot;&gt;
-        &lt;strong&gt;Oops! &lt;/strong&gt; {{ error_message }}
-    &lt;/div&gt;
+{% block content %}
+
+     {% load_error_img as error_img %}
+
+<span class="hll">     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-image: url( {{ MEDIA_URL }}{{ error_img }} );&quot;</span><span class="p">&gt;</span>
+</span>         <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Oops! <span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ error_message }}
+     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
 {% endblock content %}
 ...
-&lt;div style=&quot;background-image: url( {{ MEDIA_URL }}{{ error_img }} );&quot;&gt;
-   &lt;strong&gt;Oops! &lt;/strong&gt; {{ error_message }}
-&lt;/div&gt;
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-image: url( {{ MEDIA_URL }}{{ error_img }} );&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Oops! <span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ error_message }}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 ...
-```
 </code></pre></div>
+</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
