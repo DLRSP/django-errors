@@ -63,7 +63,7 @@ If you like to add an image for your error's page, the suggested way is implemen
     ```
 
 5. *(optional)* It could be useful use the `MEDIA_URL` setting inside template. To do it, add the `context_processor`:
- 
+
     ``` python title="settings.py" hl_lines="12"
     TEMPLATES = [
         {
