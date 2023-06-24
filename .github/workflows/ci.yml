@@ -146,7 +146,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
       - name: Rebase this branch if behind the main
         run: |
-          if [[ "$(git rev-list --left-right --count origin/main...${{ github.event.pull_request.head.sha }} | awk -F' ' '{print $1}')" != 0 ]] ; then 
+          if [[ "$(git rev-list --left-right --count origin/main...${{ github.event.pull_request.head.sha }} | awk -F' ' '{print $1}')" != 0 ]] ; then
             echo "This branch is not up to date with main: rebase it!";
             gh pr comment --body "/rebase" "$PR_URL"
           fi
