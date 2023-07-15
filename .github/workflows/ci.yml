@@ -22,7 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -122,6 +123,9 @@ jobs:
     # PRs but also ensures that it only does work for Dependabot PRs and Pre-Commit-CI
     if: github.actor == 'dependabot[bot]' || github.actor == 'pre-commit-ci[bot]' || github.actor == 'dlrsp-bot'
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
       - uses: actions/checkout@v3
 
       - name: Rebase this branch if behind the main
