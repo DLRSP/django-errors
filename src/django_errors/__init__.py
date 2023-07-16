@@ -11,7 +11,7 @@ Release logic:
 """
 import django
 
-__version__ = "1.6.2"
+__version__ = "1.6.3-dev"
 __version_info__ = tuple(int(i) if i.isdigit() else i for i in __version__.split("."))
 __license__ = "MIT"
 __title__ = "django_errors"
