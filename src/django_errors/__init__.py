@@ -12,6 +12,7 @@ Release logic:
 import django
 
 __version__ = "1.5.5"
+__version_info__ = tuple(int(i) if i.isdigit() else i for i in __version__.split('.'))
 __license__ = "MIT"
 __title__ = "django_errors"
 
@@ -19,7 +20,7 @@ __author__ = "DLRSP"
 __copyright__ = "Copyright 2010-present DLRSP"
 
 # Version synonym
-VERSION = __version__
+VERSION = __version_info__
 
 # Header encoding (see RFC5987)
 HTTP_HEADER_ENCODING = "iso-8859-1"
