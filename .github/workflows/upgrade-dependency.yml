@@ -15,7 +15,7 @@ jobs:
     env:
       BRANCH_NAME: auto-dependency-upgrades-py-${{ matrix.python-version }}
     strategy:
-      max-parallel: 5
+      max-parallel: 1
       matrix:
         python-version: [ "3.8", "3.9", "3.10", "3.11" ]
     steps:
