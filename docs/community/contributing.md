@@ -252,7 +252,7 @@ If you want to draw attention to a note or warning, use a pair of enclosing line
 [discussions]: https://github.com/DLRSP/django-errors/discussions
 [issues]: https://github.com/DLRSP/django-errors/issues?state=open
 [pep-8]: https://www.python.org/dev/peps/pep-0008/
-[build-status]: ../img/build-status.png
+[build-status]: ../images/build-status.png
 [pull-requests]: https://help.github.com/articles/using-pull-requests
 [tox]: https://tox.readthedocs.io/en/latest/
 [markdown]: https://daringfireball.net/projects/markdown/basics
