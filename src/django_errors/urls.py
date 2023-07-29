@@ -2,7 +2,7 @@
     Django Errors URL Pattern List.
 """
 
-from django.conf.urls import re_path
+from django.urls import re_path
 from django.views.decorators.cache import never_cache
 
 from . import views
