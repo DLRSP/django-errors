@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block headtitle %}
-	{{ error }} (405)[{{ request.method }}]
+	{{ error }} ({{ error_request_method }})[405]
 {% endblock headtitle %}
 
 {% block content %}
-    <section title="{{ error }} ({{ request.method }})">
+    <section title="{{ error }} ({{ error_request_method }})">
         <h2>
 			{{ error_message }}
 		</h2>

@@ -8,7 +8,6 @@ include tox.ini
 include LICENSE
 
 recursive-include requirements *.in *.txt
-recursive-exclude requirements *.py
-recursive-include src *.py *.html *.css *.js *.po *.mo *.gif *.png
+recursive-include src *.py *.html *.po *.mo
 recursive-include tests *.py
 recursive-exclude docs *
