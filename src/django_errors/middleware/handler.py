@@ -1,8 +1,8 @@
 """Django App's middleware for django-errors app"""
 from django.conf import settings
 from django.http import HttpResponseNotAllowed
-from django.shortcuts import render
-from django.utils.translation import ugettext_lazy as _
+from django.template import loader
+from django.utils.translation import gettext_lazy as _
 
 
 class HttpResponseNotAllowedMiddleware:
@@ -17,22 +17,23 @@ class HttpResponseNotAllowedMiddleware:
             error_msg = _(
                 "Sorry, the used method is not allowed for the page with that URL."
             )
-            context = {
-                "error": error,
-                "error_code": 405,
-                "error_message": f"{error_msg} ({request.method})",
-                "error_request_method": request.method,
-                "exception": None,
-            }
-            return render(
-                request,
+            template = loader.get_template(
                 getattr(
                     settings,
                     "TEMPLATE_ERROR_405",
                     getattr(settings, "TEMPLATE_ERROR_ALL", "errors/405.html"),
-                ),
-                context=context,
-                status=405,
+                )
+            )
+            context = {
+                "error": error,
+                "error_code": response.status_code,
+                "error_message": f"{error_msg} ({request.method})"
+                f"[{response.status_code}]",
+                "error_request_method": request.method,
+                "exception": None,
+            }
+            return HttpResponseNotAllowed(
+                request.method, template.render(context, request)
             )
 
         return response
