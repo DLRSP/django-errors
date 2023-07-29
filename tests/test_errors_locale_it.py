@@ -72,7 +72,8 @@ class ErrorsTestCase(TestCase):
         )
         self.assertContains(
             response,
-            b"Scusa, il metodo usato non \xc3\xa8 consentito per la pagina con questo URL.",
+            b"Scusa, il metodo usato non \xc3\xa8 consentito "
+            b"per la pagina con questo URL.",
             status_code=405,
             count=1,
         )
@@ -91,7 +92,8 @@ class ErrorsTestCase(TestCase):
         )
         self.assertContains(
             response,
-            b"Scusa, il metodo usato non \xc3\xa8 consentito per la pagina con questo URL.",
+            b"Scusa, il metodo usato non \xc3\xa8 consentito "
+            b"per la pagina con questo URL.",
             status_code=405,
             count=1,
         )
