@@ -77,7 +77,6 @@ class ErrorsTestCase(TestCase):
         self.assertContains(
             response, b"Method Not Allowed (GET)", status_code=405, count=2
         )
-        print(response.content)
         self.assertContains(
             response,
             b"Sorry, the used method is not allowed for the page with that URL.",
@@ -92,7 +91,6 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
         self.assertTemplateUsed(response, "errors/405.html")
-        print(response.content)
         self.assertContains(
             response, b"Method Not Allowed (POST)[405]", status_code=405, count=1
         )
