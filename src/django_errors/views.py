@@ -3,7 +3,6 @@ from django.conf import settings
 from django.http import (
     HttpResponseBadRequest,
     HttpResponseForbidden,
-    HttpResponseNotAllowed,
     HttpResponseNotFound,
     HttpResponseServerError,
 )
@@ -78,29 +77,6 @@ def custom_404(request, exception=None):
         "exception": exception,
     }
     return HttpResponseNotFound(template.render(context, request))
-
-
-def custom_405(request, permitted_methods=None, exception=None):
-    """Custom Page for 405 error (Method Not Allowed). url: /405"""
-    if permitted_methods is None:
-        permitted_methods = ["GET", "POST"]
-    error = _("Method Not Allowed")
-    error_msg = _("Sorry, the used method is not allowed for the page with that URL.")
-    template = loader.get_template(
-        getattr(
-            settings,
-            "TEMPLATE_ERROR_405",
-            getattr(settings, "TEMPLATE_ERROR_ALL", "errors/405.html"),
-        )
-    )
-    context = {
-        "error": error,
-        "error_code": 405,
-        "error_message": error_msg,
-        "error_request_method": request.method,
-        "exception": exception,
-    }
-    return HttpResponseNotAllowed(permitted_methods, template.render(context, request))
 
 
 @require_http_methods(["GET"])

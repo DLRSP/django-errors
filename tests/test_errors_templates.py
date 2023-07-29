@@ -67,7 +67,7 @@ class ErrorsTestCase(TestCase):
     def test_405_template_get(self):
         """Test the url of 405 page."""
         LOGGER.debug("405 Test URLs")
-        response = self.client.get("/test-template-405-get/", follow=True)
+        response = self.client.get("/test-method-only-post/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
         self.assertTemplateUsed(response, "errors/405.html")
@@ -88,10 +88,11 @@ class ErrorsTestCase(TestCase):
     def test_405_template_post(self):
         """Test the url of 405 page."""
         LOGGER.debug("405 Test URLs")
-        response = self.client.post("/test-template-405-post/", follow=True)
+        response = self.client.post("/test-method-only-get/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
         self.assertTemplateUsed(response, "errors/405.html")
+        print(response.content)
         self.assertContains(
             response, b"Method Not Allowed (POST)[405]", status_code=405, count=1
         )

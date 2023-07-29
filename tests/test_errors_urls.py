@@ -38,13 +38,6 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(404, response.status_code)
 
-    def test_405_urls(self):
-        """Test the url of 404 page."""
-        LOGGER.debug("405 Test GET URLs with only POST")
-        response = self.client.get("/405/", follow=True)
-        LOGGER.debug(response)
-        self.assertEqual(405, response.status_code)
-
     def test_not_exist_urls(self):
         """Test that redirects kicking in when trying to go to 404 page."""
         LOGGER.debug("404 Test Redirect URLs")

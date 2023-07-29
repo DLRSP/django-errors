@@ -50,7 +50,7 @@ class ErrorsTestCase(TestCase):
     def test_405_standard(self):
         """Test the url of 404 page."""
         LOGGER.debug("405 Test GET URLs with only POST")
-        response = self.client.get("/405/", follow=True)
+        response = self.client.post("/400/", follow=True)
         response_standard = self.client.get("/test-standard-405/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(type(response), type(response_standard))

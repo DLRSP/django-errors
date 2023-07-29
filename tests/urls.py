@@ -19,8 +19,6 @@ urlpatterns = [
     path("test-template-400/", views_templates.test_template_400),
     path("test-template-403/", views_templates.test_template_403),
     path("test-template-404/", views_templates.test_template_404),
-    path("test-template-405-get/", views_templates.test_template_405_get),
-    path("test-template-405-post/", views_templates.test_template_405_post),
     path("test-template-500/", views_templates.test_template_500),
     path("test-standard-400/", views_standard.test_view_400),
     path("test-standard-403/", views_standard.test_view_403),
@@ -41,8 +39,6 @@ urlpatterns += i18n_patterns(
     path("test-template-400/", views_templates.test_template_400),
     path("test-template-403/", views_templates.test_template_403),
     path("test-template-404/", views_templates.test_template_404),
-    path("test-template-405-get/", views_templates.test_template_405_get),
-    path("test-template-405-post/", views_templates.test_template_405_post),
     path("test-template-500/", views_templates.test_template_500),
     path("test-standard-400/", views_standard.test_view_400),
     path("test-standard-403/", views_standard.test_view_403),
@@ -62,9 +58,6 @@ handler403 = errors_views.custom_403
 
 handler404 = errors_views.custom_404
 """ Handle 404 error """
-
-handler405 = errors_views.custom_405
-""" Handle 405 error """
 
 handler500 = errors_views.custom_500
 """ Handle 500 error """

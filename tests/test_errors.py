@@ -30,6 +30,7 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug("Test URL accept only get")
         response = self.client.get("/admin/", follow=True)
         LOGGER.debug(response)
+        # todo: test auth protected: NOT_AUTHORIZED (should be 401)
         # self.assertEqual(403, response.status_code)
         # self.assertTemplateUsed(response, 'errors/403.html')
         self.assertRedirects(response, "/admin/login/?next=%2Fadmin%2F")
@@ -39,6 +40,7 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug("Test URL accept only get")
         response = self.client.get("/admin/", follow=True)
         LOGGER.debug(response)
+        # todo: test auth protected: NOT_AUTHORIZED (should be 401)
         # self.assertEqual(403, response.status_code)
         # self.assertTemplateUsed(response, 'errors/403.html')
         self.assertRedirects(response, "/admin/login/?next=%2Fadmin%2F")
@@ -56,8 +58,7 @@ class ErrorsTestCase(TestCase):
         response = self.client.get("/test-method-only-post/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
-        # todo: 405 handle doesn't use custom view
-        # self.assertTemplateUsed(response, 'errors/405.html')
+        self.assertTemplateUsed(response, "errors/405.html")
 
     def test_method_not_allowed_post(self):
         """Test that redirects kicking in when trying
@@ -66,5 +67,4 @@ class ErrorsTestCase(TestCase):
         response = self.client.post("/test-method-only-get/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
-        # todo: 405 handle doesn't use custom view
-        # self.assertTemplateUsed(response, 'errors/405.html')
+        self.assertTemplateUsed(response, "errors/405.html")

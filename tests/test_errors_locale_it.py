@@ -60,8 +60,9 @@ class ErrorsTestCase(TestCase):
     def test_405_template_get_locale_it(self):
         """Test the url of 405 page."""
         LOGGER.debug("405 Test URLs")
-        response = self.client.get("/it/test-template-405-get/", follow=True)
+        response = self.client.post("/it/test-template-405-get/", follow=True)
         LOGGER.debug(response)
+        print(response.content)
         self.assertEqual(405, response.status_code)
         self.assertContains(
             response, b"Metodo non consentito", status_code=405, count=2
@@ -70,8 +71,9 @@ class ErrorsTestCase(TestCase):
     def test_405_template_post_locale_it(self):
         """Test the url of 405 page."""
         LOGGER.debug("405 Test URLs")
-        response = self.client.post("/it/test-template-405-post/", follow=True)
+        response = self.client.get("/it/test-template-405-post/", follow=True)
         LOGGER.debug(response)
+        print(response.content)
         self.assertEqual(405, response.status_code)
         self.assertContains(
             response, b"Metodo non consentito", status_code=405, count=2

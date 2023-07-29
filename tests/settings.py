@@ -38,6 +38,7 @@ MIDDLEWARE = (
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.cache.FetchFromCacheMiddleware",
+    "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
 )
 
 USE_TZ = True

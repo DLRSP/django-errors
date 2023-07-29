@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block headtitle %}
-	{{ error }} ({{ error_request_method }})[405]
+	{{ error }} ({{ error_request_method }})[{{ error_code }}]
 {% endblock headtitle %}
 
 {% block content %}
