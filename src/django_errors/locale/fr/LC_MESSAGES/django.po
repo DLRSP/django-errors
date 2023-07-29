@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-15 19:04+0100\n"
+"POT-Creation-Date: 2023-07-29 15:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\src\django_errors\middleware\handler.py:15
+#: .\middleware\handler.py:16 .\views.py:87
 msgid "Method Not Allowed"
 msgstr ""
 
-#: .\src\django_errors\middleware\handler.py:17
+#: .\middleware\handler.py:18 .\views.py:88
 msgid "Sorry, the used method is not allowed for the page with that URL."
 msgstr ""
 
-#: .\src\django_errors\views.py:16
+#: .\views.py:18
 msgid "Bad Request"
 msgstr ""
 
-#: .\src\django_errors\views.py:18
+#: .\views.py:20
 msgid ""
 "The request could not be understood by the server due to malformed syntax."
 msgstr ""
 
-#: .\src\django_errors\views.py:28
+#: .\views.py:42
 msgid "Permission Denied"
 msgstr ""
 
-#: .\src\django_errors\views.py:29
+#: .\views.py:43
 msgid "You don't have permissions to see this page!"
 msgstr ""
 
-#: .\src\django_errors\views.py:38
+#: .\views.py:64
 msgid "Page Not Found"
 msgstr ""
 
-#: .\src\django_errors\views.py:39
+#: .\views.py:65
 msgid "Sorry, we don't have a page with that URL."
 msgstr ""
 
-#: .\src\django_errors\views.py:48
+#: .\views.py:109
 msgid "Internal Server Error"
 msgstr ""
 
-#: .\src\django_errors\views.py:49
+#: .\views.py:110
 msgid "Sorry, an error has occurred with the application."
 msgstr ""
