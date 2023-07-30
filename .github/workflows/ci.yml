@@ -123,11 +123,13 @@ jobs:
     # PRs but also ensures that it only does work for Dependabot PRs and Pre-Commit-CI
     if: github.actor == 'dependabot[bot]' || github.actor == 'pre-commit-ci[bot]' || github.actor == 'dlrsp-bot'
     steps:
+#      - uses: actions/checkout@v3
+#        with:
+#          ref: main
       - uses: actions/checkout@v3
         with:
-          ref: main
-      - uses: actions/checkout@v3
-
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          fetch-depth: 0
       - name: Rebase this branch if behind the main
         run: |
           if [[ "$(git rev-list --left-only --count origin/main...origin/${{ github.event.pull_request.head.ref }})" != 0 ]] ; then
