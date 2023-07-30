@@ -1,0 +1,17 @@
+---
+name: CI/CD
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ci:
+    uses: DLRSP/workflows/.github/workflows/ci.yaml@v1.1.0
