@@ -8,4 +8,4 @@ on:
 
 jobs:
   upgrade:
-    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v0.1.0
+    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v0.1.2
