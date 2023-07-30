@@ -13,13 +13,13 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           fetch-depth: 0
 
       - name: automatic rebase
         uses: cirrus-actions/rebase@1.8
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
       - name: remove label
         if: always()
