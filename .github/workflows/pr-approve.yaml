@@ -5,5 +5,5 @@ on:
   pull_request_target:
 
 jobs:
-  ci:
+  auto-approve:
     uses: DLRSP/workflows/.github/workflows/pr-approve.yaml@v1.5.0

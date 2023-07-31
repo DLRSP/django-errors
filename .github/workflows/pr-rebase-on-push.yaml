@@ -1,9 +1,11 @@
 ---
 name: Rebase PR (push)
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  ci:
+  rebase:
     uses: DLRSP/workflows/.github/workflows/pr-rebase-on-push.yaml@v1.5.0

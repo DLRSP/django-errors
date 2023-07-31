@@ -6,5 +6,5 @@ on:
     types: [opened]
 
 jobs:
-  ci:
-    uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.1.0
+  recap:
+    uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.5.0

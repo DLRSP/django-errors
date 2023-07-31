@@ -2,11 +2,11 @@
 name: Upgrade dependencies
 
 on:
-  workflow_dispatch: # Allow running on-demand
+  workflow_dispatch:
   schedule:
     # Runs every Monday at 8:00 UTC
     - cron: '0 8 * * *'
 
 jobs:
   upgrade:
-    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.1.0
+    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.5.0
