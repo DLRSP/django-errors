@@ -1,0 +1,10 @@
+---
+name: Recap PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  ci:
+    uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.1.0
