@@ -10,3 +10,4 @@ on:
 jobs:
   upgrade:
     uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.6.11
+    secrets: inherit
