@@ -14,4 +14,4 @@ on:
 
 jobs:
   docs:
-    uses: DLRSP/workflows/.github/workflows/docs.yaml@v1.1.0
+    uses: DLRSP/workflows/.github/workflows/docs.yaml@v1.4.13
