@@ -7,4 +7,4 @@ on:
 
 jobs:
   recap:
-    uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.5.1
+    uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.5.2
