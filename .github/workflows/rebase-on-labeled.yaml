@@ -7,4 +7,4 @@ on:
 
 jobs:
   main:
-    uses: DLRSP/workflows/.github/workflows/rebase-on-labeled.yaml@v1.1.0
+    uses: DLRSP/workflows/.github/workflows/rebase-on-labeled.yaml@v1.4.8
