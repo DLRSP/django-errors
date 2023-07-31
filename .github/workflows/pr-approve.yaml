@@ -7,3 +7,4 @@ on:
 jobs:
   auto-approve:
     uses: DLRSP/workflows/.github/workflows/pr-approve.yaml@v1.6.11
+    secrets: inherit

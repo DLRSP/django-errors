@@ -8,3 +8,4 @@ on:
 jobs:
   recap:
     uses: DLRSP/workflows/.github/workflows/pr-recap.yaml@v1.6.11
+    secrets: inherit

@@ -15,3 +15,4 @@ on:
 jobs:
   ci:
     uses: DLRSP/workflows/.github/workflows/ci.yaml@v1.6.11
+    secrets: inherit

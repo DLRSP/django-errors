@@ -8,3 +8,4 @@ on:
 jobs:
   main:
     uses: DLRSP/workflows/.github/workflows/pr-rebase-on-labeled.yaml@v1.6.11
+    secrets: inherit
