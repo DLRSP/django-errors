@@ -14,4 +14,4 @@ on:
 
 jobs:
   ci:
-    uses: DLRSP/workflows/.github/workflows/ci.yaml@v1.5.2
+    uses: DLRSP/workflows/.github/workflows/ci.yaml@v1.6.11
