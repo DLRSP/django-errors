@@ -6,6 +6,7 @@ include *.yml
 include *.cfg
 include tox.ini
 include LICENSE
+include CODEOWNERS
 
 recursive-include requirements *.in *.txt
 recursive-include src *.py *.html *.po *.mo
