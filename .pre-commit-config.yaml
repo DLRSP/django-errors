@@ -45,4 +45,4 @@ repos:
   hooks:
   - id: check-manifest
     args: [--no-build-isolation]
-    additional_dependencies: ["Django>=2.2"]
+    additional_dependencies: ["Django>=3.2"]
