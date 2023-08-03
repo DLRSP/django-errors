@@ -135,6 +135,6 @@ SOFTWARE.
 [quickstart]: tutorial/example.md
 
 [contributing]: community/contributing.md
-[pull-request]: community/contributing.png#pull-request
+[pull-request]: community/contributing.md#pull-requests
 
 [security-mail]: mailto:dlrsp.issue@gmail.com
