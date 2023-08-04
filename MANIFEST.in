@@ -10,5 +10,5 @@ include CODEOWNERS
 
 recursive-include requirements *.in *.txt
 recursive-include src *.py *.html *.po *.mo
-recursive-include tests *.py
+recursive-include tests *.py *.html
 recursive-exclude docs *
