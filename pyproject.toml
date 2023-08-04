@@ -55,7 +55,7 @@ type = [
 
 # bump-my-version
 [tool.bumpversion]
-current_version = "2.3.2"
+current_version = "2.3.3"
 allow_dirty = true
 
 [[tool.bumpversion.files]]
