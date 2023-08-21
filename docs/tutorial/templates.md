@@ -13,7 +13,6 @@ TEMPLATE_ERROR_404 = "other_error_page.html"
 
 # Custom Templates for only 405 error's inside the custom_app's templates
 TEMPLATE_ERROR_405 = "custom_app/another_error_page.html"
-
 ```
 
 All available `settings` variables are:

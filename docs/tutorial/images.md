@@ -36,8 +36,14 @@ If you like to add an image for your error's page, the suggested way is implemen
 
         if context_cache is None:
             try:
-                custom_context = MyBackground.objects.values('image__file').filter(name=context['error_code']).first()
-                context_cache = cache.set(cache_key, custom_context["image__file"], timeout=86400)
+                custom_context = (
+                    MyBackground.objects.values("image__file")
+                    .filter(name=context["error_code"])
+                    .first()
+                )
+                context_cache = cache.set(
+                    cache_key, custom_context["image__file"], timeout=86400
+                )
                 return custom_context["image__file"]
             except Exception as err:
                 print(err)
@@ -67,18 +73,18 @@ If you like to add an image for your error's page, the suggested way is implemen
     ``` python title="settings.py" hl_lines="12"
     TEMPLATES = [
         {
-           'BACKEND': 'django.template.backends.django.DjangoTemplates',
-           'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
-           'APP_DIRS': True,
-           'OPTIONS': {
-               'context_processors': [
-                   'django.template.context_processors.debug',
-                   'django.template.context_processors.request',
-                   'django.contrib.auth.context_processors.auth',
-                   'django.contrib.messages.context_processors.messages',
-                   'django.template.context_processors.media',
-               ],
-           },
+            "BACKEND": "django.template.backends.django.DjangoTemplates",
+            "DIRS": [os.path.join(PROJECT_DIR, "templates")],
+            "APP_DIRS": True,
+            "OPTIONS": {
+                "context_processors": [
+                    "django.template.context_processors.debug",
+                    "django.template.context_processors.request",
+                    "django.contrib.auth.context_processors.auth",
+                    "django.contrib.messages.context_processors.messages",
+                    "django.template.context_processors.media",
+                ],
+            },
         },
     ]
     ```
