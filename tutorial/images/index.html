@@ -583,8 +583,14 @@
 
     <span class="k">if</span> <span class="n">context_cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">custom_context</span> <span class="o">=</span> <span class="n">MyBackground</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;image__file&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;error_code&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
-            <span class="n">context_cache</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cache_key</span><span class="p">,</span> <span class="n">custom_context</span><span class="p">[</span><span class="s2">&quot;image__file&quot;</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">86400</span><span class="p">)</span>
+            <span class="n">custom_context</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">MyBackground</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;image__file&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s2">&quot;error_code&quot;</span><span class="p">])</span>
+                <span class="o">.</span><span class="n">first</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">context_cache</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+                <span class="n">cache_key</span><span class="p">,</span> <span class="n">custom_context</span><span class="p">[</span><span class="s2">&quot;image__file&quot;</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">86400</span>
+            <span class="p">)</span>
             <span class="k">return</span> <span class="n">custom_context</span><span class="p">[</span><span class="s2">&quot;image__file&quot;</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
@@ -612,18 +618,18 @@
 <p><em>(optional)</em> It could be useful use the <code>MEDIA_URL</code> setting inside template. To do it, add the <code>context_processor</code>:</p>
 <div class="highlight"><span class="filename">settings.py</span><pre><span></span><code><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-       <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
-       <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-       <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
-           <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
-               <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
-<span class="hll">               <span class="s1">&#39;django.template.context_processors.media&#39;</span><span class="p">,</span>
-</span>           <span class="p">],</span>
-       <span class="p">},</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.template.backends.django.DjangoTemplates&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DIRS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PROJECT_DIR</span><span class="p">,</span> <span class="s2">&quot;templates&quot;</span><span class="p">)],</span>
+        <span class="s2">&quot;APP_DIRS&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;OPTIONS&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;context_processors&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;django.template.context_processors.debug&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;django.template.context_processors.request&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;django.contrib.auth.context_processors.auth&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;django.contrib.messages.context_processors.messages&quot;</span><span class="p">,</span>
+<span class="hll">                <span class="s2">&quot;django.template.context_processors.media&quot;</span><span class="p">,</span>
+</span>            <span class="p">],</span>
+        <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">]</span>
 </code></pre></div>
@@ -656,7 +662,7 @@
   <small>
     
       Last update:
-      2023-06-24
+      2023-08-21
     
   </small>
 </div>
