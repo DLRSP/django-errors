@@ -30,8 +30,8 @@ We **highly recommend** and only officially support the latest patch release of 
 
     ``` python title="settings.py"
     INSTALLED_APPS = [
-        ...
-        'django_errors',
+        # ...other apps
+        "django_errors"
     ]
     ```
 
@@ -62,9 +62,9 @@ We **highly recommend** and only officially support the latest patch release of 
 
     ``` python title="settings.py"
     MIDDLEWARE = (
-        ...
+        # ...other middleware
         "django_errors.middleware.handler.HttpResponseNotAllowedMiddleware",
-        ...
+        # ...other middleware
     )
     ```
 
@@ -73,7 +73,7 @@ We **highly recommend** and only officially support the latest patch release of 
     ``` python title="settings.py"
     MIDDLEWARE = (
         "django.middleware.common.BrokenLinkEmailsMiddleware",  # <-- Error Manager 404
-        ...
+        ...,
     )
     ```
 
