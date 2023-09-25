@@ -3,11 +3,16 @@ name: Upgrade dependencies
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'requirements/*.in'
   schedule:
     # Runs every Monday at 8:00 UTC
     - cron: '0 8 * * *'
 
 jobs:
   upgrade:
-    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.7.16
+    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.8.12
     secrets: inherit
