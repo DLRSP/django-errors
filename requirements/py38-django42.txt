@@ -26,9 +26,9 @@ backports-zoneinfo==0.2.1 \
     --hash=sha256:f04e857b59d9d1ccc39ce2da1021d196e47234873820cbeaad210724b1ee28ac \
     --hash=sha256:fadbfe37f74051d024037f223b8e001611eac868b5c5b06144ef4d8b799862f2
     # via django
-django==4.2.7 \
-    --hash=sha256:8e0f1c2c2786b5c0e39fe1afce24c926040fad47c8ea8ad30aaf1188df29fc41 \
-    --hash=sha256:e1d37c51ad26186de355cbcec16613ebdabfa9689bbade9c538835205a8abbe9
+django==4.2.8 \
+    --hash=sha256:6cb5dcea9e3d12c47834d32156b8841f533a4493c688e2718cafd51aa430ba6d \
+    --hash=sha256:d69d5e36cc5d9f4eb4872be36c622878afcdce94062716cf3e25bcedcb168b62
     # via -r requirements/requirements.in
 sqlparse==0.4.4 \
     --hash=sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3 \
