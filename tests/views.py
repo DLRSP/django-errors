@@ -1,4 +1,5 @@
 """Test's view for django-errors"""
+
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods

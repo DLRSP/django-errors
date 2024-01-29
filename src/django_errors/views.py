@@ -1,4 +1,5 @@
 """Django Views for django-errors module"""
+
 from django.conf import settings
 from django.http import (
     HttpResponseBadRequest,

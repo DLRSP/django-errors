@@ -1,4 +1,5 @@
 """Test's settings"""
+
 import os
 
 from django.utils.translation import gettext_noop

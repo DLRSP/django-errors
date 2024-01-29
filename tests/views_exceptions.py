@@ -1,4 +1,5 @@
 """Test's view exceptions"""
+
 from django.core.exceptions import PermissionDenied, SuspiciousOperation
 from django.http import Http404
 

@@ -1,4 +1,5 @@
 """Django App's middleware for django-errors app"""
+
 from django.conf import settings
 from django.http import HttpResponseNotAllowed
 from django.template import loader
