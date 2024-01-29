@@ -1,4 +1,5 @@
 """Test's view for django-errors"""
+
 from django_errors.views import custom_400, custom_403, custom_404, custom_500
 
 

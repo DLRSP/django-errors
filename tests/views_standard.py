@@ -1,4 +1,5 @@
 """Test's view for django-errors"""
+
 from django.http import (
     HttpResponseBadRequest,
     HttpResponseForbidden,

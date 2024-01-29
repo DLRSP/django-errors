@@ -1,4 +1,5 @@
 """Test's urls view for django-errors"""
+
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include, path, re_path

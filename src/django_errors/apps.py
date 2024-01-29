@@ -1,4 +1,5 @@
 """Django App's config for django-errors app"""
+
 from django.apps import AppConfig
 
 

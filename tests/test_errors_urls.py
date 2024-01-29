@@ -1,4 +1,5 @@
 """Unit Tests for the module"""
+
 import logging
 
 from django.test import TestCase
