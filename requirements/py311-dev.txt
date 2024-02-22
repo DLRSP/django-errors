@@ -124,9 +124,9 @@ tox-py==1.3.1 \
     --hash=sha256:51393c6df0b0d16c4d0acdfba947820a028c673f7b9e3ff1fd06146827884daf \
     --hash=sha256:749ceb27062db13268881ec2f9bb0d8673839ea75feb0957f74756025737e256
     # via -r requirements/dev.in
-virtualenv==20.25.0 \
-    --hash=sha256:4238949c5ffe6876362d9c0180fc6c3a824a7b12b80604eeb8085f2ed7460de3 \
-    --hash=sha256:bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b
+virtualenv==20.25.1 \
+    --hash=sha256:961c026ac520bac5f69acb8ea063e8a4f071bcc9457b9c1f28f6b085c511583a \
+    --hash=sha256:e08e13ecdca7a0bd53798f356d5831434afa5b07b93f0abdf0797b7a06ffe197
     # via tox
 wheel==0.42.0 \
     --hash=sha256:177f9c9b0d45c47873b619f5b650346d632cdc35fb5e4d25058e09c9e581433d \
