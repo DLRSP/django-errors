@@ -103,9 +103,9 @@ py==1.11.0 \
     --hash=sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719 \
     --hash=sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378
     # via tox
-pytest==8.0.2 \
-    --hash=sha256:d4051d623a2e0b7e51960ba963193b09ce6daeb9759a451844a21e4ddedfc1bd \
-    --hash=sha256:edfaaef32ce5172d5466b5127b42e0d6d35ebbe4453f0e3505d96afd93f6b096
+pytest==8.1.0 \
+    --hash=sha256:ee32db7af8de4629a455806befa90559f307424c07b8413ccfc30bf5b221dd7e \
+    --hash=sha256:f8fa04ab8f98d185113ae60ea6d79c22f8143b14bc1caeced44a0ab844928323
     # via
     #   -r requirements/dev.in
     #   pytest-django
