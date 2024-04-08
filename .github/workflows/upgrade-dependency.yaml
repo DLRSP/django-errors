@@ -14,5 +14,5 @@ on:
 
 jobs:
   upgrade:
-    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.11.7
+    uses: DLRSP/workflows/.github/workflows/upgrade-dependency.yaml@v1.12.5
     secrets: inherit

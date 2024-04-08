@@ -8,5 +8,5 @@ on:
 
 jobs:
   rebase:
-    uses: DLRSP/workflows/.github/workflows/pr-rebase-on-push.yaml@v1.11.7
+    uses: DLRSP/workflows/.github/workflows/pr-rebase-on-push.yaml@v1.12.5
     secrets: inherit
