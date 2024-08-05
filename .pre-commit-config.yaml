@@ -16,7 +16,7 @@ repos:
   - id: pyupgrade
     args: [--py36-plus]
 - repo: https://github.com/psf/black
-  rev: 24.4.2
+  rev: 24.8.0
   hooks:
   - id: black
 - repo: https://github.com/asottile/blacken-docs
@@ -31,7 +31,7 @@ repos:
   - id: isort
     args: ["--profile", "black"]
 - repo: https://github.com/PyCQA/flake8
-  rev: 7.1.0
+  rev: 7.1.1
   hooks:
   - id: flake8
     additional_dependencies:
