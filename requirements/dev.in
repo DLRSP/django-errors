@@ -1,9 +1,0 @@
-pip
-setuptools
-wheel
-tox
-tox-py
-coverage
-pytest
-pytest-django
-pytest-randomly
