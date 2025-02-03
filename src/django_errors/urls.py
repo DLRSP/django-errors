@@ -1,5 +1,5 @@
 """
-    Django Errors URL Pattern List.
+Django Errors URL Pattern List.
 """
 
 from django.urls import re_path
