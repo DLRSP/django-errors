@@ -40,7 +40,7 @@ repos:
     - flake8-tidy-imports
     - flake8-typing-imports
 - repo: https://github.com/mgedmin/check-manifest
-  rev: "0.50"
+  rev: "0.51"
   hooks:
   - id: check-manifest
     args: [--no-build-isolation]
