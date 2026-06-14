@@ -53,7 +53,6 @@ class Build(_build):
 
 class InstallLib(_install_lib):
     def run(self):
-        self.run_command("compile_translations")
         _install_lib.run(self)
 
 
