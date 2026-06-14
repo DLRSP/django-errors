@@ -14,6 +14,9 @@ on:
 
 jobs:
   ci:
-    # Pin to @main while validating the tox matrix change; tag workflows and bump here after merge.
     uses: DLRSP/workflows/.github/workflows/ci.yaml@main
+    with:
+      requirements-ref: main
+      install-test-deps: true
+      assert-wheel-locks: true
     secrets: inherit

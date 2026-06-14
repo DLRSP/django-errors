@@ -86,6 +86,20 @@ version = { attr = "django_errors.__version__" }
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.data-files]
+"share/django-errors/requirements" = [
+  "requirements/py39-django42.txt",
+  "requirements/py310-django32.txt",
+  "requirements/py310-django42.txt",
+  "requirements/py310-django52.txt",
+  "requirements/py311-django42.txt",
+  "requirements/py311-django52.txt",
+  "requirements/py312-django42.txt",
+  "requirements/py312-django52.txt",
+  "requirements/py313-django52.txt",
+  "requirements/py314-django52.txt",
+]
+
 [tool.distutils.bdist_wheel]
 universal = false
 
@@ -150,7 +164,7 @@ package = "django_errors"
 package_dir = "src"
 filename = "CHANGELOG.rst"
 directory = "news/"
-version = "2.3.2"
+version = "2.3.5"
 issue_format = "`#{issue} <https://github.com/DLRSP/django-errors/issues/{issue}>`_"
 type = [
     { name = "Process", directory = "process", showcontent = true },
@@ -168,3 +182,8 @@ allow_dirty = true
 
 [[tool.bumpversion.files]]
 filename = "./src/django_errors/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
