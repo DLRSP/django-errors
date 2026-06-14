@@ -15,9 +15,16 @@ dynamic = ["version"]
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["django", "errors"]
+keywords = [
+    "django",
+    "errors",
+    "404",
+    "500",
+    "error-handling",
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
+    "Topic :: System :: Logging",
     "Environment :: Web Environment",
     "Framework :: Django",
     "Framework :: Django :: 3.2",
@@ -46,6 +53,10 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/DLRSP/django-errors"
+Documentation = "https://github.com/DLRSP/django-errors/"
+Repository = "https://github.com/DLRSP/django-errors"
+Issues = "https://github.com/DLRSP/django-errors/issues"
+Changelog = "https://github.com/DLRSP/django-errors/blob/main/CHANGELOG.rst"
 
 [project.optional-dependencies]
 testing = [
@@ -90,7 +101,6 @@ ignore = [
     "docs/community/third-party-packages.md",
     "docs/tutorial/customize.md",
 ]
-["AGENTS.md"]
 
 # Read by flake8 when flake8-pyproject is installed (extra `linting`).
 [tool.flake8]
