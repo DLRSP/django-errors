@@ -1,0 +1,15 @@
+---
+name: Changelog & versions
+on:
+  workflow_call:
+  push:
+    branches: [main]
+    paths:
+      - changelog.md
+      - CHANGELOG.rst
+      - pyproject.toml
+      - news/**
+jobs:
+  changelog:
+    uses: DLRSP/workflows/.github/workflows/changelog.yaml@main
+    secrets: inherit

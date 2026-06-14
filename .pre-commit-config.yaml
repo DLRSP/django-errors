@@ -16,7 +16,7 @@ repos:
   - id: pyupgrade
     args: [--py36-plus]
 - repo: https://github.com/psf/black-pre-commit-mirror
-  rev: 26.5.1
+  rev: 26.3.1
   hooks:
   - id: black
 - repo: https://github.com/asottile/blacken-docs
@@ -26,7 +26,7 @@ repos:
     additional_dependencies:
     - black>=22.12.0
 - repo: https://github.com/pycqa/isort
-  rev: 9.0.0a3
+  rev: 8.0.1
   hooks:
   - id: isort
     args: ["--profile", "black"]
@@ -35,6 +35,7 @@ repos:
   hooks:
   - id: flake8
     additional_dependencies:
+    - flake8-pyproject
     - flake8-bugbear
     - flake8-comprehensions
     - flake8-tidy-imports
@@ -44,4 +45,8 @@ repos:
   hooks:
   - id: check-manifest
     args: [--no-build-isolation]
-    additional_dependencies: ["Django>=3.2"]
+    additional_dependencies:
+      - Django>=3.2
+      - build
+      - setuptools>=77
+      - wheel

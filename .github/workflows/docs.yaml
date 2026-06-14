@@ -7,9 +7,11 @@ on:
       - main
     paths:
       - 'docs/**'
+      - 'mkdocs.yml'
   pull_request:
     paths:
       - 'docs/**'
+      - 'mkdocs.yml'
   workflow_dispatch:
 
 jobs:

@@ -1,13 +1,16 @@
 [build-system]
 requires = [
-  "setuptools >= 77; python_version >= '3.9'",
-  "setuptools >= 40.8.0; python_version < '3.9'",
-  "wheel",
+    "setuptools >= 77; python_version >= '3.9'",
+    "setuptools >= 40.8.0; python_version < '3.9'",
+    "wheel",
 ]
 build-backend = "setuptools.build_meta"
 
 [tool.black]
-target-version = ['py38']
+line-length = 80
+target-version = [
+    "py311",
+]
 
 [tool.isort]
 profile = "black"
@@ -22,17 +25,12 @@ no_implicit_optional = true
 show_error_codes = true
 warn_unreachable = true
 warn_unused_ignores = true
-
-[[tool.mypy.overrides]]
-module = "tests.*"
-allow_untyped_defs = true
+overrides = [
+    { module = "tests.*", allow_untyped_defs = true },
+]
 
 [tool.pytest.ini_options]
-addopts = """\
-    --strict-config
-    --strict-markers
-    --ds=tests.settings
-    """
+addopts = "--strict-config\n    --strict-markers\n    --ds=tests.settings\n    "
 django_find_project = false
 
 [tool.towncrier]
@@ -41,29 +39,43 @@ package_dir = "src"
 filename = "CHANGELOG.rst"
 directory = "news/"
 version = "2.3.2"
-
-# For rendering properly for this project
 issue_format = "`#{issue} <https://github.com/DLRSP/django-errors/issues/{issue}>`_"
-# template = "tools/news/template.rst"
-
-# Grouping of entries, within our changelog
 type = [
-  { name = "Process",                   directory = "process", showcontent = true },
-  { name = "Deprecations and Removals", directory = "removal", showcontent = true },
-  { name = "Features",                  directory = "feature", showcontent = true },
-  { name = "Bug Fixes",                 directory = "bugfix",  showcontent = true },
-  { name = "Vendored Libraries",        directory = "vendor",  showcontent = true },
-  { name = "Improved Documentation",    directory = "doc",     showcontent = true },
-  { name = "Trivial Changes",           directory = "trivial", showcontent = false },
+    { name = "Process", directory = "process", showcontent = true },
+    { name = "Deprecations and Removals", directory = "removal", showcontent = true },
+    { name = "Features", directory = "feature", showcontent = true },
+    { name = "Bug Fixes", directory = "bugfix", showcontent = true },
+    { name = "Vendored Libraries", directory = "vendor", showcontent = true },
+    { name = "Improved Documentation", directory = "doc", showcontent = true },
+    { name = "Trivial Changes", directory = "trivial", showcontent = false },
 ]
 
-# bump-my-version
 [tool.bumpversion]
 current_version = "2.3.5"
 allow_dirty = true
+files = [
+    { filename = "./setup.cfg" },
+    { filename = "./src/django_errors/__init__.py" },
+]
 
-[[tool.bumpversion.files]]
-filename = "./setup.cfg"
-
-[[tool.bumpversion.files]]
-filename = "./src/django_errors/__init__.py"
+[tool.flake8]
+max-line-length = 80
+select = [
+    "E",
+    "F",
+    "W",
+    "B",
+    "B950",
+    "C",
+    "I",
+    "TYP",
+]
+ignore = [
+    "E203",
+    "E501",
+    "W503",
+    "B950",
+]
+per-file-ignores = [
+    "**/migrations/*:B950",
+]

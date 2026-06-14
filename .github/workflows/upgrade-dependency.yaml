@@ -3,11 +3,6 @@ name: Upgrade dependencies
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'requirements/*.in'
   schedule:
     # Runs every Monday at 8:00 UTC
     - cron: '0 8 * * *'
