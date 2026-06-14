@@ -24,7 +24,9 @@ class ErrorsTestCase(TestCase):
         response = self.client.get("/it/test-template-400/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(400, response.status_code)
-        self.assertContains(response, b"Brutta Richiesta", status_code=400, count=2)
+        self.assertContains(
+            response, b"Brutta Richiesta", status_code=400, count=2
+        )
 
     def test_403_template_locale_it(self):
         """Test the url of 403 page."""
@@ -33,7 +35,9 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(403, response.status_code)
         self.assertTemplateUsed(response, "errors/403.html")
-        self.assertContains(response, b"Permesso Negato", status_code=403, count=2)
+        self.assertContains(
+            response, b"Permesso Negato", status_code=403, count=2
+        )
         self.assertContains(
             response,
             b"Non hai il permesso per vedere questa pagina!",
@@ -47,7 +51,9 @@ class ErrorsTestCase(TestCase):
         response = self.client.get("/it/test-template-404/", follow=True)
         LOGGER.debug(response)
         self.assertEqual(404, response.status_code)
-        self.assertContains(response, b"Pagina non trovata", status_code=404, count=2)
+        self.assertContains(
+            response, b"Pagina non trovata", status_code=404, count=2
+        )
 
     def test_not_exist_urls_locale_it(self):
         """Test that redirects kicking in when trying to go to 404 page."""
@@ -56,7 +62,9 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         print(response.content)
         self.assertEqual(404, response.status_code)
-        self.assertContains(response, b"Pagina non trovata", status_code=404, count=2)
+        self.assertContains(
+            response, b"Pagina non trovata", status_code=404, count=2
+        )
 
     def test_405_template_get_locale_it(self):
         """Test the url of 405 page."""
@@ -66,7 +74,10 @@ class ErrorsTestCase(TestCase):
         self.assertEqual(405, response.status_code)
         print(response.content)
         self.assertContains(
-            response, b"Metodo non consentito (POST)[405]", status_code=405, count=1
+            response,
+            b"Metodo non consentito (POST)[405]",
+            status_code=405,
+            count=1,
         )
         self.assertContains(
             response, b"Metodo non consentito (POST)", status_code=405, count=2
@@ -86,7 +97,10 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(405, response.status_code)
         self.assertContains(
-            response, b"Metodo non consentito (GET)[405]", status_code=405, count=1
+            response,
+            b"Metodo non consentito (GET)[405]",
+            status_code=405,
+            count=1,
         )
         self.assertContains(
             response, b"Metodo non consentito (GET)", status_code=405, count=2

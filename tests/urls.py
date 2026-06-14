@@ -30,7 +30,9 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    re_path(r"^jsi18n/$", JavaScriptCatalog.as_view(), name="javascript-catalog"),
+    re_path(
+        r"^jsi18n/$", JavaScriptCatalog.as_view(), name="javascript-catalog"
+    ),
     path("", include("django_errors.urls")),
     path("test-method-only-get/", views.test_view_405_only_get),
     path("test-method-only-post/", views.test_view_405_only_post),

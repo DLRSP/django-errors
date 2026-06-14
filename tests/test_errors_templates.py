@@ -41,7 +41,9 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(403, response.status_code)
         self.assertTemplateUsed(response, "errors/403.html")
-        self.assertContains(response, b"Permission Denied", status_code=403, count=2)
+        self.assertContains(
+            response, b"Permission Denied", status_code=403, count=2
+        )
         self.assertContains(
             response,
             b"You don&#x27;t have permissions to see this page!",
@@ -56,7 +58,9 @@ class ErrorsTestCase(TestCase):
         LOGGER.debug(response)
         self.assertEqual(404, response.status_code)
         self.assertTemplateUsed(response, "errors/404.html")
-        self.assertContains(response, b"Page Not Found", status_code=404, count=2)
+        self.assertContains(
+            response, b"Page Not Found", status_code=404, count=2
+        )
         print(response.content)
         self.assertContains(
             response,
@@ -93,7 +97,10 @@ class ErrorsTestCase(TestCase):
         self.assertEqual(405, response.status_code)
         self.assertTemplateUsed(response, "errors/405.html")
         self.assertContains(
-            response, b"Method Not Allowed (POST)[405]", status_code=405, count=1
+            response,
+            b"Method Not Allowed (POST)[405]",
+            status_code=405,
+            count=1,
         )
         self.assertContains(
             response, b"Method Not Allowed (POST)", status_code=405, count=2
