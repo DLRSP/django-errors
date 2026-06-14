@@ -6,7 +6,7 @@ It's an app to wrap Django errors.
 
 These packages are required:
 
-* Python (3.8+)
+* Python (3.9+)
 * Django (3.2+)
 
 We **highly recommend** and only officially support the latest patch release of each Python and Django series.

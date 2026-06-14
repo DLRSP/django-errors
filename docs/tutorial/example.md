@@ -16,7 +16,7 @@ python -m venv env
 source env/bin/activate  # On Windows use `env\Scripts\activate`
 
 # Install Django and django-errors into the virtual environment
-pip install -r requirements/py38-django32.txt
+pip install -r requirements/py39-django42.txt
 
 # Now sync your database for the first time
 python manage.py migrate
