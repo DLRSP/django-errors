@@ -84,6 +84,14 @@ target-version = ['py311']
 [tool.isort]
 profile = "black"
 
+[tool.check-manifest]
+ignore = [
+    "AGENTS.md",
+    "docs/community/third-party-packages.md",
+    "docs/tutorial/customize.md",
+]
+["AGENTS.md"]
+
 # Read by flake8 when flake8-pyproject is installed (extra `linting`).
 [tool.flake8]
 max-line-length = 80
