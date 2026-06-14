@@ -5,6 +5,74 @@ requires = [
   "wheel",
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-errors"
+description = "Django application for handling server errors."
+authors = [
+    { name = "DLRSP", email = "dlrsp.dev@gmail.com" },
+]
+requires-python = ">=3.8"
+dynamic = ["version"]
+readme = "README.md"
+license = "MIT"
+keywords = ["django", "errors"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "Django>=3.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/DLRSP/django-errors"
+
+[project.optional-dependencies]
+testing = [
+    "coverage",
+    "codecov",
+]
+linting = [
+    "flake8",
+    "pylint",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.dynamic]
+version = { attr = "django_errors.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.distutils.bdist_wheel]
+universal = false
+
 [tool.black]
 line-length = 80
 target-version = ['py311']
@@ -12,6 +80,14 @@ target-version = ['py311']
 profile = "black"
 
 # Read by flake8 when flake8-pyproject is installed (extra `linting`).
+[tool.flake8]
+max-line-length = 80
+select = ["E", "F", "W", "B", "B950", "C", "I", "TYP"]
+ignore = ["E203", "E501", "W503", "B950"]
+per-file-ignores = [
+    "**/migrations/*:B950",
+]
+
 [tool.mypy]
 check_untyped_defs = true
 disallow_any_generics = true
@@ -22,13 +98,29 @@ no_implicit_optional = true
 show_error_codes = true
 warn_unreachable = true
 warn_unused_ignores = true
-overrides = [
-    { module = "tests.*", allow_untyped_defs = true },
-]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+allow_untyped_defs = true
 
 [tool.pytest.ini_options]
-addopts = "--strict-config\n    --strict-markers\n    --ds=tests.settings\n    "
+addopts = """\
+    --strict-config
+    --strict-markers
+    --ds=tests.settings
+    """
 django_find_project = false
+pythonpath = ["src"]
+
+[tool.coverage.paths]
+source = ["src", ".tox/*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["django_errors"]
+
+[tool.coverage.report]
+show_missing = true
 
 [tool.towncrier]
 package = "django_errors"
@@ -50,15 +142,6 @@ type = [
 [tool.bumpversion]
 current_version = "2.3.5"
 allow_dirty = true
-files = [
-    { filename = "./setup.cfg" },
-    { filename = "./src/django_errors/__init__.py" },
-]
 
-[tool.flake8]
-max-line-length = 80
-select = ["E", "F", "W", "B", "B950", "C", "I", "TYP"]
-ignore = ["E203", "E501", "W503", "B950"]
-per-file-ignores = [
-    "**/migrations/*:B950",
-]
+[[tool.bumpversion.files]]
+filename = "./src/django_errors/__init__.py"
