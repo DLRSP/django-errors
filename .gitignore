@@ -169,3 +169,8 @@ pip-log.txt
 ## Gh-Pages
 #############
 site
+
+# AI
+AGENTS.md
+.**/rules/*.mdc
+.**/commands/*.md

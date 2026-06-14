@@ -1,4 +1,5 @@
 include *.py
+include *.toml
 include *.rst
 include *.md
 include *.yaml
@@ -10,4 +11,4 @@ include CODEOWNERS
 recursive-include requirements *.in *.txt
 recursive-include src *.py *.html *.po *.mo
 recursive-include tests *.py *.html
-recursive-exclude docs *
+recursive-include docs *.md

@@ -21,21 +21,32 @@ class CompileTranslations(Command):
         pass
 
     def run(self):
+        try:
+            from django.core.management import call_command
+        except ModuleNotFoundError:
+            return
         curdir = os.getcwd()
-        os.chdir(os.path.realpath(os.path.join("src", "django_errors")))
-        from django.core.management import call_command
-
+        os.chdir(
+            os.path.realpath(
+                os.path.join("src", os.path.basename(list(os.walk("src"))[1][0]))
+            )
+        )
         call_command("compilemessages")
         os.chdir(curdir)
 
 
 class Build(_build):
-    sub_commands = [("compile_translations", None)] + _build.sub_commands
+    sub_commands = [] + _build.sub_commands
+    if os.path.isdir(
+        os.path.realpath(
+            os.path.join("src", os.path.basename(list(os.walk("src"))[1][0]), "locale")
+        )
+    ):
+        sub_commands = [("compile_translations", None)] + _build.sub_commands
 
 
 class InstallLib(_install_lib):
     def run(self):
-        self.run_command("compile_translations")
         _install_lib.run(self)
 
 

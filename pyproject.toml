@@ -53,9 +53,16 @@ Homepage = "https://github.com/DLRSP/django-errors"
 testing = [
     "coverage",
     "codecov",
+    "pytest",
+    "pytest-django",
 ]
 linting = [
     "flake8",
+    "flake8-pyproject",
+    "flake8-bugbear",
+    "flake8-comprehensions",
+    "flake8-tidy-imports",
+    "flake8-typing-imports",
     "pylint",
 ]
 
