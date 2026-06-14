@@ -11,7 +11,9 @@ except ImportError:
 
 
 class CompileTranslations(Command):
-    description = "compile message catalogs to MO files via django compilemessages"
+    description = (
+        "compile message catalogs to MO files via django compilemessages"
+    )
     user_options = []  # type: list
 
     def initialize_options(self):
@@ -28,7 +30,9 @@ class CompileTranslations(Command):
         curdir = os.getcwd()
         os.chdir(
             os.path.realpath(
-                os.path.join("src", os.path.basename(list(os.walk("src"))[1][0]))
+                os.path.join(
+                    "src", os.path.basename(list(os.walk("src"))[1][0])
+                )
             )
         )
         call_command("compilemessages")
@@ -39,7 +43,9 @@ class Build(_build):
     sub_commands = [] + _build.sub_commands
     if os.path.isdir(
         os.path.realpath(
-            os.path.join("src", os.path.basename(list(os.walk("src"))[1][0]), "locale")
+            os.path.join(
+                "src", os.path.basename(list(os.walk("src"))[1][0]), "locale"
+            )
         )
     ):
         sub_commands = [("compile_translations", None)] + _build.sub_commands
