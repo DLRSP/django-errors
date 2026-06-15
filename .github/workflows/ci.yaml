@@ -15,6 +15,11 @@ on:
 jobs:
   ci:
     uses: DLRSP/workflows/.github/workflows/ci.yaml@main
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+      security-events: write
     with:
       requirements-ref: main
       install-test-deps: false
