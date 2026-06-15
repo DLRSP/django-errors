@@ -17,6 +17,6 @@ jobs:
     uses: DLRSP/workflows/.github/workflows/ci.yaml@main
     with:
       requirements-ref: main
-      install-test-deps: true
+      install-test-deps: false
       assert-wheel-locks: true
     secrets: inherit
