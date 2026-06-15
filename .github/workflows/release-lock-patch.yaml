@@ -23,6 +23,10 @@ on:
       - 'news/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release-lock-patch:
     uses: DLRSP/workflows/.github/workflows/release-lock-patch.yaml@main

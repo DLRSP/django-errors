@@ -20,6 +20,9 @@ on:
     - cron: '0 8 * * 1'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   verify-requirements:
     uses: DLRSP/workflows/.github/workflows/verify-requirements.yaml@main
