@@ -8,14 +8,25 @@ on:
       - main
     paths:
       - 'requirements/py*-django*.txt'
+      - 'pyproject.toml'
+      - 'src/**/__init__.py'
+      - 'CHANGELOG.rst'
+      - 'news/**'
   push:
     branches:
       - main
     paths:
       - 'requirements/py*-django*.txt'
+      - 'pyproject.toml'
+      - 'src/**/__init__.py'
+      - 'CHANGELOG.rst'
+      - 'news/**'
   workflow_dispatch:
 
 jobs:
   release-lock-patch:
     uses: DLRSP/workflows/.github/workflows/release-lock-patch.yaml@main
     secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
