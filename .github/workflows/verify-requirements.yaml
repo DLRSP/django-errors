@@ -1,0 +1,25 @@
+---
+name: Verify requirements
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'requirements/*.in'
+      - 'requirements/py*-django*.txt'
+      - 'requirements/*.txt'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'requirements/*.in'
+      - 'requirements/py*-django*.txt'
+      - 'requirements/*.txt'
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  verify-requirements:
+    uses: DLRSP/workflows/.github/workflows/verify-requirements.yaml@main

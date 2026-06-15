@@ -1,0 +1,21 @@
+---
+name: Release lock patch
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+    paths:
+      - 'requirements/py*-django*.txt'
+  push:
+    branches:
+      - main
+    paths:
+      - 'requirements/py*-django*.txt'
+  workflow_dispatch:
+
+jobs:
+  release-lock-patch:
+    uses: DLRSP/workflows/.github/workflows/release-lock-patch.yaml@main
+    secrets: inherit
