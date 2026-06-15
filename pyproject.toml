@@ -164,7 +164,7 @@ package = "django_errors"
 package_dir = "src"
 filename = "CHANGELOG.rst"
 directory = "news/"
-version = "2.3.5"
+version = "2.3.7"
 issue_format = "`#{issue} <https://github.com/DLRSP/django-errors/issues/{issue}>`_"
 type = [
     { name = "Process", directory = "process", showcontent = true },
@@ -177,7 +177,7 @@ type = [
 ]
 
 [tool.bumpversion]
-current_version = "2.3.5"
+current_version = "2.3.7"
 allow_dirty = true
 
 [[tool.bumpversion.files]]
