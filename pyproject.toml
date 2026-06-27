@@ -10,7 +10,7 @@ description = "Django application for handling server errors."
 authors = [
     { name = "DLRSP", email = "dlrsp.dev@gmail.com" },
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dynamic = ["version"]
 readme = "README.md"
 license = "MIT"
@@ -35,7 +35,6 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -88,7 +87,6 @@ where = ["src"]
 
 [tool.setuptools.data-files]
 "share/django-errors/requirements" = [
-  "requirements/py39-django42.txt",
   "requirements/py310-django42.txt",
   "requirements/py310-django52.txt",
   "requirements/py311-django42.txt",
