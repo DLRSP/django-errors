@@ -5,6 +5,10 @@ updates:
 
   - package-ecosystem: "pip"
     directory: "/"
+    # Version-update PRs disabled fleet-wide: versions are managed by the
+    # pip-compile lock-regen flow (upgrade-dependency.yaml). Security
+    # updates + alerts are unaffected by this limit (AR-033).
+    open-pull-requests-limit: 0
     schedule:
       interval: "daily"
     labels:
