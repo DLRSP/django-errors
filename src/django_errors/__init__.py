@@ -2,7 +2,7 @@
 See PEP 386 (https://peps.python.org/pep-0386/)
 """
 
-__version__ = "2.3.12"
+__version__ = "2.3.13"
 __version_info__ = tuple(
     int(i) if i.isdigit() else i for i in __version__.split(".")
 )
