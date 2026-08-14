@@ -1,3 +1,12 @@
+﻿django_errors 2.3.16 (2026-08-14)
+=================================
+
+* Add `django_errors.mail_identity` — host Subject tags aligned with SH
+  (PROD core/edge omit hostname; CLIENT/TEST keep hostname). Consumers call
+  `apply_mail_identity_defaults(globals())` so `mail_admins` / managers
+  use the same vocabulary as library shell mail.
+
+
 django_errors 2.3.15 (2026-08-14)
 =================================
 

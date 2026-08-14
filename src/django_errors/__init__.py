@@ -1,8 +1,8 @@
-"""
+﻿"""
 See PEP 386 (https://peps.python.org/pep-0386/)
 """
 
-__version__ = "2.3.15"
+__version__ = "2.3.16"
 __version_info__ = tuple(
     int(i) if i.isdigit() else i for i in __version__.split(".")
 )
