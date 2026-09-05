@@ -39,23 +39,43 @@ def _read_env_file(path: str | Path) -> dict[str, str]:
 
 def identity_tag(
     *,
-    scope: Optional[str] = None,
-    role: Optional[str] = None,
-    hostname: Optional[str] = None,
-    install_tag: Optional[str] = None,
+    scope: str | None = None,
+    role: str | None = None,
+    hostname: str | None = None,
+    install_tag: str | None = None,
     env_file: str | Path = _DEFAULT_ENV_FILE,
-    environ: Optional[Mapping[str, str]] = None,
+    environ: Mapping[str, str] | None = None,
 ) -> str:
     """Return the compact identity tag for this host."""
     env = environ if environ is not None else os.environ
     file_vars = _read_env_file(env_file)
 
-    cached = (env.get("SH_MAIL_IDENTITY_TAG") or file_vars.get("SH_MAIL_IDENTITY_TAG") or "").strip()
-    if cached and scope is None and role is None and hostname is None and install_tag is None:
+    cached = (
+        env.get("SH_MAIL_IDENTITY_TAG")
+        or file_vars.get("SH_MAIL_IDENTITY_TAG")
+        or ""
+    ).strip()
+    if (
+        cached
+        and scope is None
+        and role is None
+        and hostname is None
+        and install_tag is None
+    ):
         return cached
 
-    scope_v = (scope or env.get("SH_OS_Scope") or file_vars.get("SH_OS_Scope") or "unknown").strip()
-    role_v = (role or env.get("SH_Host_Role") or file_vars.get("SH_Host_Role") or "unknown").strip()
+    scope_v = (
+        scope
+        or env.get("SH_OS_Scope")
+        or file_vars.get("SH_OS_Scope")
+        or "unknown"
+    ).strip()
+    role_v = (
+        role
+        or env.get("SH_Host_Role")
+        or file_vars.get("SH_Host_Role")
+        or "unknown"
+    ).strip()
     host_v = (
         hostname
         or env.get("SH_OS_HostName")
@@ -65,7 +85,11 @@ def identity_tag(
     install_v = (
         install_tag
         if install_tag is not None
-        else (env.get("SH_Mail_InstallTag") or file_vars.get("SH_Mail_InstallTag") or "")
+        else (
+            env.get("SH_Mail_InstallTag")
+            or file_vars.get("SH_Mail_InstallTag")
+            or ""
+        )
     ).strip()
 
     if scope_v == "PROD" and role_v in _PROD_COMPACT_ROLES:
@@ -80,13 +104,17 @@ def identity_tag(
 def subject_prefix(
     kind: str = "app",
     *,
-    environ: Optional[Mapping[str, str]] = None,
+    environ: Mapping[str, str] | None = None,
     env_file: str | Path = _DEFAULT_ENV_FILE,
 ) -> str:
     """Return ``[kind]<IdentityTag>`` with trailing space (Django EMAIL_SUBJECT_PREFIX)."""
     env = environ if environ is not None else os.environ
     file_vars = _read_env_file(env_file)
-    explicit = (env.get("EMAIL_SUBJECT_PREFIX") or file_vars.get("EMAIL_SUBJECT_PREFIX") or "").rstrip()
+    explicit = (
+        env.get("EMAIL_SUBJECT_PREFIX")
+        or file_vars.get("EMAIL_SUBJECT_PREFIX")
+        or ""
+    ).rstrip()
     if explicit and kind == "app":
         return f"{explicit} " if not explicit.endswith(" ") else explicit
     return f"[{kind}]{identity_tag(environ=env, env_file=env_file)} "
