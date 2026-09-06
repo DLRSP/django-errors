@@ -43,12 +43,13 @@ def identity_tag(
     role: Optional[str] = None,
     hostname: Optional[str] = None,
     install_tag: Optional[str] = None,
-    env_file: str | Path = _DEFAULT_ENV_FILE,
+    env_file: str | Path | None = None,
     environ: Optional[Mapping[str, str]] = None,
 ) -> str:
     """Return the compact identity tag for this host."""
     env = environ if environ is not None else os.environ
-    file_vars = _read_env_file(env_file)
+    # Resolve default at call time so tests can monkeypatch ``_DEFAULT_ENV_FILE``.
+    file_vars = _read_env_file(_DEFAULT_ENV_FILE if env_file is None else env_file)
 
     cached = (env.get("SH_MAIL_IDENTITY_TAG") or file_vars.get("SH_MAIL_IDENTITY_TAG") or "").strip()
     if cached and scope is None and role is None and hostname is None and install_tag is None:
@@ -81,15 +82,16 @@ def subject_prefix(
     kind: str = "app",
     *,
     environ: Optional[Mapping[str, str]] = None,
-    env_file: str | Path = _DEFAULT_ENV_FILE,
+    env_file: str | Path | None = None,
 ) -> str:
     """Return ``[kind]<IdentityTag>`` with trailing space (Django EMAIL_SUBJECT_PREFIX)."""
     env = environ if environ is not None else os.environ
-    file_vars = _read_env_file(env_file)
+    resolved = _DEFAULT_ENV_FILE if env_file is None else env_file
+    file_vars = _read_env_file(resolved)
     explicit = (env.get("EMAIL_SUBJECT_PREFIX") or file_vars.get("EMAIL_SUBJECT_PREFIX") or "").rstrip()
     if explicit and kind == "app":
         return f"{explicit} " if not explicit.endswith(" ") else explicit
-    return f"[{kind}]{identity_tag(environ=env, env_file=env_file)} "
+    return f"[{kind}]{identity_tag(environ=env, env_file=resolved)} "
 
 
 def prefix_subject(subject: str, *, kind: str = "app") -> str:
