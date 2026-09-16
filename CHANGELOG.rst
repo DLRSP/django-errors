@@ -1,3 +1,14 @@
+django_errors 2.3.16 (2026-09-16)
+=================================
+
+Bug Fixes
+---------
+
+- Monkey-patch ``BaseContext.__copy__`` on Python 3.14 so Django admin
+  changelists and ``context.new()`` no longer raise AttributeError
+  (Django #35844; still broken in released 5.2.17).
+
+
 ﻿django_errors 2.3.16 (2026-08-14)
 =================================
 
