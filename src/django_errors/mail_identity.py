@@ -1,4 +1,4 @@
-"""Host mail identity tags for operator Subject/From prefixes.
+﻿"""Host mail identity tags for operator Subject/From prefixes.
 
 Mirrors the SH library helper ``SH_Mail_IdentityTag``:
 
@@ -16,7 +16,7 @@ from __future__ import annotations
 import os
 import socket
 from pathlib import Path
-from typing import Mapping, MutableMapping, Optional
+from typing import Mapping, MutableMapping
 
 _DEFAULT_ENV_FILE = "/etc/opt/sh/mail-identity.env"
 _PROD_COMPACT_ROLES = frozenset({"core", "edge"})
